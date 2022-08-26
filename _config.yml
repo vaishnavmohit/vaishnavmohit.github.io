@@ -3,9 +3,9 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-first_name: Zhuoran
+first_name: Mohit
 middle_name:
-last_name: Qiao
+last_name: Vaishnav
 email: zqiao@caltech.edu
 description: # the ">" symbol means to ignore newlines until "footer_text:"
   A practitioner of Molecular Simulation, Statistical Physics, and Machine Learning. \#AI4Science fellow, PhD student at Miller Group, Caltech.
@@ -40,7 +40,7 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # Social integration
 # -----------------------------------------------------------------------------
 
-github_username: zrqiao # your GitHub user name
+github_username: vaishnavmohit # your GitHub user name
 twitter_username: ZhuoranQ # your Twitter handle
 linkedin_username: zhuoran-qiao-269003153 # your LinkedIn user name
 scholar_userid: -u83TOkAAAAJ # your Google Scholar ID
