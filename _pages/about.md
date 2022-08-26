@@ -2,21 +2,21 @@
 layout: about
 title: about
 permalink: /
-description: A practitioner of Molecular Simulation, Statistical Physics, and Machine Learning. 
+description: A practitioner of Computational Neuroscience, Visual Reasoning, and Artificial Intelligence. PhD student at ANITI/Brown University.
 
 profile:
   align: left
   image: prof_pic.jpg
 
 news: false  # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 
 ---
 
-I am a Ph.D. student at <a href="https://cce.caltech.edu/">Caltech CCE</a> working with <a href="http://tensorlab.cms.caltech.edu/users/anima/group.html">Prof. Anima Anandkumar</a>. I collaborate closely with colleagues from the <a href="https://millergroup.caltech.edu/Miller_Group/Home.html">Miller Group</a> and <a href="https://www.entos.ai/about">Entos</a>. My research centers around developing physics-driven geometric learning approaches to tackle complex problems in chemistry and biology, especially for the study of electronic structure and dynamics out of equilibrium.
+I am a Ph.D. student at Artificial and Natural Intelligence Toulouse Institute <a href="https://aniti.univ-toulouse.fr/">ANITI</a> working with <a href="https://serre-lab.clps.brown.edu/">Prof. Thomas Serre</a> at Brown University. My research interest focuses on exploring the role of self-attention in cognitive architecture and CNN. I am currently working on modeling attention and memory mechanism inspired by biological systems. Before joining this Ph.D. I interned at a start-up, <a href="https://wediagnostix.com/en/home">WeDiagnostiX</a> (Paris, France), in dental imaging, where I developed their first working prototype. The aim was to analyze dental radiograph images to build an "Automatic Clinical Investigation" device, improving dental care quality using AI techniques.
 
-I earned my BSc from Peking University in 2019. As an undergraduate student I worked in the <a href="https://www.chem.pku.edu.cn/gaoyq/">Gao Group</a> at <a href="https://www.chem.pku.edu.cn/en/">PKU CCME</a>, where I studied the statistical mechanics of confined soft matters. 
+I earned my Joint Erasmus MS in Computer Vision and Robotics from Heriot Watt University (UK), University of Bourgogne (France), University of Girona (Spain). 
 
 {% comment %} 
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com){:target="\_blank"}. You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
