@@ -6,6 +6,13 @@ description:
 nav: true
 ---
 
+## Conference Talks
+
+* Mohit Vaishnav, Thomas FEL, Ivan Felipe, Peter Wilf, Thomas Serre, ''Using Artificial Intelligence To Identify Fossil Angiosperm Leaves At Family Level'', *Geological Society of America*, Connects, Denver (USA) 2022
+* Mohit Vaishnav, Thomas FEL, Ivan Felipe, Jacob A Rose, Peter Wilf, Thomas Serre, ''Understanding how deep neural networks categorize living and fossil leaves'', *Botany* (virtual) 2021 
+* Ivan Felipe, Jacob A Rose, Thomas FEL, Mohit Vaishnav, Peter Wilf, Thomas Serre, ''A deep-learning-based approach for automated fossil leaf identification'', *Botany* (virtual) 2021 
+* Mohit Vaishnav, ''Computational models of visual reasoning'' at *Brown Unconference*, 2021
+
 ## Teaching
 
 * Supervising 15 M1 students at Paul Sabastier University, France for the course *Initiation to research work (project) (EMINC2B2)*,  Jan-May 2021
@@ -42,18 +49,3 @@ nav: true
   * __Advisor__: [Prof. Anil Kumar Tiwari](http://home.iitj.ac.in/~akt/)
   * __Project__: Lossless Video compression techniques,
 
-## Conference and seminar presentations
-* ACS Spring 2022 - Poster and Sci-Mix Session
-
-* Invited talk on quantum-chemistry-informed geometric learning as part of the <a href="https://www.cmu.edu/aced/sciML.html">Scientific Machine Learning Webinar Series</a> at CMU, Jan. 13, 2022
-
-* Talk at <a href="https://www.nyas.org/events/2021/ai-in-chemical-biology-new-frontiers/">AI in Chemical Biology: New Frontiers</a> webinar, Mar. 17, 2021
-
-* Contributed talk on multi-task and differentiable learning for molecular electronic structure on the ML4Molecules workshop at NeurIPS 2020, Dec. 12, 2020
-  * Slides and recording at <a href="https://ml4molecules.github.io/">workshop website</a>
-
-## Teaching
-
-* (TA) Ch21c Spring 2019-2020, with Prof. Jack Beauchamp
-* (TA) Ch1b Winter 2019-2020, with Prof. Tom Miller
-* (TA) Ch1a Fall 2019-2020, with Prof. Nathan Lewis
