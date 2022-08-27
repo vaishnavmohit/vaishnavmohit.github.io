@@ -38,16 +38,16 @@ nav: true
   * __Advisor__: [Prof. Hugues Talbot](https://hugues-talbot.github.io)
   * __Project__: Developed an algorithm to estimate vehicle tyre wear using Computer Vision techniques (tread measurement)
 * Research Assistant in Ajman University, U.A.E.
-* Offshore working with Suspect Technologies, a startup by Massachusetts Institute of Technology (*MIT*) Camera Culture Group members.
+* Offshore working with Suspect Technologies, a startup by *Massachusetts Institute of Technology* (MIT) Camera Culture Group members.
 * [Kumbhathon Challenge 2015](https://www.kumbha.org/)
   * Contributed in innovating Kumbha festival by MIT USA and worked on “Abnormal Motion Detection” 
-* Indian Institute of Science (*IISc*), Bangalore, India 
+* *Indian Institute of Science* (IISc), Bangalore, India 
   * __Advisor__: [Prof. K R Ramakrishnan](http://iiscprofiles.irins.org/profile/3742)
   * __Project__: 3D Video Synopsis: Capturing to Transmission
-* Global Internship Program In Engineering Innovation And Design [(GIPEDI)](http://gipedi.iitd.ac.in/), Indian Institute of Technology (*IIT*) Delhi
+* Global Internship Program In Engineering Innovation And Design [(GIPEDI)](http://gipedi.iitd.ac.in/), *Indian Institute of Technology* (IIT) Delhi
   * __Advisor__: [Prof. Subrat Kar]([http://home.iitj.ac.in/~akt/](https://web.iitd.ac.in/~subrat/))
   * __Project__: A review on Compression Sensing.
-* Indian Institute of Technology (*IIT*), Jodhpur, India
+* *Indian Institute of Technology* (IIT), Jodhpur, India
   * __Advisor__: [Prof. Anil Kumar Tiwari](http://home.iitj.ac.in/~akt/)
   * __Project__: Lossless Video compression techniques,
 
