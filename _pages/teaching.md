@@ -8,10 +8,10 @@ nav: true
 
 ## Conference Talks
 
-* Mohit Vaishnav, Thomas FEL, Ivan Felipe, Peter Wilf, Thomas Serre, ''Using Artificial Intelligence To Identify Fossil Angiosperm Leaves At Family Level'', *Geological Society of America*, Connects, Denver (USA) 2022
-* Mohit Vaishnav, Thomas FEL, Ivan Felipe, Jacob A Rose, Peter Wilf, Thomas Serre, ''Understanding how deep neural networks categorize living and fossil leaves'', *Botany* (virtual) 2021 
-* Ivan Felipe, Jacob A Rose, Thomas FEL, Mohit Vaishnav, Peter Wilf, Thomas Serre, ''A deep-learning-based approach for automated fossil leaf identification'', *Botany* (virtual) 2021 
-* Mohit Vaishnav, ''Computational models of visual reasoning'' at *Brown Unconference*, 2021
+* Mohit Vaishnav, Thomas FEL, Ivan Felipe, Peter Wilf, Thomas Serre, <a style='color:blue'>Using Artificial Intelligence To Identify Fossil Angiosperm Leaves At Family Level</a>, *Geological Society of America*, Connects, Denver (USA) 2022
+* Mohit Vaishnav, Thomas FEL, Ivan Felipe, Jacob A Rose, Peter Wilf, Thomas Serre, <a style='color:blue'>Understanding how deep neural networks categorize living and fossil leaves</a>, *Botany* (virtual) 2021 
+* Ivan Felipe, Jacob A Rose, Thomas FEL, Mohit Vaishnav, Peter Wilf, Thomas Serre, <a style='color:blue'>A deep-learning-based approach for automated fossil leaf identification</a>, *Botany* (virtual) 2021 
+* Mohit Vaishnav, <a style='color:blue'>Computational models of visual reasoning</a> at *Brown Unconference*, 2021
 
 ## Teaching
 
