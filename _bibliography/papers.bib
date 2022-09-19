@@ -39,13 +39,16 @@
   abstract = {Vision transformers are nowadays the de-facto preference for image classification tasks. There are two broad categories of classification tasks, fine-grained and coarse-grained. In fine-grained classification, the necessity is to discover subtle differences due to the high level of similarity between sub-classes. Such distinctions are often lost as we downscale the image to save the memory and computational cost associated with vision transformers (ViT). In this work, we present an in-depth analysis and describe the critical components for developing a system for the fine-grained categorization of plants from herbarium sheets. Our extensive experimental analysis indicated the need for a better augmentation technique and the ability of modern-day neural networks to handle higher dimensional images. We also introduce a convolutional transformer architecture called Conviformer which, unlike the popular Vision Transformer (ConViT), can handle higher resolution images without exploding memory and computational cost. We also introduce a novel, improved pre-processing technique called PreSizer to resize images better while preserving their original aspect ratios, which proved essential for classifying natural plants. With our simple yet effective approach, we achieved SoTA on Herbarium 202x and iNaturalist 2019 dataset.}
 }
 
-@article{zerroug2022benchmark,
+@inproceedings{zerroug2022benchmark,
   abbr = {cvr},
   title={A Benchmark for Compositional Visual Reasoning},
   author={Zerroug, Aimen and Vaishnav, Mohit and Colin, Julien and Musslick, Sebastian and Serre, Thomas},
-  journal={arXiv preprint arXiv:2206.05379},
-  year={2022},
+  booktitle = {Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks},
+  pages = {},
+  url = {},
   html = {https://arxiv.org/pdf/2206.05379},
+  volume = {1},
+  year = {2022},
   abstract = {A fundamental component of human vision is our ability to parse complex visual scenes and judge the relations between their constituent objects. AI benchmarks for visual reasoning have driven rapid progress in recent years with state-of-the-art systems now reaching human accuracy on some of these benchmarks. Yet, a major gap remains in terms of the sample efficiency with which humans and AI systems learn new visual reasoning tasks. Humans' remarkable efficiency at learning has been at least partially attributed to their ability to harness compositionality -- such that they can efficiently take advantage of previously gained knowledge when learning new tasks. Here, we introduce a novel visual reasoning benchmark, Compositional Visual Relations (CVR), to drive progress towards the development of more data-efficient learning algorithms. We take inspiration from fluidic intelligence and non-verbal reasoning tests and describe a novel method for creating compositions of abstract rules and associated image datasets at scale. Our proposed benchmark includes measures of sample efficiency, generalization and transfer across task rules, as well as the ability to leverage compositionality. We systematically evaluate modern neural architectures and find that, surprisingly, convolutional architectures surpass transformer-based architectures across all performance measures in most data regimes. However, all computational models are a lot less data efficient compared to humans even after learning informative visual representations using self-supervision. Overall, we hope that our challenge will spur interest in the development of neural architectures that can learn to harness compositionality toward more efficient learning.}
 }
 
