@@ -8,7 +8,7 @@ nav: true
 
 <a style='color:DodgerBlue'>Doctor of Philosophy</a> 
   * [Artificial and Natural Intelligence Toulouse Institute](https://aniti.univ-toulouse.fr/) (*ANITI*), France and [Brown University](https://serre-lab.clps.brown.edu/), USA  
-  * __Topic__: Exploring the role of self-attention in cognitive and computer vision architectures 
+  * __Topic__: Exploring the role of (self-)attention in cognitive and computer vision architectures 
   * __Supervisor__: Thomas Serre (Professor, Brown University, USA)
   * __Year__: 2019-2022
 
