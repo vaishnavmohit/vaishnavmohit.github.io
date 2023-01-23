@@ -3,6 +3,17 @@
 
 @string{acs = {Americam Chemical Society,}}
 
+@article{vaishnav2022mareo,
+  abbr = {mareo},
+  title={{GAMR}: Guided Attention Model for (visual) Reasoning},
+  author={Vaishnav, Mohit and Serre, Thomas},
+  journal={International Conference on Learning Representations {ICLR},  2023},
+  year={2023},
+  publisher = {OpenReview.net},
+  html={https://openreview.net/forum?id=iLMgk2IGNyv},
+  abstract = {Humans continue to outperform modern AI systems in their ability to flexibly parse and understand complex visual scenes. Here, we present a novel module for visual reasoning, the Guided Attention Model for (visual) Reasoning (GAMR), which instantiates an active vision theory -- positing that the brain solves complex visual reasoning problems dynamically -- via sequences of attention shifts to select and route task-relevant visual information into memory. Experiments on an array of visual reasoning tasks and datasets demonstrate GAMR's ability to learn visual routines in a robust and sample-efficient manner. In addition, GAMR is shown to be capable of zero-shot generalization on completely novel reasoning tasks. Overall, our work provides computational support for cognitive theories that postulate the need for a critical interplay between attention and memory to dynamically maintain and manipulate task-relevant visual information to solve complex visual reasoning tasks.}
+}
+
 @article{vaishnav2021understanding,
     abbr = {nc_resnet},
     author = {Vaishnav, Mohit and Cadene, Remi and Alamia, Andrea and Linsley, Drew and VanRullen, Rufin and Serre, Thomas},
@@ -17,16 +28,6 @@
     eprint = {https://direct.mit.edu/neco/article-pdf/doi/10.1162/neco\_a\_01485/1993419/neco\_a\_01485.pdf},
     html = {https://direct.mit.edu/neco/article-pdf/doi/10.1162/neco\_a\_01485/1993419/neco\_a\_01485.pdf},
     abstract = {Visual understanding requires comprehending complex visual relations between objects within a scene. Here, we seek to characterize the computational demands for abstract visual reasoning. We do this by systematically assessing the ability of modern deep convolutional neural networks (CNNs) to learn to solve the synthetic visual reasoning test (SVRT) challenge, a collection of 23 visual reasoning problems. Our analysis reveals a novel taxonomy of visual reasoning tasks, which can be primarily explained by both the type of relations (same-different versus spatial-relation judgments) and the number of relations used to compose the underlying rules. Prior cognitive neuroscience work suggests that attention plays a key role in humans' visual reasoning ability. To test this hypothesis, we extended the CNNs with spatial and feature-based attention mechanisms. In a second series of experiments, we evaluated the ability of these attention networks to learn to solve the SVRT challenge and found the resulting architectures to be much more efficient at solving the hardest of these visual reasoning tasks. Most important, the corresponding improvements on individual tasks partially explained our novel taxonomy. Overall, this work provides a granular computational account of visual reasoning and yields testable neuroscience predictions regarding the differential need for feature-based versus spatial attention depending on the type of visual reasoning problem.}
-}
-
-@article{vaishnav2022mareo,
-  abbr = {mareo},
-  title={GAMR: Guided Attention Model for (visual) Reasoning},
-  author={Vaishnav, Mohit and Serre, Thomas},
-  journal={arXiv preprint arXiv:2206.04928},
-  year={2022},
-  html = {https://arxiv.org/pdf/2206.04928},
-  abstract = {Humans continue to vastly outperform modern AI systems in their ability to parse and understand complex visual scenes flexibly. Attention and memory are two systems known to play a critical role in our ability to selectively maintain and manipulate behaviorally-relevant visual information to solve some of the most challenging visual reasoning tasks. Here, we present a novel architecture for visual reasoning inspired by the cognitive-science literature on visual reasoning, the Memory- and Attention-based (visual) REasOning (MAREO) architecture. MAREO instantiates an active-vision theory, which posits that the brain solves complex visual reasoning problems compositionally by learning to combine previously-learned elementary visual operations to form more complex visual routines. MAREO learns to solve visual reasoning tasks via sequences of attention shifts to route and maintain task-relevant visual information into a memory bank via a multi-head transformer module. Visual routines are then deployed by a dedicated reasoning module trained to judge various relations between objects in the scenes. Experiments on four types of reasoning tasks demonstrate MAREO's ability to learn visual routines in a robust and sample-efficient manner.}
 }
 
 @article{vaishnav2022conviformers,
