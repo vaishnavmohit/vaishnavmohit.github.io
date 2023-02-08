@@ -17,5 +17,5 @@ nav: true
 * <a style='color:DodgerBlue'>Erasmus+ Mobility Grant</a> for Masters study abroad by European Commission, 2017
 * <a style='color:DodgerBlue'>Bourgogne Regional Council Grant</a>, 2017
 * <a style='color:DodgerBlue'>Microsoft Research Travel Grant</a>, 2011
-* Selected in Govt. of India, National fellowship scheme, <a style='color:DodgerBlue'>Kishor Vaigyanic Protsahan Yojna</a> funded by DST, in Engineering stream, 2010
+* Selected in Govt. of India, National fellowship scheme, <a style='color:DodgerBlue'>Kishor Vaigyanic Protsahan Yojna</a> funded by DST, in Engineering stream, 2010-2013
   * <a style='color:SlateGray'>The Kishore Vaigyanik Protsahan Yojana (KVPY) is an on-going National Program of Fellowship in Basic Sciences, initiated and funded by the Department of Science and Technology, Government of India, to attract exceptionally highly motivated students for pursuing basic science courses and research career in science. The objective of the program is to identify students with talent and aptitude for research; help them realize their academic potential; encourage them to take up research careers in Science, and ensure the growth of the best scientific minds for research and development in the country.</a>
