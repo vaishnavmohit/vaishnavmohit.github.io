@@ -6,7 +6,7 @@ description:
 nav: true
 ---
 
-## <a style='color:DodgerBlue'><center>Exploring the role of (self-)attention in cognitive and computer vision architecture</center></a>
+## <a style='color:darkturquoise'><center>Exploring the role of (self-)attention in cognitive and computer vision architecture</center></a>
 
 
 <p align="center">

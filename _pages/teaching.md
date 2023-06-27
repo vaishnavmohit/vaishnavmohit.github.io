@@ -6,24 +6,11 @@ description:
 nav: true
 ---
 
-## Conference Talks
-
-* Ivan Felipe, Thomas FEL, Mohit Vaishnav, Peter Wilf, Thomas Serre, <a style='color:DodgerBlue'>Using Artificial Intelligence To Identify Fossil Angiosperm Leaves At Family Level</a>, *Geological Society of America*, Connects, Denver (USA) 2022
-* Mohit Vaishnav, Thomas FEL, Ivan Felipe, Jacob A Rose, Peter Wilf, Thomas Serre, <a style='color:DodgerBlue'>Understanding how deep neural networks categorize living and fossil leaves</a>, *Botany* (virtual) 2021 
-* Ivan Felipe, Jacob A Rose, Thomas FEL, Mohit Vaishnav, Peter Wilf, Thomas Serre, <a style='color:DodgerBlue'>A deep-learning-based approach for automated fossil leaf identification</a>, *Botany* (virtual) 2021 
-* Mohit Vaishnav, <a style='color:DodgerBlue'>Computational models of visual reasoning</a> at *Brown Unconference*, 2021
-
-## Teaching
-
-* Supervising 15 M1 students at Paul Sabastier University, France for the course *Initiation to research work (project) (EMINC2B2)*,  Jan-May 2021
-* Teaching *[Basics of Introduction to Computer vision](https://rufinv.github.io/Intro2AI-advanced-class/)* at Federal University of Toulouse Midi-Pyrénées, France, Mar-May 2021, 2022
-* Teaching *[Visual Reasoning in Computer Vision](https://rufinv.github.io/Intro2AI-advanced-class/)* at Federal University of Toulouse Midi-Pyrénées, France, Mar-May 2021, 2022
-* Teaching Assistant for Electronics lab at The LNMIIT, Jaipur India.
-
-## Workshops
-* *[Reinforcement Learning Virtual School](https://rlvs.aniti.fr/)*, organized by *ANITI*, 2021 
-* *[Computational Neuroscience](https://www.coursera.org/learn/computational-neuroscience)* course on *Coursera*, 2021 
-* *[Computational Psychiatry Course](https://www.translationalneuromodeling.org/cpcourse/)* organized by the Translational Neuromodeling Unit, University of Zurich & ETH Zurich, Sept 2020
+## Startup Experience
+* <a style='color:lightsalmon'>Shree Bherunath Granite, Rajsamad, India</a> (2014-2016)
+  - Helped my family setup granite mines and played a key role in overseeing the day-to-day operations of the firm supervising 20 employees and has made significant contributions to the efficiency and productivity of our team.
+* <a style='color:lightsalmon'>Kevin Technology, Ajmer, India</a> (2016-17)
+  - Co-founded a start-up with a vision to develop 2016-17 surveillance system based on computer vision techniques.
 
 ## Industrial Experience
 * Masters Thesis at [WeDiagnostiX](https://wediagnostix.com/en/home) (Feb 2019 - July 2019):
@@ -51,3 +38,21 @@ nav: true
   * __Advisor__: [Prof. Anil Kumar Tiwari](http://home.iitj.ac.in/~akt/)
   * __Project__: Lossless Video compression techniques,
 
+## Conference Talks
+
+* Ivan Felipe, Thomas FEL, Mohit Vaishnav, Peter Wilf, Thomas Serre, <a style='color:darkturquoise'>Using Artificial Intelligence To Identify Fossil Angiosperm Leaves At Family Level</a>, *Geological Society of America*, Connects, Denver (USA) 2022
+* Mohit Vaishnav, Thomas FEL, Ivan Felipe, Jacob A Rose, Peter Wilf, Thomas Serre, <a style='color:darkturquoise'>Understanding how deep neural networks categorize living and fossil leaves</a>, *Botany* (virtual) 2021 
+* Ivan Felipe, Jacob A Rose, Thomas FEL, Mohit Vaishnav, Peter Wilf, Thomas Serre, <a style='color:darkturquoise'>A deep-learning-based approach for automated fossil leaf identification</a>, *Botany* (virtual) 2021 
+* Mohit Vaishnav, <a style='color:darkturquoise'>Computational models of visual reasoning</a> at *Brown Unconference*, 2021
+
+## Teaching
+
+* Supervising 15 M1 students at Paul Sabastier University, France for the course *Initiation to research work (project) (EMINC2B2)*,  Jan-May 2021
+* Teaching *[Basics of Introduction to Computer vision](https://rufinv.github.io/Intro2AI-advanced-class/)* at Federal University of Toulouse Midi-Pyrénées, France, Mar-May 2021, 2022
+* Teaching *[Visual Reasoning in Computer Vision](https://rufinv.github.io/Intro2AI-advanced-class/)* at Federal University of Toulouse Midi-Pyrénées, France, Mar-May 2021, 2022
+* Teaching Assistant for Electronics lab at The LNMIIT, Jaipur India.
+
+## Workshops
+* *[Reinforcement Learning Virtual School](https://rlvs.aniti.fr/)*, organized by *ANITI*, 2021 
+* *[Computational Neuroscience](https://www.coursera.org/learn/computational-neuroscience)* course on *Coursera*, 2021 
+* *[Computational Psychiatry Course](https://www.translationalneuromodeling.org/cpcourse/)* organized by the Translational Neuromodeling Unit, University of Zurich & ETH Zurich, Sept 2020
