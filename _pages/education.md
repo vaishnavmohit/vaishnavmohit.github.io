@@ -10,7 +10,7 @@ nav: true
   * [Artificial and Natural Intelligence Toulouse Institute](https://aniti.univ-toulouse.fr/) (*ANITI*), France and [Brown University](https://serre-lab.clps.brown.edu/), USA  
   * __Topic__: Exploring the role of (self-)attention in cognitive and computer vision architectures 
   * __Supervisor__: Thomas Serre (Professor, Brown University, USA)
-  * __Year__: 2019-2022
+  * __Year__: 2019-2023
 
 <a style='color:DodgerBlue'>Erasmus Joint Masters In Vision and Robotics (VIBOT)</a> 
   * Joint Degree In Association with [Heriot Watt University](https://www.hw.ac.uk/), UK ,[University of Bourgogne](http://en.u-bourgogne.fr/), France, [University of Girona](http://www.udg.edu/en/), Spain 
