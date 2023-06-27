@@ -30,14 +30,14 @@ nav: true
   * Contributed in innovating Kumbha festival by MIT USA and worked on “Abnormal Motion Detection” 
 * *Indian Institute of Science* ([IISc](https://iisc.ac.in/)), Bangalore, India 
   * __Advisor__: [Prof. K R Ramakrishnan](http://iiscprofiles.irins.org/profile/3742)
-  * __Project__: 3D Video Synopsis: Capturing to Transmission
+  * __Project__: During my summer internship I wrote a survey article on 3D Video Synopsis: Capturing to Transmission
 * Global Internship Program In Engineering Innovation And Design [(GIPEDI)](http://gipedi.iitd.ac.in/), *Indian Institute of Technology* ([IIT](https://home.iitd.ac.in/)) Delhi
   * __Advisor__: [Prof. Subrat Kar]([http://home.iitj.ac.in/~akt/](https://web.iitd.ac.in/~subrat/))
   * __Project__: A review on Compression Sensing.
 * *Indian Institute of Technology* ([IIT](https://www.iitj.ac.in/)), Jodhpur, India
   * __Advisor__: [Prof. Anil Kumar Tiwari](http://home.iitj.ac.in/~akt/)
-  * __Project__: Lossless Video compression techniques,
-
+  * __Project__: I developed lossless video compression techniques and published papers in Top tier conference, Data Compression Conference.
+  
 ## Conference Talks
 
 * Ivan Felipe, Thomas FEL, Mohit Vaishnav, Peter Wilf, Thomas Serre, <a style='color:darkturquoise'>Using Artificial Intelligence To Identify Fossil Angiosperm Leaves At Family Level</a>, *Geological Society of America*, Connects, Denver (USA) 2022
