@@ -15,7 +15,7 @@ nav: true
 
 <p align="center"><a href="https://arxiv.org/abs/2306.14650"><button type="button" class="btn btn-lg btn-primary">Manuscript in PDF</button></a></p>
 
-<p>The thesis defense took place on April 13th 2023.</p>
+<p>The thesis defense took place on April 13th 2023. [slides](https://docs.google.com/presentation/d/18MowWN7zjDfqUiJWD3pl3NsuSrrXtc4vnrcGjX2RErg/edit?usp=sharing)</p>
 
 <kbd> Committee </kbd>
 
