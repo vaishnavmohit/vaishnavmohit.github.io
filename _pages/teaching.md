@@ -6,6 +6,25 @@ description:
 nav: true
 ---
 
+## Work Experience
+* <a style='color:lightsalmon'>Data Scientist at Center for AI and Automation, Sandvik Gmbh</a> (2024)
+  - Led development and deployment of end-to-end AI solutions within an Azure environment collaborating with stakeholders to align business needs and execute strategic initiatives.
+  - Working towards delivering platform responsibility, ensuring seamless integration and optimization of AI services to enable capability creation and accelerate business growth in a dynamic international environment.
+
+* <a style='color:lightsalmon'>Researcher at German AI Research Center (DFKI), Germany</a> (2023)
+  - Started with the work of designing perception systems specifically tailored for driver behavioral modeling within the domain of connected, cooperative, and automated mobility (CCAM) projects BERTHA – an EU Horizon project.
+  - Conducted the first studies to apply Bayesian Belief Networks (BBN) extensively to construct scalable and probabilistic Driver Behavioral Models (DBM), ensuring both technological feasibility and practical applicability in real-world scenarios.
+
+* <a style='color:lightsalmon'>Doctoral Researcher at Serre Lab, Brown University, USA</a> (2019-2023)
+  - Conducted research and identified the challenges faced by machines in performing abstract reasoning tasks, highlighting its disparity with humans' performance.
+  - Developed novel architecture by leveraging insights from cognitive science literature, specifically the role of attention and memory.
+  - Created a prototype model that successfully combines attention and memory, resulting in state of the art performance on two visual reasoning dataset. 
+  - Designed and optimized multi-million parameter models utilizing Transformer architecture to accommodate higher resolution images without compromising computational complexity, resulting in outstanding performance on real-world classification challenges.
+  - Published papers in prestigious conferences and journals including NeurIPS, ICLR, and Neural Computation, showcasing research contributions and expertise.
+  - Collaborated with interdisciplinary teams and projects across institutes during the course of the PhD, fostering a collaborative and dynamic research environment.
+  - Worked with a multi-GPU environment using Slurm workload manager on High performance computing clusters such as Oscar and CALMIP.
+
+
 ## Startup Experience
 * <a style='color:lightsalmon'>Shree Bherunath Granite, Rajsamad, India</a> (2014-2016)
   - Helped my family setup granite mines and played a key role in overseeing the day-to-day operations of the firm supervising 20 employees and has made significant contributions to the efficiency and productivity of our team.
@@ -13,13 +32,22 @@ nav: true
   - Co-founded a start-up with a vision to develop 2016-17 surveillance system based on computer vision techniques.
 
 ## Industrial Experience
-* Masters Thesis at [WeDiagnostiX](https://wediagnostix.com/en/home) (Feb 2019 - July 2019):
+* Research Engineer at [WeDiagnostiX](https://wediagnostix.com/en/home) (Feb 2019 - July 2019):
   * __Advisor__: [Prof. Hugues Talbot](https://hugues-talbot.github.io)
-  * __Project__: Masters Thesis with a Dental AI startup where I developed first working prototype for the classification/understanding of maxillary structures from X-ray imaging using Deep learning. My responsibilities included creating an end-to-end pipeline, starting with data collection and labeling till building a working prototype.
+  <!-- * __Project__:  -->
+  <!-- Masters Thesis with a Dental AI startup where I developed first working prototype for the classification/understanding of maxillary structures from X-ray imaging using Deep learning. My responsibilities included creating an end-to-end pipeline, starting with data collection and labeling till building a working prototype. -->
+  - Developed the first working prototype for the classification and understanding of maxillary structures from X-ray images.
+  - Demonstrated expertise utilizing Deep Learning algorithms for semantic and instance segmentation of teeth.
+  - Created an end-to-end pipeline, including data collection and labeling, to build a functional model.
+  - Responsible for the entire project, ensuring smooth progress from data collection to the development of a fully operational prototype.
 
-* Summer Internship with [Quelia Systems Inc.](https://quelia.fr/}) (July 2018 - Aug 2018): 
-  * __Advisor__: [Prof. Hugues Talbot](https://hugues-talbot.github.io)
-  * __Project__: During the summer internship, I was tasked to build an application for estimating tyre wear using a portable mobile camera and computer vision technique. With the software developed, any person can approximate the depth of the treads and accordingly take action to replace them if needed. 
+* Research Engineer at [Quelia Systems Inc.](https://quelia.fr/}) (July 2018 - Aug 2018): 
+  <!-- * __Advisor__: [Prof. Hugues Talbot](https://hugues-talbot.github.io) -->
+  <!-- * __Project__: During the summer internship, I was tasked to build an application for estimating tyre wear using a portable mobile camera and computer vision technique. With the software developed, any person can approximate the depth of the treads and accordingly take action to replace them if needed.  -->
+  - Developed an application for estimating tire wear during a summer internship.
+  - Utilized computer vision techniques and a portable mobile camera to measure the depth of tire treads.
+  - Contributed to enhancing safety on the road by providing a user-friendly solution for assessing tire conditions.
+
 
 ## Academic Experience
 
