@@ -7,6 +7,12 @@ nav: true
 ---
 
 ## Work Experience
+* <a style='color:lightsalmon'>Co-founder, Kimova AI</a> (2024)
+  - Co-founded and lead [Kimova AI](https://kimova.ai), a pioneering ISO auditing company leveraging AI technology to transform cybersecurity and compliance practices.
+  - Secured backing from the Google Cloud Startup Program to accelerate growth and enhance service offerings.
+  - Revolutionizing ISO/IEC 27001:2022 compliance assessments with innovative solutions, ensuring security, speed, and accuracy in gap assessments.
+  - Spearheaded strategic partnerships and client engagements, driving business development and operational excellence.
+
 * <a style='color:lightsalmon'>Data Scientist at Center for AI and Automation, Sandvik Gmbh</a> (2024)
   - Led development and deployment of end-to-end AI solutions within an Azure environment collaborating with stakeholders to align business needs and execute strategic initiatives.
   - Working towards delivering platform responsibility, ensuring seamless integration and optimization of AI services to enable capability creation and accelerate business growth in a dynamic international environment.
