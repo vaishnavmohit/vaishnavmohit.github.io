@@ -12,6 +12,20 @@ If you like the theme, give it a star!
 
 [![Preview](assets/img/al-folio-preview.png)](https://alshedivat.github.io/al-folio/)
 
+## To run:
+```
+git add -A    
+git commit -m "commit"
+./bin/deploy --user
+```
+
+## Dependencies:
+```
+chruby 2.7.1
+bundle install
+bundle update
+bundle exec jekyll serve
+```
 
 ## User community
 
