@@ -7,11 +7,17 @@ nav: true
 ---
 
 ## Work Experience
-* <a style='color:lightsalmon'>Co-founder, Kimova AI</a> (2024)
+* <a style='color:lightsalmon'>Co-founder, Kimova AI</a> (2024 - Present)
   - Co-founded and lead [Kimova AI](https://kimova.ai), a pioneering ISO auditing company leveraging AI technology to transform cybersecurity and compliance practices.
   - Secured backing from the Google Cloud Startup Program to accelerate growth and enhance service offerings.
   - Revolutionizing ISO/IEC 27001:2022 compliance assessments with innovative solutions, ensuring security, speed, and accuracy in gap assessments.
   - Spearheaded strategic partnerships and client engagements, driving business development and operational excellence.
+
+* <a style='color:lightsalmon'>Postdoctoral Researcher, Applied AI Group, TalTech University, Estonia</a> (2024-Present)
+  - Leading multidisciplinary research under the EXAI grant focusing on \textit{multimodal reasoning agents} and \textit{human-aligned AI systems}.
+  - Designing novel evaluation pipelines for large vision-language models using real-world visual reasoning datasets.
+  - Developed AI agents demonstrating enhanced reasoning capabilities, aiming to surpass human performance benchmarks.
+  - Designed reasoning methodology that established new state-of-the-art benchmarks on real-world datasets.
 
 * <a style='color:lightsalmon'>Data Scientist at Center for AI and Automation, Sandvik Gmbh</a> (2024)
   - Led development and deployment of end-to-end AI solutions within an Azure environment collaborating with stakeholders to align business needs and execute strategic initiatives.
