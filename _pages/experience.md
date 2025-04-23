@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /teaching/
+permalink: /experience/
 title: Experience
 description:
 nav: true
@@ -14,7 +14,7 @@ nav: true
   - Spearheaded strategic partnerships and client engagements, driving business development and operational excellence.
 
 * <a style='color:lightsalmon'>Postdoctoral Researcher, Applied AI Group, TalTech University, Estonia</a> (2024-Present)
-  - Leading multidisciplinary research under the EXAI grant focusing on \textit{multimodal reasoning agents} and \textit{human-aligned AI systems}.
+  - Leading multidisciplinary research under the EXAI grant focusing on *multimodal reasoning agents* and *human-aligned AI systems*.
   - Designing novel evaluation pipelines for large vision-language models using real-world visual reasoning datasets.
   - Developed AI agents demonstrating enhanced reasoning capabilities, aiming to surpass human performance benchmarks.
   - Designed reasoning methodology that established new state-of-the-art benchmarks on real-world datasets.
