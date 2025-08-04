@@ -1,12 +1,12 @@
 ---
 layout: page
-permalink: /phd_thesis/
+permalink: /phd-thesis/
 title: PhD Thesis
-description:
-nav: true
+description: 
+nav: false
 ---
 
-## <a style='color:darkturquoise'><center>Exploring the role of (self-)attention in cognitive and computer vision architecture</center></a>
+## <a class="thesis-title"><center>Exploring the role of (self-)attention in cognitive and computer vision architecture</center></a>
 
 
 <p align="center">
@@ -23,8 +23,8 @@ nav: true
 * [Hugues Talbot](https://hugues-talbot.github.io), *CentraleSup\`elec*, France
 * [Jessica B. Hamrick](https://hugues-talbot.github.io), *DeepMind*, UK
 * [Timoth\`ee Masquelier](https://cerco.cnrs.fr/pagesp/tim/), *CerCo*, France
-* [Thomas Serre](https://serre-lab.clps.brown.edu/person/thomas-serre/), *Brown University*, USA, <a style='color:lightsalmon'>Thesis Director</a>
-* [Nicholas Asher](https://www.cnrs.fr/fr/personne/nicholas-asher), *ANITI*, France, <a style='color:lightsalmon'>Thesis Co-Director</a>
+* [Thomas Serre](https://serre-lab.clps.brown.edu/person/thomas-serre/), *Brown University*, USA, <a class="thesis-director">Thesis Director</a>
+* [Nicholas Asher](https://www.cnrs.fr/fr/personne/nicholas-asher), *ANITI*, France, <a class="thesis-director">Thesis Co-Director</a>
 
 <kbd> Abstract </kbd>
 
@@ -35,3 +35,38 @@ A fundamental mechanism of cognition needed to perform complex reasoning tasks i
 
 <p style='text-align: justify;'>At last, we develop a novel cognitive architecture integrating attention and memory. We propose GAMR: <strong>G</strong>uided <strong>A</strong>ttention <strong>M</strong>odel for (visual) <strong>R</strong>easoning, motivated by the theory of active vision. GAMR has similar working mechanisms as that of the brain that solves complex visual reasoning tasks via sequences of attention shifts to select and route the task-relevant visual information into memory. This shift of attention is implemented with the help of a attention module guided by an internally generated query. We demonstrate that <em>GAMR</em> is sample-efficient, robust, and compositional compared to either of the feedforward, attention or memory-based architectures. In addition, <em>GAMR</em> is shown to be capable of zero-shot generalization on completely novel reasoning tasks. Overall, our work analyzes the role of self-attention in cognitive and computer vision architecture by their ability to solve complex visual reasoning tasks needing  attention as a key component to efficiently solve reasoning tasks.
 </p>
+
+<style>
+  .thesis-title {
+    color: #2980b9 !important;
+    text-decoration: none;
+  }
+
+  html[data-theme='dark'] .thesis-title {
+    color: var(--global-theme-color) !important;
+  }
+
+  .thesis-director {
+    color: #e74c3c !important;
+    text-decoration: none;
+  }
+
+  html[data-theme='dark'] .thesis-director {
+    color: #ff6b6b !important;
+  }
+
+  kbd {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    color: #495057;
+    font-size: 0.875em;
+    padding: 0.2rem 0.4rem;
+  }
+
+  html[data-theme='dark'] kbd {
+    background-color: #333;
+    border: 1px solid #555;
+    color: var(--global-text-color);
+  }
+</style>

@@ -12,3 +12,17 @@ $max-content-width: {{site.max_width}};
   "layout",
   "base"
 ;
+
+/* Remove horizontal line/underline from Research dropdown in navbar */
+.navbar-nav .dropdown-toggle,
+.navbar-nav .dropdown-toggle:focus,
+.navbar-nav .dropdown-toggle:active,
+.navbar-nav .dropdown-toggle.show {
+  border-bottom: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+
+.navbar-nav .dropdown-menu {
+  border-top: none !important;
+}

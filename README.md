@@ -21,11 +21,15 @@ git commit -m "commit"
 
 ## Dependencies:
 ```
+source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
 chruby 2.7.1
 bundle install
 bundle update
 bundle exec jekyll serve
 ```
+
+## update for the google knowledge panel:
+update the schema and head.
 
 ## User community
 

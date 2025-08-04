@@ -22,15 +22,6 @@
       </button>
       <div class="collapse navbar-collapse text-right" id="navbarNav">
         <ul class="navbar-nav ml-auto flex-nowrap">
-          <!-- About -->
-          <li class="nav-item {% if page.title == 'about' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/' | relative_url }}">
-              About
-              {% if page.title == "about" %}
-                <span class="sr-only">(current)</span>
-              {% endif %}
-            </a>
-          </li>
           {% if site.blog_name %}
           <!-- Blog -->
           <li class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
@@ -44,21 +35,32 @@
           {% endif %}
           <!-- Other pages -->
           {% assign sorted_pages = site.pages | sort: "title" %}
+          {% assign research_pages = sorted_pages | where: "title", "Publications" | concat: (sorted_pages | where: "title", "PhDThesis") %}
           {% for p in sorted_pages %}
-          {% if p.nav and p.autogen == nil %}
-          <li class="nav-item {% if page.title == p.title %}active{% endif %}">
-              <a class="nav-link" href="{{ p.url | relative_url }}">
-                {{ p.title }}
-                {% if page.title == p.title %}
-                <span class="sr-only">(current)</span>
-                {% endif %}
-              </a>
-          </li>
-          {% endif %}
+            {% if p.nav and p.autogen == nil and p.title != "Publications" and p.title != "PhDThesis" %}
+              <li class="nav-item {% if page.title == p.title %}active{% endif %}">
+                <a class="nav-link" href="{{ p.url | relative_url }}">
+                  {{ p.title }}
+                  {% if page.title == p.title %}
+                  <span class="sr-only">(current)</span>
+                  {% endif %}
+                </a>
+              </li>
+            {% endif %}
           {% endfor %}
-	  <!-- CV -->
+          <!-- Research Dropdown -->
+          <li class="nav-item dropdown {% if page.title == 'Publications' or page.title == 'PhDThesis' %}active{% endif %}">
+  <a class="nav-link" href="#" id="navbarDropdownResearch">
+    Research
+  </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownResearch">
+              <a class="dropdown-item" href="{{ '/publications/' | relative_url }}">Publications</a>
+              <a class="dropdown-item" href="{{ '/phd-thesis/' | relative_url }}">PhD Thesis</a>
+            </div>
+          </li>
+    <!-- CV -->
           <li class="nav-item {% if page.title == 'CV' %}active{% endif %}">
-	    <a class="nav-link" target="_blank" href="{{ '/assets/pdf/Mohit_Vaishnav_cv.pdf' | relative_url }}">CV</a>
+      <a class="nav-link" target="_blank" href="{{ '/assets/pdf/Mohit_Vaishnav_cv.pdf' | relative_url }}">CV</a>
           </li>
           {% if site.enable_darkmode %}
             <div class = "toggle-container">
