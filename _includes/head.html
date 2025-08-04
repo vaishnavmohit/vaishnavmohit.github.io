@@ -4,6 +4,67 @@
 
 <title>{% if site.title == blank %}{{ site.title }}{% else %}{{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}{% endif %}{% if page.title and page.url != "/" %} | {{ page.title }}{% endif %}</title>
 <meta name="description" content="{{ site.description }}">
+<!-- Schema.org Person JSON-LD for Google Knowledge Panel -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mohit Vaishnav",
+  "image": "https://vaishnavmohit.github.io/assets/img/mohit_vaishnav.jpg",
+  "jobTitle": "AI Entrepreneur & Researcher",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Kimova AI",
+    "url": "https://kimova.ai"
+  },
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Taltech University",
+      "url": "https://taltech.ee/en"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Brown University",
+      "url": "https://brown.edu"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "ANITI",
+      "url": "https://aniti.univ-toulouse.fr/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Toulouse III - Paul Sabatier",
+      "url": "https://www.univ-tlse3.fr/home"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Université Bourgogne Franche-Comté",
+      "url": "https://www.u-bourgogne.fr/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Heriot-Watt University",
+      "url": "https://www.hw.ac.uk/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "LNM Institute of Information Technology",
+      "url": "https://www.lnmiit.ac.in/"
+    }
+  ],
+  "description": "Co-founder at Kimova AI (AI for ISO Cybersecurity Compliance). PhD in Cognitive AI & Visual Reasoning (Brown/ANITI). Bridging research with real-world impact.",
+  "sameAs": [
+    "https://github.com/vaishnavmohit",
+    "https://twitter.com/mohitvaishnav",
+    "https://www.linkedin.com/in/mohit-vaishnav",
+    "https://scholar.google.com/citations?user=jGOzdbgAAAAJ&hl",
+    "https://www.researchgate.net/profile/Mohit-Vaishnav-2"
+  ],
+  "url": "https://vaishnavmohit.github.io/"
+}
+</script>
 
 <!-- Open Graph -->
 {% if site.serve_og_meta %}
@@ -48,4 +109,9 @@
 
     gtag('config', '{{ site.google_analytics }}');
   </script>
+<!-- Schema.org ScholarlyArticle JSON-LD for Publications -->
+{% capture publication_schema %}{% include schema-publication-list.jsonld %}{% endcapture %}
+<script type="application/ld+json">
+{{ publication_schema | strip_newlines }}
+</script>
 {% endif %}
