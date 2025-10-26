@@ -692,7 +692,7 @@ social: true
 
   .achievements-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     max-width: 800px;
     margin: 0 auto;
