@@ -2,9 +2,122 @@
 layout: page
 permalink: /education/
 title: Education
-description: Academic journey and educational achievements
+description: >-
+  Academic credentials and educational achievements. PhD in Cognitive AI and Visual Reasoning from Brown University/ANITI, 
+  Erasmus Joint Masters in Vision and Robotics (VIBOT) from top European universities, and Bachelor of Technology in 
+  Electronics and Communication Engineering. International research experience across USA, France, UK, and Spain.
+keywords: >-
+  PhD Artificial Intelligence, Brown University, ANITI, Cognitive AI, Visual Reasoning, Computer Vision PhD, 
+  Erasmus Masters, VIBOT, Vision and Robotics, Machine Learning Education, Deep Learning Research, 
+  Heriot Watt University, University of Bourgogne, University of Girona, BTech Electronics
 nav: true
 ---
+
+<!-- JSON-LD Structured Data for Educational Credentials -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mohit Vaishnav",
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Doctorate",
+      "name": "Doctor of Philosophy (PhD)",
+      "description": "Exploring the role of (self-)attention in cognitive and computer vision architectures",
+      "educationalLevel": "Doctoral",
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Cognitive Artificial Intelligence and Visual Reasoning"
+      },
+      "recognizedBy": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Artificial and Natural Intelligence Toulouse Institute (ANITI)",
+          "url": "https://aniti.univ-toulouse.fr",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Toulouse",
+            "addressCountry": "France"
+          }
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Brown University",
+          "url": "https://www.brown.edu",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Providence",
+            "addressRegion": "RI",
+            "addressCountry": "USA"
+          }
+        }
+      ],
+      "validFrom": "2019",
+      "validThrough": "2023"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Master's Degree",
+      "name": "Erasmus Joint Masters in Vision and Robotics (VIBOT)",
+      "description": "MU-Net: A deep learning model for teeth segmentation from panoramic X-ray images",
+      "educationalLevel": "Master's",
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Computer Vision and Robotics"
+      },
+      "recognizedBy": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Heriot Watt University",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "UK"
+          }
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "University of Bourgogne",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "France"
+          }
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "University of Girona",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "Spain"
+          }
+        }
+      ],
+      "validFrom": "2017",
+      "validThrough": "2019"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Bachelor's Degree",
+      "name": "Bachelor of Technology (Honours)",
+      "educationalLevel": "Bachelor's",
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Electronics and Communication Engineering"
+      },
+      "recognizedBy": {
+        "@type": "EducationalOrganization",
+        "name": "LNM Institute of Information Technology",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "India"
+        }
+      },
+      "validFrom": "2009",
+      "validThrough": "2013"
+    }
+  ]
+}
+</script>
 
 <div class="education-container">
   <div class="education-timeline">

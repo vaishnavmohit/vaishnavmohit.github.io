@@ -2,10 +2,52 @@
 layout: page
 permalink: /publications/
 title: Publications
-description: Research publications and academic contributions across multiple years
+description: >-
+  Research publications and academic contributions in artificial intelligence, computer vision, and machine learning. 
+  Published in top-tier venues including NeurIPS, ICLR, Neural Computation, CVPR workshops, and specialized conferences. 
+  Research areas include visual reasoning, attention mechanisms, transformer architectures, cognitive AI, medical imaging, 
+  and paleobotany applications. Google Scholar verified publications with international collaborations.
+keywords: >-
+  AI Publications, Research Papers, NeurIPS, ICLR, CVPR, Neural Computation, Computer Vision Research, 
+  Deep Learning Papers, Visual Reasoning, Attention Mechanisms, Transformer Architecture, Cognitive AI, 
+  Machine Learning Research, Academic Publications, Google Scholar, ResearchGate, AI Conference Papers, 
+  Medical Imaging AI, Paleobotany AI, Abstract Reasoning
 years: [2023, 2022, 2014, 2013, 2011]
 nav: true
 ---
+
+<!-- JSON-LD Structured Data for Publications -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mohit Vaishnav",
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "Google Scholar",
+    "value": "jGOzdbgAAAAJ"
+  },
+  "sameAs": [
+    "https://scholar.google.com/citations?user=jGOzdbgAAAAJ",
+    "https://www.researchgate.net/profile/Mohit-Vaishnav-2"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Mohit Vaishnav"
+  },
+  "keywords": [
+    "Artificial Intelligence",
+    "Machine Learning", 
+    "Computer Vision",
+    "Visual Reasoning",
+    "Attention Mechanisms",
+    "Transformer Architecture",
+    "Cognitive AI",
+    "Deep Learning"
+  ],
+  "description": "Research publications in artificial intelligence and computer vision, published in top-tier conferences and journals including NeurIPS, ICLR, and Neural Computation"
+}
+</script>
 
 <div class="publications-container">
   <div class="publications-header">

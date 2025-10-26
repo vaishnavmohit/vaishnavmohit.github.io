@@ -2,9 +2,80 @@
 layout: page
 permalink: /phd-thesis/
 title: PhD Thesis
-description: 
+description: >-
+  Doctoral dissertation on exploring the role of self-attention in cognitive and computer vision architectures. 
+  Defended April 2023 at Brown University/ANITI. Research on transformer architecture, attention mechanisms, 
+  visual reasoning, and memory-augmented neural networks. Novel GAMR (Guided Attention Model for Reasoning) architecture 
+  combining attention and memory for complex visual reasoning tasks. Committee included experts from Princeton, DeepMind, 
+  CentraleSupélec, and leading AI research institutions.
+keywords: >-
+  PhD Thesis, Brown University, ANITI, Self-Attention, Transformer Architecture, Cognitive AI, 
+  Computer Vision, Visual Reasoning, Attention Mechanisms, Memory Networks, GAMR, Neural Networks, 
+  Deep Learning Research, Doctoral Dissertation, AI Thesis, Machine Learning PhD
 nav: false
 ---
+
+<!-- JSON-LD Structured Data for Thesis -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Thesis",
+  "name": "Exploring the role of (self-)attention in cognitive and computer vision architecture",
+  "author": {
+    "@type": "Person",
+    "name": "Mohit Vaishnav",
+    "affiliation": [
+      {
+        "@type": "EducationalOrganization",
+        "name": "Brown University",
+        "url": "https://www.brown.edu"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "ANITI - Artificial and Natural Intelligence Toulouse Institute",
+        "url": "https://aniti.univ-toulouse.fr"
+      }
+    ]
+  },
+  "datePublished": "2023-04-13",
+  "inLanguage": "en",
+  "thesisAdvisor": [
+    {
+      "@type": "Person",
+      "name": "Thomas Serre",
+      "affiliation": {
+        "@type": "EducationalOrganization",
+        "name": "Brown University"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "Nicholas Asher",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "ANITI"
+      }
+    }
+  ],
+  "about": [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Computer Vision",
+    "Attention Mechanisms",
+    "Transformer Architecture",
+    "Visual Reasoning",
+    "Cognitive AI",
+    "Memory Networks"
+  ],
+  "abstract": "A fundamental mechanism of cognition needed to perform complex reasoning tasks is the ability to selectively process information (attention) and retain information in an accessible state (memory). We systematically analyze the role of both these components, starting with Transformer-based self-attention as a model of attention and later extending the architecture with memory. The Transformer is the latest and seemingly most powerful class of neural architecture, and it has brought a paradigm shift in the field of artificial intelligence.",
+  "url": "https://arxiv.org/abs/2306.14650",
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "arXiv",
+    "value": "2306.14650"
+  }
+}
+</script>
 
 ## <a class="thesis-title"><center>Exploring the role of (self-)attention in cognitive and computer vision architecture</center></a>
 

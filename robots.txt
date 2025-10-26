@@ -1,0 +1,20 @@
+# robots.txt for https://vaishnavmohit.github.io
+# Optimized for search engine indexing
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://vaishnavmohit.github.io/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1
+
+# Disallow specific patterns if needed
+Disallow: /assets/
+Disallow: /_site/
+Disallow: /vendor/
+
+# Allow important assets for rich snippets
+Allow: /assets/img/
+Allow: /assets/pdf/

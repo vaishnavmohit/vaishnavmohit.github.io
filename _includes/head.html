@@ -3,7 +3,24 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <title>{% if site.title == blank %}{{ site.title }}{% else %}{{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}{% endif %}{% if page.title and page.url != "/" %} | {{ page.title }}{% endif %}</title>
-<meta name="description" content="{{ site.description }}">
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% endif %}{% if site.keywords %}, {{ site.keywords }}{% endif %}">
+<meta name="author" content="{{ site.author | default: site.first_name }} {{ site.last_name }}">
+<meta name="robots" content="index, follow">
+
+<!-- Additional SEO Meta Tags -->
+<meta name="language" content="{{ site.lang | default: 'en' }}">
+<meta name="revisit-after" content="7 days">
+<meta name="classification" content="Artificial Intelligence, Machine Learning, Computer Vision, Research">
+<link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="{{ site.twitter_card | default: 'summary_large_image' }}">
+<meta name="twitter:site" content="@{{ site.twitter_username }}">
+<meta name="twitter:creator" content="@{{ site.twitter_username }}">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.first_name }} {{ site.last_name }}">
+<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="twitter:image" content="{{ site.og_image | absolute_url }}">
 <!-- Schema.org Person JSON-LD for Google Knowledge Panel -->
 <script type="application/ld+json">
 {
@@ -72,14 +89,21 @@
 }
 </script>
 
-<!-- Open Graph -->
+<!-- Open Graph Meta Tags -->
 {% if site.serve_og_meta %}
-<meta property="og:site_name" content="{{ site.description }}" />
-<meta property="og:type" content="object" />
-<meta property="og:title" content="{{ site.name }}" />
-<meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}" />
-<meta property="og:description" content="{{ page.title }}" />
-<meta property="og:image" content="{%- if page.og_image -%}{{ page.og_image }}{%- else -%}{{ site.og_image }}{%- endif -%}" />
+<meta property="og:site_name" content="{{ site.first_name }} {{ site.last_name }} - {{ site.tagline | default: 'AI Researcher & Entrepreneur' }}" />
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}" />
+<meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.first_name }} {{ site.last_name }}" />
+<meta property="og:url" content="{{ page.url | absolute_url }}" />
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+<meta property="og:image" content="{% if page.og_image %}{{ page.og_image | absolute_url }}{% else %}{{ site.og_image | absolute_url }}{% endif %}" />
+<meta property="og:image:alt" content="{{ site.first_name }} {{ site.last_name }}" />
+<meta property="og:locale" content="{{ site.locale | default: 'en_US' }}" />
+{% if site.fb_app_id %}<meta property="fb:app_id" content="{{ site.fb_app_id }}" />{% endif %}
+{% if page.layout == 'post' %}
+<meta property="article:author" content="{{ site.first_name }} {{ site.last_name }}" />
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />
+{% endif %}
 {% endif %}
 
 <!-- Bootstrap & MDB -->
@@ -97,8 +121,6 @@
 <!-- Styles -->
 <link rel="shortcut icon" href="{{ '/assets/img/favicon.ico' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-
-<link rel="canonical" href="{{ page.url | replace:'index.html','' | relative_url }}">
 
 <!-- Theming-->
 {% if site.enable_darkmode %}

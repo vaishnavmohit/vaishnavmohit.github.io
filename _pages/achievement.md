@@ -2,9 +2,78 @@
 layout: page
 permalink: /awards/
 title: Recognition
-description: Professional achievements and leadership recognition
+description: >-
+  Professional achievements, leadership recognition, and awards in AI research, entrepreneurship, and innovation. 
+  Google Cloud Startup Program backing, Top 5 Kaggle ranking, ANR Doctoral Fellowship, Charpak Excellence Scholarship, 
+  and international research grants spanning artificial intelligence, machine learning, and computer vision.
+keywords: >-
+  Awards, Recognition, Google Cloud Startup, Kaggle Top 5, AI Competition, Research Excellence, 
+  ANR Fellowship, Charpak Scholarship, Erasmus Grant, PhD Fellowship, Innovation Awards, 
+  Entrepreneurship Recognition, AI Research Awards, Academic Honors
 nav: true
 ---
+
+<!-- JSON-LD Structured Data for Awards and Recognition -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Professional Awards and Recognition - Mohit Vaishnav",
+  "description": "Awards and recognition received by Dr. Mohit Vaishnav for excellence in AI research, entrepreneurship, and innovation",
+  "itemListElement": [
+    {
+      "@type": "Award",
+      "name": "Google Cloud Startup Program",
+      "datePublished": "2024",
+      "description": "Selected for Google Cloud Startup Program for Kimova AI, providing enterprise infrastructure and strategic support for AI-driven cybersecurity compliance solutions",
+      "issuedBy": {
+        "@type": "Organization",
+        "name": "Google Cloud"
+      }
+    },
+    {
+      "@type": "Award",
+      "name": "Kaggle Half Earth Challenge - Top 5 Global Ranking",
+      "datePublished": "2022",
+      "description": "Achieved top 5 ranking among 3000+ participants in advanced plant species identification using state-of-the-art computer vision and machine learning",
+      "issuedBy": {
+        "@type": "Organization",
+        "name": "Kaggle"
+      }
+    },
+    {
+      "@type": "Grant",
+      "name": "ANR Doctoral Fellowship",
+      "datePublished": "2019",
+      "description": "Prestigious doctoral fellowship from ANITI - French National Research Agency supporting AI and cognitive science research",
+      "issuedBy": {
+        "@type": "Organization",
+        "name": "ANITI - Artificial and Natural Intelligence Toulouse Institute"
+      }
+    },
+    {
+      "@type": "Award",
+      "name": "Charpak Excellence Scholarship",
+      "datePublished": "2017",
+      "description": "Prestigious scholarship program for outstanding international students named after Nobel Prize winner Georges Charpak",
+      "issuedBy": {
+        "@type": "Organization",
+        "name": "Government of France"
+      }
+    },
+    {
+      "@type": "Grant",
+      "name": "KVPY National Fellowship",
+      "datePublished": "2010",
+      "description": "National fellowship recognizing exceptional promise in engineering and scientific research",
+      "issuedBy": {
+        "@type": "Organization",
+        "name": "Department of Science & Technology, India"
+      }
+    }
+  ]
+}
+</script>
 
 <div class="executive-recognition">
   

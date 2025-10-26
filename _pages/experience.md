@@ -2,9 +2,109 @@
 layout: page
 permalink: /experience/
 title: Experience
-description: Professional journey across industry, research, and academia
+description: >-
+  Professional experience spanning AI entrepreneurship, research, and industry. CEO & Co-founder at Kimova AI 
+  (Google Cloud Startup Program), Postdoctoral Researcher at TalTech University, Data Scientist at Sandvik, 
+  Researcher at DFKI (German AI Research Center), and PhD Researcher at Brown University. Expertise in machine learning, 
+  computer vision, cybersecurity AI, automotive AI, and enterprise solutions across 4+ countries.
+keywords: >-
+  AI Experience, CEO Kimova AI, Google Cloud Startup, Postdoctoral Research, TalTech University, 
+  Data Scientist, Sandvik AI, DFKI Researcher, Brown University Research, Computer Vision Expert, 
+  Cybersecurity AI, ISO 27001 Automation, Machine Learning Industry, AI Entrepreneurship, 
+  Academic Research, Industrial AI, Automotive AI, Healthcare AI
 nav: true
 ---
+
+<!-- JSON-LD Structured Data for Professional Experience -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mohit Vaishnav",
+  "hasOccupation": [
+    {
+      "@type": "Occupation",
+      "name": "Chief Executive Officer and Co-founder",
+      "occupationLocation": {
+        "@type": "Organization",
+        "name": "Kimova AI",
+        "url": "https://kimova.ai",
+        "description": "AI-powered ISO 27001 cybersecurity compliance automation"
+      },
+      "skills": ["Artificial Intelligence", "Machine Learning", "Cybersecurity", "ISO 27001", "Leadership", "Entrepreneurship", "Product Strategy"],
+      "startDate": "2024",
+      "responsibilities": "Leading AI-driven cybersecurity compliance innovation, secured Google Cloud Startup Program backing, spearheading strategic partnerships and client engagements"
+    },
+    {
+      "@type": "Occupation",
+      "name": "Postdoctoral Researcher",
+      "occupationLocation": {
+        "@type": "Organization",
+        "name": "TalTech University",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "Estonia"
+        }
+      },
+      "skills": ["Multimodal AI", "Large Language Models", "Vision-Language Models", "Research", "Deep Learning"],
+      "startDate": "2024",
+      "responsibilities": "Leading EXAI grant research on multimodal reasoning agents, designing evaluation pipelines for large vision-language models, establishing new benchmarks"
+    },
+    {
+      "@type": "Occupation",
+      "name": "Data Scientist",
+      "occupationLocation": {
+        "@type": "Organization",
+        "name": "Sandvik GmbH - Center for AI and Automation",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "Germany"
+        }
+      },
+      "skills": ["Azure AI", "Machine Learning", "Data Science", "AI Solutions", "Cloud Computing"],
+      "startDate": "2024",
+      "endDate": "2024",
+      "responsibilities": "Led development and deployment of end-to-end AI solutions within Azure environment, collaborated with stakeholders on strategic initiatives"
+    },
+    {
+      "@type": "Occupation",
+      "name": "Researcher",
+      "occupationLocation": {
+        "@type": "Organization",
+        "name": "German AI Research Center (DFKI)",
+        "url": "https://www.dfki.de",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "Germany"
+        }
+      },
+      "skills": ["Computer Vision", "Bayesian Networks", "Automotive AI", "Perception Systems", "EU Research"],
+      "startDate": "2023",
+      "endDate": "2023",
+      "responsibilities": "Designed perception systems for driver behavioral modeling, applied Bayesian Belief Networks for scalable models, contributed to EU Horizon project BERTHA"
+    },
+    {
+      "@type": "Occupation",
+      "name": "Doctoral Researcher",
+      "occupationLocation": {
+        "@type": "Organization",
+        "name": "Brown University - Serre Lab",
+        "url": "https://serre-lab.clps.brown.edu",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Providence",
+          "addressRegion": "RI",
+          "addressCountry": "USA"
+        }
+      },
+      "skills": ["Deep Learning", "Computer Vision", "Visual Reasoning", "Transformer Architecture", "Research Publication", "HPC Computing"],
+      "startDate": "2019",
+      "endDate": "2023",
+      "responsibilities": "Conducted research on abstract reasoning and attention mechanisms, developed novel architectures, published in NeurIPS, ICLR, and Neural Computation, optimized multi-million parameter models on HPC clusters"
+    }
+  ]
+}
+</script>
 
 <div class="experience-container">
   

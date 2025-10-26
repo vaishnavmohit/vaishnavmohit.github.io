@@ -2,7 +2,15 @@
 layout: about
 title: About
 permalink: /
-description: AI Entrepreneur & CEO | Co-founder at Kimova AI revolutionizing cybersecurity compliance through AI | PhD in Cognitive AI from Brown University/ANITI | Bridging cutting-edge research with transformative business solutions.
+description: >-
+  Dr. Mohit Vaishnav - AI Entrepreneur, CEO & Co-founder at Kimova AI revolutionizing cybersecurity compliance through artificial intelligence. 
+  PhD in Cognitive AI from Brown University/ANITI. Expert in computer vision, deep learning, and visual reasoning. 
+  Former researcher at DFKI, Sandvik, and Brown University. Top 5 global ranking in Kaggle AI competitions.
+  Specializing in ISO 27001 compliance automation, transformer architectures, and enterprise AI solutions.
+keywords: >-
+  Mohit Vaishnav, AI Entrepreneur, Kimova AI, Cybersecurity AI, ISO 27001, Computer Vision, Deep Learning, 
+  Visual Reasoning, Brown University, ANITI, Cognitive AI, PhD Artificial Intelligence, AI CEO, 
+  Transformer Architecture, Google Cloud Startup, Machine Learning Expert, AI Research, Enterprise AI
 profile:
   align: left
   image: mohit_vaishnav.jpg
@@ -10,6 +18,90 @@ news: false
 selected_papers: false
 social: true
 ---
+
+<!-- JSON-LD Structured Data for Google Knowledge Graph -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mohit Vaishnav",
+  "givenName": "Mohit",
+  "familyName": "Vaishnav",
+  "url": "https://vaishnavmohit.github.io",
+  "image": "https://vaishnavmohit.github.io/assets/img/mohit_vaishnav.jpg",
+  "email": "mohit@kimova.ai",
+  "jobTitle": "CEO & Co-founder",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Kimova AI",
+    "url": "https://kimova.ai",
+    "description": "AI-powered ISO 27001 cybersecurity compliance automation"
+  },
+  "alumniOf": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "Brown University",
+      "url": "https://www.brown.edu",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Providence",
+        "addressRegion": "RI",
+        "addressCountry": "USA"
+      }
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "ANITI - Artificial and Natural Intelligence Toulouse Institute",
+      "url": "https://aniti.univ-toulouse.fr",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toulouse",
+        "addressCountry": "France"
+      }
+    }
+  ],
+  "knowsAbout": [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Computer Vision",
+    "Deep Learning",
+    "Cognitive AI",
+    "Visual Reasoning",
+    "Cybersecurity Compliance",
+    "ISO 27001",
+    "Transformer Architecture",
+    "Natural Language Processing",
+    "Enterprise AI Solutions"
+  ],
+  "award": [
+    "Google Cloud Startup Program",
+    "ANR Doctoral Fellowship",
+    "Kaggle Half Earth Challenge Top 5",
+    "Charpak Excellence Scholarship",
+    "KVPY National Fellowship"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/mohit-vaishnav",
+    "https://twitter.com/mohitvaishnav",
+    "https://github.com/vaishnavmohit",
+    "https://scholar.google.com/citations?user=jGOzdbgAAAAJ",
+    "https://www.researchgate.net/profile/Mohit-Vaishnav-2"
+  ],
+  "affiliation": [
+    {
+      "@type": "Organization",
+      "name": "Kimova AI",
+      "url": "https://kimova.ai"
+    },
+    {
+      "@type": "Organization",
+      "name": "TalTech University",
+      "url": "https://taltech.ee"
+    }
+  ],
+  "description": "AI Entrepreneur and researcher specializing in cognitive AI, computer vision, and cybersecurity compliance automation. PhD from Brown University/ANITI with expertise in transformer architectures and visual reasoning."
+}
+</script>
 
 <div class="executive-profile">
   <!-- Remove default page title to avoid duplicate name   .journey-timeline::before {
