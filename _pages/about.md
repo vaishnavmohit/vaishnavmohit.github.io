@@ -263,11 +263,11 @@ social: true
         <div class="metric-label">Countries</div>
         <div class="metric-context">Research & work experience</div>
       </div>
-      <div class="achievement-metric">
+      <!-- <div class="achievement-metric">
         <div class="metric-value">$1M+</div>
         <div class="metric-label">Google Cloud Credits</div>
         <div class="metric-context">Startup program backing</div>
-      </div>
+      </div> -->
     </div>
   </section>
   <!-- Call to Action -->
