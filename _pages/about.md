@@ -259,7 +259,7 @@ social: true
         <div class="metric-context">Top-tier venues</div>
       </div>
       <div class="achievement-metric">
-        <div class="metric-value">4</div>
+        <div class="metric-value">10+</div>
         <div class="metric-label">Countries</div>
         <div class="metric-context">Research & work experience</div>
       </div>
@@ -892,36 +892,104 @@ social: true
     }
 
     .executive-title {
-      font-size: 2.2rem;
+      font-size: 1.8rem;
     }
 
     .executive-subtitle {
-      font-size: 1.1rem;
+      font-size: 1rem;
+      margin-bottom: 2rem;
     }
 
     .leadership-highlight {
-      padding: 1.5rem;
+      padding: 1.25rem;
+    }
+
+    .highlight-header h2 {
+      font-size: 1.2rem;
     }
 
     .highlight-header h3 {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
+    }
+
+    .company-description {
+      font-size: 0.95rem;
     }
 
     .company-achievements {
       justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .achievement-item {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.75rem;
     }
 
     .philosophy-grid {
       grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .philosophy-card {
+      padding: 1.25rem;
+    }
+
+    .philosophy-card h3 {
+      font-size: 1.1rem;
+    }
+
+    .philosophy-card p {
+      font-size: 0.9rem;
     }
 
     .milestone-header {
       flex-direction: column;
-      align-items: stretch;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .milestone-header h3 {
+      font-size: 1.1rem;
+    }
+
+    .milestone-content {
+      padding: 1.25rem;
+    }
+
+    .milestone-content h4 {
+      font-size: 1rem;
+    }
+
+    .milestone-content p {
+      font-size: 0.9rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin: 2rem 0 1.5rem 0;
+    }
+
+    .achievements-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .achievement-metric {
+      padding: 1.25rem;
+    }
+
+    .metric-value {
+      font-size: 2rem;
+    }
+
+    .metric-label {
+      font-size: 0.85rem;
     }
 
     .cta-options {
       grid-template-columns: 1fr;
+      gap: 1rem;
     }
 
     .executive-cta {
@@ -930,12 +998,86 @@ social: true
     }
 
     .cta-content h2 {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
+    }
+
+    .cta-content > p {
+      font-size: 0.95rem;
+    }
+
+    .cta-option {
+      padding: 1.25rem;
+    }
+
+    .cta-option h4 {
+      font-size: 1.1rem;
     }
 
     .profile img {
       width: 150px !important;
       height: 150px !important;
     }
+
+    .journey-timeline {
+      padding-left: 1.5rem;
+    }
+
+    .journey-timeline::before {
+      left: 10px;
+    }
+
+    .milestone-marker {
+      left: -22px;
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  /* Extra small devices */
+  @media (max-width: 480px) {
+    .executive-title {
+      font-size: 1.5rem;
+    }
+
+    .executive-subtitle {
+      font-size: 0.9rem;
+    }
+
+    .highlight-header h3 {
+      font-size: 1.3rem;
+    }
+
+    .company-achievements {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .achievement-item {
+      justify-content: center;
+    }
+
+    .metric-value {
+      font-size: 1.75rem;
+    }
+
+    .cta-button {
+      width: 100%;
+      padding: 0.75rem 1rem;
+    }
+  }
+
+  /* Dark mode enhancements */
+  html[data-theme='dark'] .key-achievements {
+    background: linear-gradient(135deg, var(--global-bg-color) 0%, #2a2a2a 100%);
+  }
+
+  html[data-theme='dark'] .highlight-tag {
+    background: #2a2a2a;
+    color: var(--global-text-color);
+    border-color: #444;
+  }
+
+  html[data-theme='dark'] .milestone-header h3 {
+    color: var(--global-text-color);
   }
 </style>

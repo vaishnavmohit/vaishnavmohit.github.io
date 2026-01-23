@@ -737,5 +737,132 @@ nav: true
       align-items: stretch;
       gap: 1rem;
     }
+
+    .recognition-card {
+      padding: 1.5rem;
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+    }
+
+    .recognition-card h4 {
+      font-size: 1.2rem;
+    }
+
+    .category-header h3 {
+      font-size: 1.6rem;
+    }
+  }
+
+  /* Extra small devices (phones, 480px and down) */
+  @media (max-width: 480px) {
+    .hero-recognition {
+      padding: 1.5rem 0.75rem;
+    }
+
+    .hero-title {
+      font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+
+    .hero-metrics {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .metric-number {
+      font-size: 1.8rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+    }
+
+    .achievement-spotlight {
+      padding: 1.5rem;
+      gap: 1.5rem;
+    }
+
+    .spotlight-content h2 {
+      font-size: 1.6rem;
+    }
+
+    .spotlight-content p {
+      font-size: 0.9rem;
+    }
+
+    .achievement-impact {
+      gap: 0.75rem;
+    }
+
+    .impact-stat {
+      padding: 0.75rem 1rem;
+      min-width: auto;
+      flex: 1;
+    }
+
+    .impact-value {
+      font-size: 1.2rem;
+    }
+
+    .recognition-categories {
+      padding: 0.75rem;
+    }
+
+    .category {
+      margin-bottom: 2.5rem;
+    }
+
+    .category-header h3 {
+      font-size: 1.3rem;
+    }
+
+    .recognition-card {
+      padding: 1.25rem;
+      border-radius: 15px;
+    }
+
+    .card-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .card-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+    }
+
+    .achievement-year {
+      padding: 0.35rem 0.75rem;
+      font-size: 0.75rem;
+    }
+
+    .recognition-card h4 {
+      font-size: 1.1rem;
+    }
+
+    .organization {
+      font-size: 0.9rem;
+    }
+
+    .description {
+      font-size: 0.85rem;
+    }
+
+    .impact-metrics {
+      gap: 0.35rem;
+    }
+
+    .metric-tag {
+      padding: 0.2rem 0.5rem;
+      font-size: 0.65rem;
+    }
   }
 </style>

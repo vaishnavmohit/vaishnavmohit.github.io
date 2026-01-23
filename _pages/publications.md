@@ -50,9 +50,9 @@ nav: true
 </script>
 
 <div class="publications-container">
-  <div class="publications-header">
+  <!-- <div class="publications-header">
     <p class="publications-subtitle">Explore my research work organized by year</p>
-  </div>
+  </div> -->
 
   <div class="publications-timeline">
     {% for y in page.years %}
@@ -246,6 +246,56 @@ nav: true
     margin-bottom: 0;
   }
 
+  /* Abstract visibility + colors */
+  .publications-content .bibliography div.abstract {
+    color: var(--global-text-color);
+  }
+
+  .publications-content .bibliography div.abstract p {
+    color: var(--global-text-color);
+  }
+
+  .publications-content .bibliography div.abstract.hidden {
+    display: none;
+    max-height: 0;
+    opacity: 0;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .publications-content .bibliography div.abstract.hidden.open {
+    display: block;
+    max-height: 100em;
+    opacity: 1;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--global-bg-alt-color);
+    border: 1px solid var(--global-border-color);
+    border-left: 4px solid var(--global-theme-color);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  @media (hover: hover) {
+    .publications-content .bibliography li:hover div.abstract.hidden {
+      display: block;
+      max-height: 100em;
+      opacity: 1;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      background-color: var(--global-bg-alt-color);
+      border: 1px solid var(--global-border-color);
+      border-left: 4px solid var(--global-theme-color);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .publications-content .bibliography li:hover div.abstract.hidden p {
+      color: var(--global-text-color);
+    }
+  }
+
   /* Enhanced typography for publication entries */
   .publications-content .title {
     font-weight: 600;
@@ -283,25 +333,89 @@ nav: true
       padding: 1rem;
     }
 
+    .publications-header {
+      margin-bottom: 2rem;
+    }
+
+    .publications-subtitle {
+      font-size: 0.95rem;
+    }
+
     .publications-timeline::before {
-      left: 20px;
+      left: 15px;
+    }
+
+    .year-section {
+      margin-bottom: 2rem;
     }
 
     .year-title {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       padding: 0.5rem 1rem;
     }
 
     .year-title::before {
-      left: -35px;
+      left: -30px;
+      width: 10px;
+      height: 10px;
     }
 
     .publications-content {
-      margin-left: 60px;
+      margin-left: 50px;
+      padding: 1rem;
+    }
+
+    .publications-content .bibliography li {
+      padding: 0.875rem;
+      margin-bottom: 1rem;
+    }
+
+    .publications-content .title {
+      font-size: 1rem;
     }
 
     .year-line {
       display: none;
+    }
+  }
+
+  /* Extra small devices */
+  @media (max-width: 480px) {
+    .publications-container {
+      padding: 0.75rem;
+    }
+
+    .publications-timeline::before {
+      left: 10px;
+    }
+
+    .year-title {
+      font-size: 1.05rem;
+      padding: 0.4rem 0.875rem;
+    }
+
+    .year-title::before {
+      left: -25px;
+      width: 8px;
+      height: 8px;
+    }
+
+    .publications-content {
+      margin-left: 35px;
+      padding: 0.875rem;
+    }
+
+    .publications-content .bibliography li {
+      padding: 0.75rem;
+    }
+
+    .publications-content .title {
+      font-size: 0.95rem;
+    }
+
+    .publications-content .author,
+    .publications-content .periodical {
+      font-size: 0.9rem;
     }
   }
 </style>

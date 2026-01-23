@@ -1152,6 +1152,66 @@ nav: true
 
   /* Responsive Design for New Sections */
   @media (max-width: 768px) {
+    .experience-container {
+      padding: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .experience-timeline {
+      padding-left: 1.5rem;
+    }
+
+    .experience-timeline::before {
+      left: 10px;
+    }
+
+    .experience-dot {
+      left: -22px;
+      width: 12px;
+      height: 12px;
+    }
+
+    .experience-card {
+      padding: 1.25rem;
+    }
+
+    .experience-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .role-info h3 {
+      font-size: 1.1rem;
+    }
+
+    .role-info h4 {
+      font-size: 0.95rem;
+    }
+
+    .experience-period {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.75rem;
+    }
+
+    .achievements li {
+      font-size: 0.9rem;
+      padding-left: 1.25rem;
+    }
+
+    .experience-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .experience-card.small {
+      padding: 1.25rem;
+    }
+
     .academic-item,
     .talk-item,
     .teaching-item,
@@ -1168,6 +1228,50 @@ nav: true
 
     .talk-title {
       font-size: 1rem;
+    }
+
+    .tag {
+      font-size: 0.65rem;
+      padding: 0.2rem 0.5rem;
+    }
+  }
+
+  /* Extra small devices */
+  @media (max-width: 480px) {
+    .experience-container {
+      padding: 0.75rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+    }
+
+    .role-info h3 {
+      font-size: 1rem;
+    }
+
+    .experience-card {
+      padding: 1rem;
+    }
+
+    .experience-card::before {
+      height: 3px;
+    }
+
+    .achievements li {
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .experience-tags {
+      gap: 0.35rem;
+    }
+
+    .academic-item,
+    .talk-item,
+    .teaching-item,
+    .workshop-item {
+      padding: 0.875rem;
     }
   }
 </style>

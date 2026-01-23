@@ -1,0 +1,85 @@
+---
+layout: null
+sitemap:
+  exclude: 'yes'
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage / About Page -->
+  <url>
+    <loc>https://vaishnavmohit.github.io/</loc>
+    <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://vaishnavmohit.github.io/assets/img/mohit_vaishnav.jpg</image:loc>
+      <image:title>Dr. Mohit Vaishnav - AI Entrepreneur and CEO</image:title>
+      <image:caption>Mohit Vaishnav, CEO and Co-founder at Kimova AI, PhD in Cognitive AI from Brown University/ANITI</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Experience Page -->
+  <url>
+    <loc>https://vaishnavmohit.github.io/experience/</loc>
+    <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Education Page -->
+  <url>
+    <loc>https://vaishnavmohit.github.io/education/</loc>
+    <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Publications Page -->
+  <url>
+    <loc>https://vaishnavmohit.github.io/publications/</loc>
+    <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- PhD Thesis Page -->
+  <url>
+    <loc>https://vaishnavmohit.github.io/phd-thesis/</loc>
+    <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Achievements Page -->
+  <url>
+    <loc>https://vaishnavmohit.github.io/awards/</loc>
+    <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Dynamic Pages from Jekyll -->
+  {% for page in site.pages %}
+  {% if page.sitemap != false and page.url != "/" %}
+  <url>
+    <loc>https://vaishnavmohit.github.io{{ page.url | remove: 'index.html' }}</loc>
+    <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  {% endif %}
+  {% endfor %}
+
+  <!-- Blog Posts if any -->
+  {% for post in site.posts %}
+  <url>
+    <loc>https://vaishnavmohit.github.io{{ post.url }}</loc>
+    <lastmod>{{ post.date | date: '%Y-%m-%d' }}</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  {% endfor %}
+
+</urlset>

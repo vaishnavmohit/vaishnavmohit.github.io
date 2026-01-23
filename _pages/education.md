@@ -485,26 +485,83 @@ nav: true
 
     .education-dot {
       left: -22px;
+      width: 12px;
+      height: 12px;
     }
 
     .education-card {
-      padding: 1.5rem;
+      padding: 1.25rem;
     }
 
     .education-header {
       flex-direction: column;
-      align-items: stretch;
+      align-items: flex-start;
+      gap: 0.75rem;
     }
 
     .education-header h3 {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       min-width: auto;
+    }
+
+    .education-period {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.75rem;
     }
 
     .institution {
       flex-direction: column;
       align-items: flex-start;
       gap: 0.5rem;
+    }
+
+    .institution-name {
+      font-size: 0.95rem;
+    }
+
+    .detail-item {
+      font-size: 0.9rem;
+    }
+
+    .education-badges {
+      gap: 0.35rem;
+    }
+
+    .badge {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+    }
+  }
+
+  /* Extra small devices */
+  @media (max-width: 480px) {
+    .education-container {
+      padding: 0.75rem;
+    }
+
+    .education-header h3 {
+      font-size: 1.05rem;
+    }
+
+    .education-card {
+      padding: 1rem;
+    }
+
+    .education-card::before {
+      height: 3px;
+    }
+
+    .institution-name {
+      font-size: 0.9rem;
+    }
+
+    .institution-location {
+      font-size: 0.8rem;
+    }
+
+    .detail-item {
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
     }
   }
 </style>
