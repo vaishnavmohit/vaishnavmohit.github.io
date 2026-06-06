@@ -1,0 +1,93 @@
+---
+import Base from '@layouts/Base.astro';
+import Section from '@components/Section.astro';
+import Icon from '@components/Icon.astro';
+import { site, socials } from '@data/site';
+import { awards } from '@data/experience';
+
+const philosophy = [
+  { title: 'Innovation-driven', body: 'Building AI that solves real problems — bridging frontier research and practical business value.' },
+  { title: 'Human-centered AI', body: 'Systems that augment human capability rather than replace it, so technology serves people first.' },
+  { title: 'Global impact', body: 'Scalable solutions that cross borders, making advanced AI accessible to organizations everywhere.' },
+];
+const social = socials.filter((s) => s.id !== 'email');
+---
+<Base title="About" description={site.description}>
+  <section class="container-page py-16 sm:py-20">
+    <div class="grid items-start gap-12 md:grid-cols-[1fr_1.6fr]">
+      <div class="md:sticky md:top-24">
+        <img src="/img/about.jpg" alt="Mohit Vaishnav" width="420" height="525"
+          class="aspect-[4/5] w-full rounded-3xl border border-slate-200 object-cover object-top shadow-xl dark:border-slate-800" />
+        <div class="mt-5 flex gap-3">
+          {social.map((s) => (
+            <a href={s.href} target="_blank" rel="me noopener" aria-label={s.label}
+              class="rounded-full border border-slate-200 p-2.5 text-ink-faint transition-colors hover:border-brand-400 hover:text-brand-600 dark:border-slate-700 dark:text-slate-400 dark:hover:text-brand-300">
+              <Icon name={s.id} class="h-4 w-4" />
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <p class="eyebrow">About</p>
+        <h1 class="mt-2 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl dark:text-white">
+          From cognitive science to shipping AI products
+        </h1>
+        <div class="prose-portfolio mt-6 space-y-4 text-lg text-ink-soft dark:text-slate-400">
+          <p>
+            I'm <strong class="text-ink dark:text-white">Dr. Mohit Vaishnav</strong>, Co-founder and CEO of
+            <a href={site.company.url} target="_blank" rel="noopener" class="link-underline">Kimova AI</a>.
+            We're reimagining cybersecurity compliance — our platform automates complex ISO&nbsp;27001 audit
+            processes, cutting audit time dramatically while holding enterprise-grade standards.
+          </p>
+          <p>
+            Before founding Kimova, I spent years at the frontier of AI research. My PhD at
+            <strong class="text-ink dark:text-white"> Brown University</strong> and
+            <strong class="text-ink dark:text-white"> ANITI</strong> (one of France's flagship AI institutes)
+            explored how attention and memory drive reasoning in both brains and machines — published at
+            NeurIPS, ICLR and Neural Computation. I've since carried that into applied roles at
+            TalTech, Sandvik and the German Research Center for AI (DFKI).
+          </p>
+          <p>
+            That dual lens — rigorous science plus a builder's bias for shipping — is how I approach
+            everything. I've worked across <strong class="text-ink dark:text-white">10+ countries</strong>,
+            ranked top-5 of 3000+ in a global Kaggle AI challenge, and I care most about AI that earns
+            real-world trust.
+          </p>
+        </div>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="/experience" class="btn-ghost">My journey <Icon name="arrow" class="h-4 w-4" /></a>
+          <a href="/contact" class="btn-primary">Get in touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy -->
+  <Section eyebrow="How I work" title="Leadership philosophy" class="border-t border-slate-200 dark:border-slate-800">
+    <div class="grid gap-6 md:grid-cols-3">
+      {philosophy.map((p) => (
+        <div class="card card-hover">
+          <h3 class="font-display text-lg font-bold text-ink dark:text-white">{p.title}</h3>
+          <p class="mt-2 text-sm text-ink-soft dark:text-slate-400">{p.body}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- Awards -->
+  <Section eyebrow="Recognition" title="Awards & honors">
+    <div class="grid gap-5 md:grid-cols-2">
+      {awards.map((a) => (
+        <div class="card flex gap-4">
+          <div class="shrink-0 font-display text-sm font-bold text-accent-500">{a.year}</div>
+          <div>
+            <h3 class="font-semibold text-ink dark:text-white">{a.title}</h3>
+            <p class="text-sm font-medium text-brand-600 dark:text-brand-300">{a.org}</p>
+            <p class="mt-1.5 text-sm text-ink-soft dark:text-slate-400">{a.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Section>
+</Base>

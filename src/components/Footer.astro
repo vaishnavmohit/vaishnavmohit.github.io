@@ -1,0 +1,42 @@
+---
+import { site, socials, nav } from '@data/site';
+import Icon from './Icon.astro';
+const year = 2026; // build-time constant; bump in src/components/Footer.astro yearly
+const social = socials.filter((s) => s.id !== 'email');
+---
+<footer class="mt-24 border-t border-slate-200 bg-slate-50/60 dark:border-slate-800 dark:bg-slate-900/30">
+  <div class="container-page grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
+    <div>
+      <p class="font-display text-lg font-bold text-ink dark:text-white">Dr. Mohit Vaishnav</p>
+      <p class="mt-2 max-w-sm text-sm text-ink-faint dark:text-slate-400">{site.tagline}</p>
+      <div class="mt-5 flex gap-3">
+        {social.map((s) => (
+          <a href={s.href} target="_blank" rel="me noopener" aria-label={s.label}
+            class="rounded-full border border-slate-200 p-2.5 text-ink-faint transition-colors hover:border-brand-400 hover:text-brand-600 dark:border-slate-700 dark:text-slate-400 dark:hover:text-brand-300">
+            <Icon name={s.id} class="h-4 w-4" />
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <nav aria-label="Footer">
+      <p class="text-xs font-semibold uppercase tracking-wider text-ink-faint">Explore</p>
+      <ul class="mt-3 space-y-2 text-sm">
+        {nav.map((item) => (
+          <li><a href={item.href} class="text-ink-soft hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-300">{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-wider text-ink-faint">Get in touch</p>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li><a href="/contact" class="text-ink-soft hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-300">Send a message</a></li>
+        <li><a href={site.company.url} target="_blank" rel="noopener" class="text-ink-soft hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-300">{site.company.name} ↗</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-slate-200 py-5 dark:border-slate-800">
+    <p class="container-page text-xs text-ink-faint dark:text-slate-500">© {year} Mohit Vaishnav · Built with Astro · Hosted on GitHub Pages</p>
+  </div>
+</footer>

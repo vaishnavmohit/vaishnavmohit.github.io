@@ -1,0 +1,66 @@
+---
+import Base from '@layouts/Base.astro';
+import PubCard from '@components/PubCard.astro';
+import Icon from '@components/Icon.astro';
+import { site } from '@data/site';
+import pubData from '@data/publications.json';
+
+const pubs = [...pubData.publications].sort((a, b) => (b.year - a.year) || (b.citations - a.citations));
+const totalCitations = pubs.reduce((n, p) => n + p.citations, 0);
+const years = [...new Set(pubs.map((p) => p.year))].sort((a, b) => b - a);
+---
+<Base title="Research" description={`Publications by Dr. Mohit Vaishnav — ${pubs.length} papers in visual reasoning, vision-language models and computer vision. ${totalCitations}+ citations.`}>
+  <section class="container-page py-16 sm:py-20">
+    <p class="eyebrow">Research</p>
+    <h1 class="mt-2 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl dark:text-white">Publications</h1>
+    <p class="mt-4 max-w-2xl text-lg text-ink-soft dark:text-slate-400">
+      Work on visual reasoning, vision-language models, attention &amp; memory architectures, and video coding —
+      peer-reviewed at NeurIPS, ICLR, Neural Computation and more.
+    </p>
+
+    <div class="mt-8 flex flex-wrap gap-8">
+      <div><p class="font-display text-2xl font-bold text-brand-600 dark:text-brand-400">{pubs.length}</p><p class="text-sm text-ink-faint">Publications</p></div>
+      <div><p class="font-display text-2xl font-bold text-brand-600 dark:text-brand-400">{totalCitations}+</p><p class="text-sm text-ink-faint">Citations</p></div>
+      <div class="flex items-end">
+        <a href={pubData.meta.scholarUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-medium link-underline">
+          Google Scholar <Icon name="external" class="h-3.5 w-3.5" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="mt-10 flex flex-wrap gap-2" id="filters">
+      <button class="filter-btn is-active" data-filter="all">All</button>
+      {years.map((y) => <button class="filter-btn" data-filter={String(y)}>{y}</button>)}
+    </div>
+
+    <div class="mt-8 grid gap-6 md:grid-cols-2" id="pub-grid">
+      {pubs.map((pub) => <PubCard pub={pub} />)}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .filter-btn {
+    @apply rounded-full border border-slate-200 px-4 py-1.5 text-sm font-medium text-ink-soft transition-colors hover:border-brand-400 hover:text-brand-600 dark:border-slate-700 dark:text-slate-400;
+  }
+  .filter-btn.is-active {
+    @apply border-brand-500 bg-brand-500 text-white hover:text-white dark:border-brand-500;
+  }
+</style>
+
+<script>
+  const grid = document.getElementById('pub-grid');
+  const btns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  btns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      btns.forEach((b) => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      const f = btn.dataset.filter;
+      grid?.querySelectorAll<HTMLElement>('[data-year]').forEach((card) => {
+        const show = f === 'all' || card.dataset.year === f;
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+</script>

@@ -1,0 +1,108 @@
+---
+import Base from '@layouts/Base.astro';
+import Section from '@components/Section.astro';
+import PubCard from '@components/PubCard.astro';
+import Icon from '@components/Icon.astro';
+import { site, socials, stats } from '@data/site';
+import { experience } from '@data/experience';
+import pubData from '@data/publications.json';
+
+const heroSocials = socials.filter((s) => s.primary);
+const featuredPubs = pubData.publications.filter((p) => p.featured).slice(0, 3);
+const currentRoles = experience.filter((r) => r.current);
+---
+<Base isHome>
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 -z-10">
+      <div class="absolute -top-24 right-0 h-96 w-96 rounded-full bg-brand-500/10 blur-3xl"></div>
+      <div class="absolute top-40 -left-20 h-80 w-80 rounded-full bg-accent-500/10 blur-3xl"></div>
+    </div>
+    <div class="container-page grid items-center gap-12 py-16 sm:py-24 md:grid-cols-[1.5fr_1fr]">
+      <div class="animate-fade-up">
+        <p class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-ink-soft dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-300">
+          <span class="h-2 w-2 rounded-full bg-signal-500"></span>
+          Building <a href={site.company.url} class="font-semibold text-brand-600 dark:text-brand-300" target="_blank" rel="noopener">Kimova AI</a> · AI for cybersecurity compliance
+        </p>
+        <h1 class="mt-5 font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl dark:text-white">
+          AI researcher,<br /><span class="text-brand-600 dark:text-brand-400">turned founder.</span>
+        </h1>
+        <p class="mt-6 max-w-xl text-lg text-ink-soft dark:text-slate-400">
+          I'm <strong class="font-semibold text-ink dark:text-white">Dr. Mohit Vaishnav</strong> — Co-founder & CEO of Kimova AI, where we're automating cybersecurity compliance with AI. I bring a PhD in cognitive AI and visual reasoning from Brown University &amp; ANITI to building products that turn frontier research into real-world impact.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="/contact" class="btn-primary">Let's work together <Icon name="arrow" class="h-4 w-4" /></a>
+          <a href="/research" class="btn-ghost">View research</a>
+        </div>
+        <div class="mt-8 flex items-center gap-3">
+          {heroSocials.map((s) => (
+            <a href={s.href} target="_blank" rel="me noopener" aria-label={s.label}
+              class="rounded-full border border-slate-200 p-2.5 text-ink-faint transition-colors hover:border-brand-400 hover:text-brand-600 dark:border-slate-700 dark:text-slate-400 dark:hover:text-brand-300">
+              <Icon name={s.id} class="h-5 w-5" />
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-xs animate-fade-up md:max-w-none">
+        <div class="absolute -inset-3 -z-10 rounded-3xl bg-gradient-to-tr from-brand-500/20 via-transparent to-accent-500/20 blur-xl"></div>
+        <img src="/img/profile.jpg" alt="Dr. Mohit Vaishnav"
+          width="480" height="600" loading="eager"
+          class="aspect-[4/5] w-full rounded-3xl border border-white/50 object-cover shadow-2xl dark:border-slate-800" />
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="border-y border-slate-200 bg-slate-50/60 dark:border-slate-800 dark:bg-slate-900/30">
+    <div class="container-page grid grid-cols-2 gap-6 py-10 md:grid-cols-4">
+      {stats.map((s) => (
+        <div>
+          <p class="font-display text-3xl font-bold text-brand-600 dark:text-brand-400">{s.value}</p>
+          <p class="mt-1 text-sm font-medium text-ink dark:text-slate-200">{s.label}</p>
+          <p class="text-xs text-ink-faint dark:text-slate-500">{s.detail}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- WHAT I'M BUILDING -->
+  <Section eyebrow="What I'm doing now" title="Two worlds, one mission" lead="I split my time between scaling a company and pushing the science forward.">
+    <div class="grid gap-6 md:grid-cols-2">
+      {currentRoles.map((r) => (
+        <div class="card card-hover">
+          <div class="flex items-center justify-between">
+            <span class="rounded-full bg-signal-500/10 px-2.5 py-1 text-xs font-semibold text-signal-600 dark:text-signal-400">Current · {r.period.split('—')[1]?.trim()}</span>
+          </div>
+          <h3 class="mt-3 font-display text-xl font-bold text-ink dark:text-white">{r.title}</h3>
+          <p class="text-sm font-medium text-brand-600 dark:text-brand-300">{r.org}</p>
+          <p class="mt-3 text-sm text-ink-soft dark:text-slate-400">{r.summary}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- FEATURED RESEARCH -->
+  <Section eyebrow="Selected research" title="Frontier work in vision & reasoning" lead="Peer-reviewed at NeurIPS, ICLR and Neural Computation — full list on the research page.">
+    <div class="grid gap-6 md:grid-cols-3">
+      {featuredPubs.map((pub) => <PubCard pub={pub} />)}
+    </div>
+    <div class="mt-8">
+      <a href="/research" class="btn-ghost">All publications <Icon name="arrow" class="h-4 w-4" /></a>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <Section>
+    <div class="relative overflow-hidden rounded-3xl border border-brand-200 bg-gradient-to-br from-brand-600 to-brand-800 px-8 py-14 text-center dark:border-brand-800">
+      <h2 class="font-display text-3xl font-bold text-white sm:text-4xl">Let's build the future of AI together</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-brand-100">
+        Whether it's AI solutions for compliance, research collaboration, investment, or speaking — I'd love to connect.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="/contact" class="btn bg-white text-brand-700 hover:bg-brand-50">Get in touch</a>
+        <a href={site.company.url} target="_blank" rel="noopener" class="btn border border-white/40 text-white hover:bg-white/10">Explore Kimova AI</a>
+      </div>
+    </div>
+  </Section>
+</Base>

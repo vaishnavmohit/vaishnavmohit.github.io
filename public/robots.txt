@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vaishnavmohit.github.io/sitemap-index.xml

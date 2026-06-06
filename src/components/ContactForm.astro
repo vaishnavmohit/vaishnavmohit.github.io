@@ -1,0 +1,81 @@
+---
+import { site } from '@data/site';
+const inputCls =
+  'w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-ink placeholder:text-ink-faint focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20 dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-100';
+---
+<form id="contact-form" class="space-y-4">
+  <!-- Web3Forms access key (delivers to your inbox; your email is never shown) -->
+  <input type="hidden" name="access_key" value={site.web3formsKey} />
+  <input type="hidden" name="subject" value="New message from vaishnavmohit.github.io" />
+  <input type="hidden" name="from_name" value="Portfolio contact form" />
+  <!-- Honeypot: bots fill this, humans don't -->
+  <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+
+  <div class="grid gap-4 sm:grid-cols-2">
+    <div>
+      <label for="cf-name" class="mb-1.5 block text-sm font-medium text-ink-soft dark:text-slate-300">Name</label>
+      <input id="cf-name" name="name" type="text" required autocomplete="name" placeholder="Your name" class={inputCls} />
+    </div>
+    <div>
+      <label for="cf-email" class="mb-1.5 block text-sm font-medium text-ink-soft dark:text-slate-300">Email</label>
+      <input id="cf-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com" class={inputCls} />
+    </div>
+  </div>
+  <div>
+    <label for="cf-message" class="mb-1.5 block text-sm font-medium text-ink-soft dark:text-slate-300">Message</label>
+    <textarea id="cf-message" name="message" rows="5" required placeholder="How can I help?" class={inputCls}></textarea>
+  </div>
+
+  <button type="submit" id="cf-submit" class="btn-primary w-full sm:w-auto">
+    <span class="cf-label">Send message</span>
+    <span class="cf-spinner hidden">Sending…</span>
+  </button>
+
+  <p id="cf-status" class="hidden text-sm" role="status" aria-live="polite"></p>
+</form>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const status = document.getElementById('cf-status');
+  const btn = document.getElementById('cf-submit') as HTMLButtonElement | null;
+  const label = btn?.querySelector('.cf-label');
+  const spinner = btn?.querySelector('.cf-spinner');
+
+  const setStatus = (msg: string, ok: boolean) => {
+    if (!status) return;
+    status.textContent = msg;
+    status.className = `text-sm ${ok ? 'text-signal-600 dark:text-signal-400' : 'text-accent-600'}`;
+  };
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form));
+    if (String(data.access_key).startsWith('YOUR_')) {
+      setStatus('Contact form not configured yet — add a Web3Forms key in src/data/site.ts.', false);
+      return;
+    }
+    btn?.setAttribute('disabled', 'true');
+    label?.classList.add('hidden');
+    spinner?.classList.remove('hidden');
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json();
+      if (json.success) {
+        form.reset();
+        setStatus("Thanks — your message is on its way. I'll get back to you soon.", true);
+      } else {
+        setStatus(json.message || 'Something went wrong. Please try again.', false);
+      }
+    } catch {
+      setStatus('Network error — please try again, or reach me on LinkedIn.', false);
+    } finally {
+      btn?.removeAttribute('disabled');
+      label?.classList.remove('hidden');
+      spinner?.classList.add('hidden');
+    }
+  });
+</script>

@@ -1,0 +1,175 @@
+{
+  "meta": {
+    "scholarId": "jGOzdbgAAAAJ",
+    "scholarUrl": "https://scholar.google.com/citations?user=jGOzdbgAAAAJ",
+    "note": "Auto-seeded from Google Scholar, deduped + enriched with links/abstracts. Re-run `npm run sync:scholar` to refresh citation counts, or edit entries by hand.",
+    "lastSynced": "2026-06-07"
+  },
+  "publications": [
+    {
+      "title": "Symbolic Grounding Reveals Representational Bottlenecks in Abstract Visual Reasoning",
+      "authors": "Mohit Vaishnav, et al.",
+      "venue": "Conference on Computational Natural Language Learning (CoNLL)",
+      "year": 2026,
+      "citations": 0,
+      "type": "conference",
+      "featured": true,
+      "links": { "scholar": "https://scholar.google.com/citations?user=jGOzdbgAAAAJ" }
+    },
+    {
+      "title": "Concept Cues Reshape Human Verification in Bongard-LOGO Visual Reasoning",
+      "authors": "Mohit Vaishnav, et al.",
+      "venue": "CVPR Workshop on Knowledge-Intensive Multimodal Reasoning",
+      "year": 2026,
+      "citations": 0,
+      "type": "workshop",
+      "featured": false,
+      "links": { "scholar": "https://scholar.google.com/citations?user=jGOzdbgAAAAJ" }
+    },
+    {
+      "title": "Beyond the Linear Separability Ceiling: Aligning Representations in Vision-Language Models",
+      "authors": "Mohit Vaishnav, et al.",
+      "venue": "Transactions on Machine Learning Research (TMLR)",
+      "year": 2026,
+      "citations": 1,
+      "type": "journal",
+      "featured": true,
+      "links": { "arxiv": "https://arxiv.org/abs/2507.07574" }
+    },
+    {
+      "title": "A Cognitive Paradigm Approach to Probe the Perception–Reasoning Interface in VLMs",
+      "authors": "Mohit Vaishnav, et al.",
+      "venue": "arXiv preprint arXiv:2501.13620",
+      "year": 2025,
+      "citations": 4,
+      "type": "preprint",
+      "featured": true,
+      "links": { "arxiv": "https://arxiv.org/abs/2501.13620" }
+    },
+    {
+      "title": "Not How You Think, It's What You See: Decoupling Perception from Reasoning",
+      "authors": "Mohit Vaishnav, et al.",
+      "venue": "Working paper",
+      "year": 2025,
+      "citations": 0,
+      "type": "preprint",
+      "featured": false,
+      "links": { "scholar": "https://scholar.google.com/citations?user=jGOzdbgAAAAJ" }
+    },
+    {
+      "title": "GAMR: A Guided Attention Model for (Visual) Reasoning",
+      "authors": "Mohit Vaishnav, Thomas Serre",
+      "venue": "International Conference on Learning Representations (ICLR)",
+      "year": 2023,
+      "citations": 24,
+      "type": "conference",
+      "featured": true,
+      "abstract": "A novel module for visual reasoning that instantiates an active-vision theory — solving complex visual reasoning dynamically via sequences of attention shifts that route task-relevant information into memory. GAMR learns visual routines robustly and sample-efficiently, and generalizes zero-shot to novel reasoning tasks.",
+      "links": { "html": "https://openreview.net/forum?id=iLMgk2IGNyv" }
+    },
+    {
+      "title": "PhD Thesis: Exploring the Role of (Self-)Attention in Cognitive and Computer Vision Architecture",
+      "authors": "Mohit Vaishnav",
+      "venue": "Université Paul Sabatier (Toulouse III) / Brown University / ANITI",
+      "year": 2023,
+      "citations": 2,
+      "type": "thesis",
+      "featured": false,
+      "abstract": "Investigates the role of attention and memory in complex reasoning. Analyses Transformer self-attention, extends it with memory, refines the taxonomy of SVRT reasoning tasks, and proposes GAMR — a cognitive architecture combining attention and memory inspired by active-vision theory.",
+      "links": { "arxiv": "https://arxiv.org/abs/2306.14650" }
+    },
+    {
+      "title": "A Benchmark for Compositional Visual Reasoning",
+      "authors": "Aimen Zerroug, Mohit Vaishnav, Julien Colin, Sebastian Musslick, Thomas Serre",
+      "venue": "NeurIPS — Datasets and Benchmarks Track",
+      "year": 2022,
+      "citations": 82,
+      "type": "conference",
+      "featured": true,
+      "abstract": "Introduces Compositional Visual Relations (CVR), a benchmark driving progress toward more data-efficient visual reasoning. Provides measures of sample efficiency, generalization and compositionality, and finds modern models remain far less data-efficient than humans.",
+      "links": { "arxiv": "https://arxiv.org/pdf/2206.05379" }
+    },
+    {
+      "title": "Understanding the Computational Demands Underlying Visual Reasoning",
+      "authors": "Mohit Vaishnav, Remi Cadene, Andrea Alamia, Drew Linsley, Rufin VanRullen, Thomas Serre",
+      "venue": "Neural Computation (MIT Press)",
+      "year": 2022,
+      "citations": 26,
+      "type": "journal",
+      "featured": true,
+      "abstract": "Characterizes the computational demands of abstract visual reasoning by assessing CNNs on the SVRT challenge, revealing a novel taxonomy of reasoning tasks and showing how spatial vs. feature-based attention selectively helps the hardest tasks.",
+      "links": { "html": "https://doi.org/10.1162/neco_a_01485" }
+    },
+    {
+      "title": "Conviformers: Convolutionally Guided Vision Transformer",
+      "authors": "Mohit Vaishnav, Thomas Fel, Ivan Felipe Rodríguez, Thomas Serre",
+      "venue": "arXiv preprint arXiv:2208.08900",
+      "year": 2022,
+      "citations": 6,
+      "type": "preprint",
+      "featured": false,
+      "abstract": "A convolutional transformer architecture that handles higher-resolution images without exploding memory/compute, with a PreSizer pre-processing technique — achieving state-of-the-art on Herbarium 202x and iNaturalist 2019.",
+      "links": { "arxiv": "https://arxiv.org/pdf/2208.08900" }
+    },
+    {
+      "title": "Using Artificial Intelligence to Identify Fossil Angiosperm Leaves at Family Level",
+      "authors": "Mohit Vaishnav, et al.",
+      "venue": "Geological Society of America — Abstracts with Programs",
+      "year": 2022,
+      "citations": 0,
+      "type": "conference",
+      "featured": false,
+      "links": { "scholar": "https://scholar.google.com/citations?user=jGOzdbgAAAAJ" }
+    },
+    {
+      "title": "Bin Classification Using Temporal Gradient Estimation for Lossless Video Coding",
+      "authors": "Mohit Vaishnav, Anil Kumar Tiwari",
+      "venue": "Data Compression Conference (DCC), IEEE",
+      "year": 2014,
+      "citations": 1,
+      "type": "conference",
+      "featured": false,
+      "links": { "html": "https://ieeexplore.ieee.org/document/6824482/" }
+    },
+    {
+      "title": "Temporal Stationarity Based Prediction Method for Lossless Video Coding",
+      "authors": "Mohit Vaishnav, Dinesh Kumar Chobey, Anil Kumar Tiwari",
+      "venue": "Indian Conference on Computer Vision, Graphics and Image Processing (ICVGIP), ACM",
+      "year": 2014,
+      "citations": 0,
+      "type": "conference",
+      "featured": false,
+      "links": { "html": "https://doi.org/10.1145/2683483.2683522" }
+    },
+    {
+      "title": "Residue Coding Technique for Video Compression",
+      "authors": "Mohit Vaishnav, Binny Tewani, Anil Kumar Tiwari",
+      "venue": "Data Compression Conference (DCC), IEEE",
+      "year": 2014,
+      "citations": 0,
+      "type": "conference",
+      "featured": false,
+      "links": { "html": "https://ieeexplore.ieee.org/document/6824481/" }
+    },
+    {
+      "title": "An Optimal Switched Adaptive Prediction Method for Lossless Video Coding",
+      "authors": "Dinesh Kumar Chobey, Mohit Vaishnav, Anil Kumar Tiwari",
+      "venue": "Data Compression Conference (DCC), IEEE",
+      "year": 2013,
+      "citations": 1,
+      "type": "conference",
+      "featured": false,
+      "links": { "html": "https://ieeexplore.ieee.org/document/6543091/" }
+    },
+    {
+      "title": "A Novel Computationally Efficient Motion Compensation Method Based on Pixel by Pixel Prediction",
+      "authors": "Mohit Vaishnav, Ashwani Sharma, Anil Kumar Tiwari",
+      "venue": "Data Compression Conference (DCC), IEEE Computer Society",
+      "year": 2011,
+      "citations": 2,
+      "type": "conference",
+      "featured": false,
+      "links": { "html": "https://ieeexplore.ieee.org/document/5749537" }
+    }
+  ]
+}

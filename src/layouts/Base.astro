@@ -1,0 +1,47 @@
+---
+import '@fontsource-variable/inter';
+import '@fontsource/sora/600.css';
+import '@fontsource/sora/700.css';
+import '../styles/global.css';
+import SEO from '@components/SEO.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+  noindex?: boolean;
+  isHome?: boolean;
+}
+const props = Astro.props;
+---
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#2f6fef" />
+    <meta name="generator" content={Astro.generator} />
+    <!-- Set theme before paint to avoid flash -->
+    <script is:inline>
+      (() => {
+        const t = localStorage.getItem('theme');
+        const m = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (t === 'dark' || (!t && m)) document.documentElement.classList.add('dark');
+      })();
+    </script>
+    <SEO {...props} />
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-brand-600 focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+    <Header />
+    <main id="main" class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

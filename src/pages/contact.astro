@@ -1,0 +1,57 @@
+---
+import Base from '@layouts/Base.astro';
+import Icon from '@components/Icon.astro';
+import ContactForm from '@components/ContactForm.astro';
+import { socials } from '@data/site';
+
+const channels = [
+  { title: 'Business & partnerships', body: 'Collaboration with Kimova AI on AI-driven compliance.' },
+  { title: 'Research collaboration', body: 'Academic or industrial research on vision-language models & reasoning.' },
+  { title: 'Speaking & advisory', body: 'Keynotes, panels and strategic advisory on applied AI.' },
+];
+const social = socials.filter((s) => s.id !== 'email');
+---
+<Base title="Contact" description="Get in touch with Dr. Mohit Vaishnav — partnerships, research collaboration, speaking and advisory.">
+  <section class="container-page py-16 sm:py-24">
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="eyebrow">Contact</p>
+      <h1 class="mt-2 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl dark:text-white">Let's connect</h1>
+      <p class="mt-4 text-lg text-ink-soft dark:text-slate-400">
+        Partnerships, research, speaking — or just to say hello. Drop me a message and it lands straight in my inbox.
+      </p>
+    </div>
+
+    <div class="mx-auto mt-12 grid max-w-5xl gap-10 md:grid-cols-[1.3fr_1fr]">
+      <!-- Form -->
+      <div class="card">
+        <ContactForm />
+      </div>
+
+      <!-- Alt channels -->
+      <div class="space-y-6">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wider text-ink-faint">What I'm open to</p>
+          <ul class="mt-3 space-y-3">
+            {channels.map((c) => (
+              <li>
+                <p class="text-sm font-semibold text-ink dark:text-white">{c.title}</p>
+                <p class="text-sm text-ink-soft dark:text-slate-400">{c.body}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wider text-ink-faint">Prefer a DM?</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            {social.map((s) => (
+              <a href={s.href} target="_blank" rel="me noopener"
+                class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-ink-soft transition-colors hover:border-brand-400 hover:text-brand-600 dark:border-slate-700 dark:text-slate-300 dark:hover:text-brand-300">
+                <Icon name={s.id} class="h-4 w-4" /> {s.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

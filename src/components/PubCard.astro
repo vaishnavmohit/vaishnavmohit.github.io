@@ -1,0 +1,44 @@
+---
+import Icon from './Icon.astro';
+interface Pub {
+  title: string; authors: string; venue: string; year: number;
+  citations: number; type: string; featured?: boolean;
+  abstract?: string; links?: Record<string, string>;
+}
+const { pub } = Astro.props as { pub: Pub };
+const linkOrder = ['arxiv', 'html', 'scholar'];
+const linkLabels: Record<string, string> = { arxiv: 'arXiv', html: 'Paper', scholar: 'Scholar' };
+const links = Object.entries(pub.links ?? {}).sort(
+  (a, b) => linkOrder.indexOf(a[0]) - linkOrder.indexOf(b[0])
+);
+const typeColor: Record<string, string> = {
+  conference: 'bg-brand-50 text-brand-700 dark:bg-brand-500/10 dark:text-brand-300',
+  journal: 'bg-signal-500/10 text-signal-600 dark:text-signal-400',
+  preprint: 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300',
+  workshop: 'bg-accent-50 text-accent-700 dark:bg-accent-500/10 dark:text-accent-300',
+  thesis: 'bg-purple-50 text-purple-700 dark:bg-purple-500/10 dark:text-purple-300',
+};
+---
+<article class="card card-hover" data-year={pub.year} data-type={pub.type}>
+  <div class="flex items-start justify-between gap-3">
+    <span class:list={['rounded-full px-2.5 py-1 text-xs font-semibold capitalize', typeColor[pub.type] ?? typeColor.preprint]}>{pub.type}</span>
+    <div class="flex shrink-0 items-center gap-3 text-xs text-ink-faint">
+      <span>{pub.year}</span>
+      {pub.citations > 0 && <span class="font-medium text-ink-soft dark:text-slate-300">{pub.citations} citations</span>}
+    </div>
+  </div>
+  <h3 class="mt-3 font-display text-lg font-semibold leading-snug text-ink dark:text-white">{pub.title}</h3>
+  <p class="mt-1.5 text-sm text-ink-soft dark:text-slate-400">{pub.authors}</p>
+  <p class="mt-1 text-sm italic text-ink-faint dark:text-slate-500">{pub.venue}</p>
+  {pub.abstract && <p class="mt-3 line-clamp-3 text-sm text-ink-soft dark:text-slate-400">{pub.abstract}</p>}
+  {links.length > 0 && (
+    <div class="mt-4 flex flex-wrap gap-2">
+      {links.map(([key, href]) => (
+        <a href={href} target="_blank" rel="noopener"
+          class="inline-flex items-center gap-1.5 rounded-full border border-slate-200 px-3 py-1.5 text-xs font-medium text-ink-soft transition-colors hover:border-brand-400 hover:text-brand-600 dark:border-slate-700 dark:text-slate-300 dark:hover:text-brand-300">
+          {linkLabels[key] ?? key}<Icon name="external" class="h-3 w-3" />
+        </a>
+      ))}
+    </div>
+  )}
+</article>

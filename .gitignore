@@ -1,7 +1,18 @@
-_site
-.sass-cache
-.jekyll-metadata
-.DS_store
-.ruby-version
-.tweet-cache/
-Gemfile.lock
+# build output
+dist/
+.output/
+
+# dependencies
+node_modules/
+
+# astro
+.astro/
+
+# logs / env
+*.log
+.env
+.env.production
+.DS_Store
+
+# scholar sync side-file (generated; not committed)
+src/data/publications.scholar-sync.json

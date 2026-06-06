@@ -1,0 +1,22 @@
+---
+// Reusable pagination nav. Renders nothing if there's only one page.
+interface Props { currentPage: number; lastPage: number; base?: string; }
+const { currentPage, lastPage, base = '/blog' } = Astro.props;
+const href = (p: number) => (p <= 1 ? base : `${base}/page/${p}`);
+const pages = Array.from({ length: lastPage }, (_, i) => i + 1);
+---
+{lastPage > 1 && (
+  <nav class="mt-12 flex items-center justify-center gap-2" aria-label="Pagination">
+    <a href={href(currentPage - 1)}
+      class:list={['rounded-full border px-4 py-2 text-sm font-medium transition-colors', currentPage <= 1 ? 'pointer-events-none border-slate-200 text-ink-faint opacity-50 dark:border-slate-800' : 'border-slate-200 text-ink-soft hover:border-brand-400 hover:text-brand-600 dark:border-slate-700 dark:text-slate-300']}
+      aria-disabled={currentPage <= 1}>← Prev</a>
+    {pages.map((p) => (
+      <a href={href(p)}
+        class:list={['rounded-full px-4 py-2 text-sm font-semibold transition-colors', p === currentPage ? 'bg-brand-500 text-white' : 'text-ink-soft hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-300']}
+        aria-current={p === currentPage ? 'page' : undefined}>{p}</a>
+    ))}
+    <a href={href(currentPage + 1)}
+      class:list={['rounded-full border px-4 py-2 text-sm font-medium transition-colors', currentPage >= lastPage ? 'pointer-events-none border-slate-200 text-ink-faint opacity-50 dark:border-slate-800' : 'border-slate-200 text-ink-soft hover:border-brand-400 hover:text-brand-600 dark:border-slate-700 dark:text-slate-300']}
+      aria-disabled={currentPage >= lastPage}>Next →</a>
+  </nav>
+)}
