@@ -28,6 +28,15 @@ const years = [...new Set(pubs.map((p) => p.year))].sort((a, b) => b - a);
       </div>
     </div>
 
+    <!-- PhD thesis highlight -->
+    <a href="/phd-thesis" class="mt-10 flex items-center gap-4 rounded-2xl border border-brand-200 bg-brand-50/60 p-5 transition-colors hover:border-brand-400 dark:border-brand-800 dark:bg-brand-500/5">
+      <img src="/img/phd-thesis.png" alt="" width="56" height="56" class="h-14 w-14 shrink-0 rounded-lg border border-slate-200 object-cover dark:border-slate-700" />
+      <div class="min-w-0">
+        <p class="text-sm font-semibold text-ink dark:text-white">PhD Thesis — Exploring the role of (self-)attention in cognitive &amp; computer vision</p>
+        <p class="text-sm text-ink-soft dark:text-slate-400">Brown University / ANITI, 2023 · committee from Princeton, DeepMind &amp; CentraleSupélec →</p>
+      </div>
+    </a>
+
     <!-- Filters -->
     <div class="mt-10 flex flex-wrap gap-2" id="filters">
       <button class="filter-btn is-active" data-filter="all">All</button>

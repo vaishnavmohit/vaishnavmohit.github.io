@@ -1,0 +1,82 @@
+---
+import Base from '@layouts/Base.astro';
+import Section from '@components/Section.astro';
+import Icon from '@components/Icon.astro';
+
+const manuscript = 'https://arxiv.org/abs/2306.14650';
+const slides = 'https://docs.google.com/presentation/d/18MowWN7zjDfqUiJWD3pl3NsuSrrXtc4vnrcGjX2RErg/edit?usp=sharing';
+
+const committee = [
+  { name: 'Jonathan D. Cohen', affil: 'Princeton University, USA', url: 'http://pni.princeton.edu/faculty/jonathan-cohen' },
+  { name: 'Jessica B. Hamrick', affil: 'DeepMind, UK', url: 'https://www.jesshamrick.com' },
+  { name: 'Hugues Talbot', affil: 'CentraleSupélec, France', url: 'https://hugues-talbot.github.io' },
+  { name: 'Timothée Masquelier', affil: 'CerCo, CNRS, France', url: 'https://cerco.cnrs.fr/pagesp/tim/' },
+  { name: 'Thomas Serre', affil: 'Brown University, USA · Thesis Director', url: 'https://serre-lab.clps.brown.edu/person/thomas-serre/' },
+  { name: 'Nicholas Asher', affil: 'ANITI, France · Thesis Co-Director', url: 'https://www.cnrs.fr/fr/personne/nicholas-asher' },
+];
+---
+<Base
+  title="PhD Thesis"
+  description="Exploring the role of (self-)attention in cognitive and computer vision architecture — doctoral dissertation by Dr. Mohit Vaishnav, defended April 2023 at Brown University / ANITI. Committee from Princeton, DeepMind, CentraleSupélec and CNRS.">
+  <section class="container-page py-16 sm:py-20">
+    <a href="/research" class="text-sm font-medium text-brand-600 dark:text-brand-300">← Back to research</a>
+    <div class="mt-6 grid items-start gap-10 md:grid-cols-[1.5fr_1fr]">
+      <div>
+        <p class="eyebrow">PhD Thesis · Defended April 13, 2023</p>
+        <h1 class="mt-2 font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl dark:text-white">
+          Exploring the role of (self-)attention in cognitive and computer vision architecture
+        </h1>
+        <p class="mt-4 text-lg text-ink-soft dark:text-slate-400">
+          Doctoral dissertation at <strong class="text-ink dark:text-white">Brown University</strong> &amp;
+          <strong class="text-ink dark:text-white"> ANITI</strong> (Université Paul Sabatier), under
+          Prof. Thomas Serre and Prof. Nicholas Asher.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href={manuscript} target="_blank" rel="noopener" class="btn-primary">Read manuscript (arXiv) <Icon name="external" class="h-4 w-4" /></a>
+          <a href={slides} target="_blank" rel="noopener" class="btn-ghost">Defense slides <Icon name="external" class="h-4 w-4" /></a>
+        </div>
+      </div>
+      <img src="/img/phd-thesis.png" alt="PhD thesis cover" width="320" height="320"
+        class="mx-auto w-full max-w-[16rem] rounded-2xl border border-slate-200 shadow-lg dark:border-slate-800" />
+    </div>
+  </section>
+
+  <Section eyebrow="Abstract" title="What the thesis is about" class="border-t border-slate-200 dark:border-slate-800">
+    <div class="prose-portfolio max-w-3xl">
+      <p>
+        A fundamental mechanism of cognition needed to perform complex reasoning tasks is the ability to
+        selectively process information (<strong>attention</strong>) and retain information in an accessible
+        state (<strong>memory</strong>). We systematically analyze both components, starting with
+        Transformer-based self-attention as a model of attention and later extending the architecture with
+        memory — the Transformer being the de-facto architectural choice across modern AI.
+      </p>
+      <p>
+        We first study the computational mechanisms of a synthetic visual reasoning test (SVRT), analyzing
+        ResNet architectures of varying depth and training-set size. This yields a novel, finer taxonomy of
+        the twenty-three SVRT tasks, consistent with the same-different (SD) and spatial-relation (SR)
+        classes of reasoning. We then incorporate self-attention into ResNet50 — as feature-based and
+        spatial attention enriching the feature maps — and find these attention networks markedly more
+        efficient at the hardest reasoning tasks, partially explaining the taxonomy and yielding testable
+        predictions about attentional needs.
+      </p>
+      <p>
+        Finally, we develop <strong>GAMR — a Guided Attention Model for (visual) Reasoning</strong> —
+        a cognitive architecture integrating attention and memory, motivated by the theory of active vision.
+        GAMR solves complex visual reasoning via sequences of attention shifts that route task-relevant
+        information into memory, guided by an internally generated query. It is sample-efficient, robust and
+        compositional, and capable of zero-shot generalization to entirely novel reasoning tasks.
+      </p>
+    </div>
+  </Section>
+
+  <Section eyebrow="Defense committee" title="Examined by">
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {committee.map((m) => (
+        <a href={m.url} target="_blank" rel="noopener" class="card card-hover block">
+          <p class="font-semibold text-ink dark:text-white">{m.name}</p>
+          <p class="mt-1 text-sm text-brand-600 dark:text-brand-300">{m.affil}</p>
+        </a>
+      ))}
+    </div>
+  </Section>
+</Base>
