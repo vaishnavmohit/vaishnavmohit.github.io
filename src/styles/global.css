@@ -18,6 +18,11 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
   }
+  /* Ensure the [hidden] attribute always wins over display utilities
+     (e.g. sm:flex on the cookie banner) so toggling visibility works. */
+  [hidden] {
+    display: none !important;
+  }
   body {
     @apply bg-white text-ink antialiased dark:bg-[#080c18] dark:text-slate-200;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
