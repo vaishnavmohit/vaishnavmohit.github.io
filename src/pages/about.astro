@@ -56,8 +56,9 @@ const social = socials.filter((s) => s.id !== 'email');
           </p>
         </div>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="/experience" class="btn-ghost">My journey <Icon name="arrow" class="h-4 w-4" /></a>
           <a href="/contact" class="btn-primary">Get in touch</a>
+          <a href={site.cvUrl} target="_blank" rel="noopener" class="btn-ghost">Download CV <Icon name="external" class="h-4 w-4" /></a>
+          <a href="/experience" class="btn-ghost">My journey <Icon name="arrow" class="h-4 w-4" /></a>
         </div>
       </div>
     </div>

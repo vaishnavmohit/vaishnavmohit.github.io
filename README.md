@@ -136,6 +136,23 @@ git push
 
 ---
 
+## 4b. Analytics, CV & Google Search Console
+
+- **Google Analytics 4** is wired up (`G-CJ1FLXGREG` in `src/data/site.ts` →
+  `analyticsId`). It loads **only in production** and **only after a visitor
+  accepts** the cookie banner (consent-gated, IP anonymized). Decline = no
+  analytics cookies. Change the ID or set it to `''` to disable.
+- **CV / résumé**: the "Download CV" buttons point to `public/pdf/Mohit_Vaishnav_CV.pdf`
+  (carried over from the old site — **replace it with a current PDF** when you can;
+  keep the same filename, or update `cvUrl` in `src/data/site.ts`).
+- **Google Search Console** (recommended, ~2 min):
+  1. Go to <https://search.google.com/search-console>, add the property
+     `https://vaishnavmohit.github.io`.
+  2. Choose the **HTML tag** verification method; copy the `content="..."` value.
+  3. Paste it into `src/data/site.ts` → `googleSiteVerification`, then push.
+  4. Back in Search Console click **Verify**, then submit your sitemap:
+     `https://vaishnavmohit.github.io/sitemap-index.xml`.
+
 ## 5. Project structure
 
 ```

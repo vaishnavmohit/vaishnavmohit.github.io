@@ -37,6 +37,9 @@ const social = socials.filter((s) => s.id !== 'email');
     </div>
   </div>
   <div class="border-t border-slate-200 py-5 dark:border-slate-800">
-    <p class="container-page text-xs text-ink-faint dark:text-slate-500">© {year} Mohit Vaishnav · Built with Astro · Hosted on GitHub Pages</p>
+    <div class="container-page flex flex-wrap items-center justify-between gap-2 text-xs text-ink-faint dark:text-slate-500">
+      <p>© {year} Mohit Vaishnav · Built with Astro · Hosted on GitHub Pages</p>
+      <a href="/privacy" class="hover:text-brand-600 dark:hover:text-brand-300">Privacy</a>
+    </div>
   </div>
 </footer>

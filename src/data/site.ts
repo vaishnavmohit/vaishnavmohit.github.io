@@ -32,6 +32,14 @@ export const site = {
   // Only loads in the production build — never on localhost. Leave '' to disable.
   analyticsId: 'G-CJ1FLXGREG',
 
+  // Downloadable CV (place the PDF in public/pdf/). Replace with an up-to-date file.
+  cvUrl: '/pdf/Mohit_Vaishnav_CV.pdf',
+
+  // Google Search Console verification token. Get it from
+  // search.google.com/search-console (HTML-tag method) and paste the content
+  // value here. Leave '' until you have it. See README §6.
+  googleSiteVerification: '',
+
   keywords: [
     'Mohit Vaishnav', 'AI Entrepreneur', 'Kimova AI', 'Cybersecurity AI',
     'ISO 27001', 'Computer Vision', 'Deep Learning', 'Visual Reasoning',
