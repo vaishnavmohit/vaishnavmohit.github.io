@@ -28,6 +28,10 @@ export const site = {
   // Default social card image (place a 1200x630 PNG at public/img/og-default.png)
   ogImage: '/img/og-default.png',
 
+  // Google Analytics 4 measurement ID (carried over from the old site).
+  // Only loads in the production build — never on localhost. Leave '' to disable.
+  analyticsId: 'G-CJ1FLXGREG',
+
   keywords: [
     'Mohit Vaishnav', 'AI Entrepreneur', 'Kimova AI', 'Cybersecurity AI',
     'ISO 27001', 'Computer Vision', 'Deep Learning', 'Visual Reasoning',

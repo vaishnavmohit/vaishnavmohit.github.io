@@ -1,0 +1,18 @@
+---
+import { site } from '@data/site';
+// Load GA4 only in the production build (not on localhost / dev),
+// and only when a measurement ID is configured.
+const enabled = import.meta.env.PROD && !!site.analyticsId;
+const id = site.analyticsId;
+---
+{enabled && (
+  <>
+    <script async is:inline src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
+    <script is:inline define:vars={{ id }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', id, { anonymize_ip: true });
+    </script>
+  </>
+)}
