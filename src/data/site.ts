@@ -65,6 +65,7 @@ export const socials = [
   { id: 'github', label: 'GitHub', href: 'https://github.com/vaishnavmohit', primary: true },
   { id: 'twitter', label: 'X / Twitter', href: 'https://twitter.com/mohitvaishnav', primary: true },
   { id: 'orcid', label: 'ORCID', href: 'https://orcid.org/0000-0002-9795-493X', primary: false },
+  { id: 'researchgate', label: 'ResearchGate', href: 'https://www.researchgate.net/profile/Mohit-Vaishnav-2', primary: false },
 ];
 
 // Headline metrics shown on Home + About.

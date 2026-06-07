@@ -26,10 +26,11 @@ const show = !!site.analyticsId;
       var hide = function (v) { localStorage.setItem('cookie-consent', v); b.hidden = true; };
       document.getElementById('cookie-accept').addEventListener('click', function () {
         hide('accepted');
-        if (window.loadGA) window.loadGA();
+        if (window.gtag) window.gtag('consent', 'update', { analytics_storage: 'granted' });
       });
       document.getElementById('cookie-decline').addEventListener('click', function () {
         hide('declined');
+        if (window.gtag) window.gtag('consent', 'update', { analytics_storage: 'denied' });
       });
     })();
   </script>

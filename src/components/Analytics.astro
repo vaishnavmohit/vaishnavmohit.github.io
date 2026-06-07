@@ -1,24 +1,32 @@
 ---
 import { site } from '@data/site';
-// Load GA4 only in the production build (never on localhost) and only AFTER
-// the visitor accepts cookies. The cookie banner calls window.loadGA().
+// Loads GA4 only in the production build (never on localhost).
+// Uses Google Consent Mode v2: analytics run in COOKIELESS mode by default
+// (so aggregate traffic is still visible), and upgrade to full cookies only
+// after the visitor clicks "Accept" on the cookie banner.
 const enabled = import.meta.env.PROD && !!site.analyticsId;
 const id = site.analyticsId;
 ---
 {enabled && (
-  <script is:inline define:vars={{ id }}>
-    window.loadGA = function () {
-      if (window.__gaLoaded) return;
-      window.__gaLoaded = true;
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
-      document.head.appendChild(s);
+  <>
+    <script async is:inline src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
+    <script is:inline define:vars={{ id }}>
       window.dataLayer = window.dataLayer || [];
-      window.gtag = function () { window.dataLayer.push(arguments); };
-      window.gtag('js', new Date());
-      window.gtag('config', id, { anonymize_ip: true });
-    };
-    if (localStorage.getItem('cookie-consent') === 'accepted') window.loadGA();
-  </script>
+      function gtag() { window.dataLayer.push(arguments); }
+      window.gtag = gtag;
+      // Default: everything denied → GA sends cookieless pings (privacy-friendly).
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+      });
+      // If the visitor already accepted in a previous visit, upgrade now.
+      if (localStorage.getItem('cookie-consent') === 'accepted') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+      gtag('js', new Date());
+      gtag('config', id, { anonymize_ip: true });
+    </script>
+  </>
 )}

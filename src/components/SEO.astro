@@ -1,5 +1,6 @@
 ---
 import { site, socials } from '@data/site';
+import { awards } from '@data/experience';
 
 interface Props {
   title?: string;
@@ -30,6 +31,7 @@ const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: site.name,
+  alternateName: 'Dr. Mohit Vaishnav',
   givenName: 'Mohit',
   familyName: 'Vaishnav',
   url: site.url,
@@ -42,14 +44,30 @@ const personSchema = {
     url: site.company.url,
     description: site.company.description,
   },
+  affiliation: [
+    { '@type': 'Organization', name: 'Kimova AI', url: 'https://kimova.ai' },
+    { '@type': 'Organization', name: 'TalTech University', url: 'https://taltech.ee' },
+  ],
   alumniOf: [
-    { '@type': 'CollegeOrUniversity', name: 'Brown University' },
-    { '@type': 'CollegeOrUniversity', name: 'ANITI / Université Paul Sabatier' },
+    {
+      '@type': 'CollegeOrUniversity',
+      name: 'Brown University',
+      url: 'https://www.brown.edu',
+      address: { '@type': 'PostalAddress', addressLocality: 'Providence', addressRegion: 'RI', addressCountry: 'USA' },
+    },
+    {
+      '@type': 'CollegeOrUniversity',
+      name: 'ANITI — Artificial and Natural Intelligence Toulouse Institute',
+      url: 'https://aniti.univ-toulouse.fr',
+      address: { '@type': 'PostalAddress', addressLocality: 'Toulouse', addressCountry: 'France' },
+    },
   ],
   knowsAbout: [
-    'Artificial Intelligence', 'Machine Learning', 'Computer Vision',
-    'Deep Learning', 'Vision-Language Models', 'Cybersecurity Compliance', 'ISO 27001',
+    'Artificial Intelligence', 'Machine Learning', 'Computer Vision', 'Deep Learning',
+    'Cognitive AI', 'Visual Reasoning', 'Vision-Language Models', 'Transformer Architecture',
+    'Cybersecurity Compliance', 'ISO 27001', 'Enterprise AI',
   ],
+  award: awards.map((a) => a.title),
   sameAs,
 };
 ---

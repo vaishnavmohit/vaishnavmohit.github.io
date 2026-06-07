@@ -117,14 +117,6 @@ export const earlyVentures: EarlyVenture[] = [
       'Co-founded a startup developing surveillance systems based on computer vision.',
     tags: ['Startup', 'Computer Vision'],
   },
-  {
-    name: 'Shree Bherunath Granite',
-    role: 'Operations',
-    location: 'Rajsamand, India · 2014–2016',
-    description:
-      'Helped set up family granite mines; oversaw daily operations supervising 20 employees.',
-    tags: ['Business', 'Operations'],
-  },
 ];
 
 export type Education = {
