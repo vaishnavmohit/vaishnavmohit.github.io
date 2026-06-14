@@ -56,13 +56,22 @@ const currentRoles = experience.filter((r) => r.current);
   <!-- STATS -->
   <section class="border-y border-slate-200 bg-slate-50/60 dark:border-slate-800 dark:bg-slate-900/30">
     <div class="container-page grid grid-cols-2 gap-6 py-10 md:grid-cols-4">
-      {stats.map((s) => (
-        <div>
-          <p class="font-display text-3xl font-bold text-brand-600 dark:text-brand-400">{s.value}</p>
-          <p class="mt-1 text-sm font-medium text-ink dark:text-slate-200">{s.label}</p>
-          <p class="text-xs text-ink-faint dark:text-slate-500">{s.detail}</p>
-        </div>
-      ))}
+      {stats.map((s) => {
+        const ext = s.link?.startsWith('http');
+        const Tag = s.link ? 'a' : 'div';
+        return (
+          <Tag
+            href={s.link || undefined}
+            target={ext ? '_blank' : undefined}
+            rel={ext ? 'noopener' : undefined}
+            class:list={['block', s.link && 'group transition-opacity hover:opacity-80']}
+          >
+            <p class="font-display text-3xl font-bold text-brand-600 dark:text-brand-400">{s.value}</p>
+            <p class="mt-1 text-sm font-medium text-ink group-hover:underline dark:text-slate-200">{s.label}</p>
+            <p class="text-xs text-ink-faint dark:text-slate-500">{s.detail}</p>
+          </Tag>
+        );
+      })}
     </div>
   </section>
 

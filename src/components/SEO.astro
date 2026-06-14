@@ -1,5 +1,5 @@
 ---
-import { site, socials } from '@data/site';
+import { site, sameAsProfiles } from '@data/site';
 import { awards } from '@data/experience';
 
 interface Props {
@@ -25,7 +25,7 @@ const pageTitle = title ? `${title} · ${site.shortTitle}` : `${site.shortTitle}
 const canonical = new URL(Astro.url.pathname, site.url).href;
 const ogImageUrl = new URL(image, site.url).href;
 
-const sameAs = socials.filter((s) => s.id !== 'email').map((s) => s.href);
+const sameAs = [...sameAsProfiles, site.kaggleUrl, site.crunchbaseUrl].filter(Boolean);
 
 const personSchema = {
   '@context': 'https://schema.org',
@@ -36,23 +36,28 @@ const personSchema = {
   familyName: 'Vaishnav',
   url: site.url,
   image: ogImageUrl,
-  jobTitle: 'Co-founder & CEO',
+  jobTitle: site.jobTitles,
   description: site.description,
-  worksFor: {
-    '@type': 'Organization',
-    name: site.company.name,
-    url: site.company.url,
-    description: site.company.description,
-  },
-  affiliation: [
-    { '@type': 'Organization', name: 'Kimova AI', url: 'https://kimova.ai' },
-    { '@type': 'Organization', name: 'TalTech University', url: 'https://taltech.ee' },
+  worksFor: [
+    {
+      '@type': 'Organization',
+      name: site.company.name,
+      url: site.company.url,
+      description: site.company.description,
+    },
+    {
+      '@type': 'CollegeOrUniversity',
+      name: 'Tallinn University of Technology (TalTech)',
+      url: 'https://taltech.ee',
+      sameAs: 'https://en.wikipedia.org/wiki/Tallinn_University_of_Technology',
+    },
   ],
   alumniOf: [
     {
       '@type': 'CollegeOrUniversity',
       name: 'Brown University',
       url: 'https://www.brown.edu',
+      sameAs: 'https://en.wikipedia.org/wiki/Brown_University',
       address: { '@type': 'PostalAddress', addressLocality: 'Providence', addressRegion: 'RI', addressCountry: 'USA' },
     },
     {

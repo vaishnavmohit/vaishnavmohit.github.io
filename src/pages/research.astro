@@ -2,7 +2,7 @@
 import Base from '@layouts/Base.astro';
 import PubCard from '@components/PubCard.astro';
 import Icon from '@components/Icon.astro';
-import { site } from '@data/site';
+import { site, academicProfiles } from '@data/site';
 import pubData from '@data/publications.json';
 
 const pubs = [...pubData.publications].sort((a, b) => (b.year - a.year) || (b.citations - a.citations));
@@ -21,15 +21,41 @@ const years = [...new Set(pubs.map((p) => p.year))].sort((a, b) => b - a);
     <div class="mt-8 flex flex-wrap gap-8">
       <div><p class="font-display text-2xl font-bold text-brand-600 dark:text-brand-400">{pubs.length}</p><p class="text-sm text-ink-faint">Publications</p></div>
       <div><p class="font-display text-2xl font-bold text-brand-600 dark:text-brand-400">{totalCitations}+</p><p class="text-sm text-ink-faint">Citations</p></div>
-      <div class="flex items-end">
-        <a href={pubData.meta.scholarUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-medium link-underline">
-          Google Scholar <Icon name="external" class="h-3.5 w-3.5" />
+    </div>
+
+    <!-- Academic profiles (authoritative identity backlinks) -->
+    <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
+      <span class="text-xs font-semibold uppercase tracking-wider text-ink-faint">Profiles</span>
+      {academicProfiles.map((p) => (
+        <a href={p.href} target="_blank" rel="me noopener" class="inline-flex items-center gap-1 text-sm font-medium link-underline">
+          {p.label} <Icon name="external" class="h-3 w-3" />
         </a>
+      ))}
+    </div>
+
+    <!-- Research vision (establishes the active-researcher entity) -->
+    <div class="mt-12 rounded-2xl border border-slate-200 bg-slate-50/60 p-6 sm:p-8 dark:border-slate-800 dark:bg-slate-900/30">
+      <p class="eyebrow">Research direction</p>
+      <h2 class="mt-2 font-display text-2xl font-bold text-ink dark:text-white">Probing how vision-language models actually reason</h2>
+      <p class="mt-3 max-w-3xl text-ink-soft dark:text-slate-400">
+        My current research — as a postdoctoral researcher at TalTech under the EXAI grant — asks a
+        deceptively simple question: when a large vision-language model answers correctly, is it
+        <em>reasoning</em>, or pattern-matching? I design cognitive-paradigm evaluations that decouple
+        perception from reasoning, build benchmarks that resist shortcut-learning, and develop agents whose
+        attention and memory are guided rather than brute-forced — extending the GAMR line of work from my PhD.
+      </p>
+      <p class="mt-3 max-w-3xl text-ink-soft dark:text-slate-400">
+        The throughline across a decade of work: <strong class="text-ink dark:text-white">attention and memory
+        as the levers of efficient, generalizable intelligence</strong> — in brains, in models, and now in
+        the products we build at Kimova AI.
+      </p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 dark:bg-brand-500/10 dark:text-brand-300">Recent &amp; upcoming: TMLR 2026 · CoNLL 2026 · CVPR Workshop 2026</span>
       </div>
     </div>
 
     <!-- PhD thesis highlight -->
-    <a href="/phd-thesis" class="mt-10 flex items-center gap-4 rounded-2xl border border-brand-200 bg-brand-50/60 p-5 transition-colors hover:border-brand-400 dark:border-brand-800 dark:bg-brand-500/5">
+    <a href="/phd-thesis" class="mt-6 flex items-center gap-4 rounded-2xl border border-brand-200 bg-brand-50/60 p-5 transition-colors hover:border-brand-400 dark:border-brand-800 dark:bg-brand-500/5">
       <img src="/img/phd-thesis.png" alt="" width="56" height="56" class="h-14 w-14 shrink-0 rounded-lg border border-slate-200 object-cover dark:border-slate-700" />
       <div class="min-w-0">
         <p class="text-sm font-semibold text-ink dark:text-white">PhD Thesis — Exploring the role of (self-)attention in cognitive &amp; computer vision</p>
