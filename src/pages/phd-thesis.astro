@@ -2,8 +2,10 @@
 import Base from '@layouts/Base.astro';
 import Section from '@components/Section.astro';
 import Icon from '@components/Icon.astro';
+import { thesisNode } from '../lib/schema';
 
 const manuscript = 'https://arxiv.org/abs/2306.14650';
+const thesesFr = 'https://theses.fr/2023TOU30139';
 const slides = 'https://docs.google.com/presentation/d/18MowWN7zjDfqUiJWD3pl3NsuSrrXtc4vnrcGjX2RErg/edit?usp=sharing';
 
 const committee = [
@@ -17,7 +19,8 @@ const committee = [
 ---
 <Base
   title="PhD Thesis"
-  description="Exploring the role of (self-)attention in cognitive and computer vision architecture — doctoral dissertation by Dr. Mohit Vaishnav, defended April 2023 at Brown University / ANITI. Committee from Princeton, DeepMind, CentraleSupélec and CNRS.">
+  description="Exploring the role of (self-)attention in cognitive and computer vision architecture — doctoral dissertation by Dr. Mohit Vaishnav, defended April 2023 at Université Toulouse III with Brown University / ANITI. Committee from Princeton, DeepMind, CentraleSupélec and CNRS."
+  schema={[thesisNode()]}>
   <section class="container-page py-16 sm:py-20">
     <a href="/research" class="text-sm font-medium text-brand-600 dark:text-brand-300">← Back to research</a>
     <div class="mt-6 grid items-start gap-10 md:grid-cols-[1.5fr_1fr]">
@@ -34,6 +37,7 @@ const committee = [
         <div class="mt-7 flex flex-wrap gap-3">
           <a href={manuscript} target="_blank" rel="noopener" class="btn-primary">Read manuscript (arXiv) <Icon name="external" class="h-4 w-4" /></a>
           <a href={slides} target="_blank" rel="noopener" class="btn-ghost">Defense slides <Icon name="external" class="h-4 w-4" /></a>
+          <a href={thesesFr} target="_blank" rel="noopener" class="btn-ghost">Official record (theses.fr) <Icon name="external" class="h-4 w-4" /></a>
         </div>
       </div>
       <img src="/img/phd-thesis.png" alt="PhD thesis cover" width="320" height="320"

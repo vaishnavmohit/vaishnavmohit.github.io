@@ -8,7 +8,12 @@ const allPosts = await getSortedPosts();
 const lastPage = Math.max(1, Math.ceil(allPosts.length / POSTS_PER_PAGE));
 const posts = allPosts.slice(0, POSTS_PER_PAGE);
 ---
-<Base title="Blog" description="Writing by Dr. Mohit Vaishnav on applied AI, entrepreneurship, compliance and research.">
+<Base
+  title="Blog"
+  description="Writing by Dr. Mohit Vaishnav on applied AI, entrepreneurship, compliance and research."
+  pageType="CollectionPage"
+  noindex={posts.length === 0}
+>
   <section class="container-page py-16 sm:py-20">
     <p class="eyebrow">Writing</p>
     <h1 class="mt-2 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl dark:text-white">Blog</h1>

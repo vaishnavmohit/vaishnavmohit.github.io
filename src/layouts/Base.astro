@@ -8,6 +8,7 @@ import Analytics from '@components/Analytics.astro';
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 import CookieConsent from '@components/CookieConsent.astro';
+import type { PageType } from '../lib/schema';
 
 interface Props {
   title?: string;
@@ -15,6 +16,11 @@ interface Props {
   image?: string;
   type?: string;
   noindex?: boolean;
+  /** schema.org page type — ProfilePage for pages that are about you */
+  pageType?: PageType;
+  /** Extra JSON-LD nodes for this page */
+  schema?: Record<string, unknown>[];
+  /** @deprecated use pageType="ProfilePage" */
   isHome?: boolean;
 }
 const props = Astro.props;
@@ -26,6 +32,7 @@ const props = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="/img/favicon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Blog · Dr. Mohit Vaishnav" href="/rss.xml" />
     <meta name="theme-color" content="#2f6fef" />
     <meta name="generator" content={Astro.generator} />
     <!-- Set theme before paint to avoid flash -->

@@ -113,13 +113,14 @@
     },
     {
       "title": "Using Artificial Intelligence to Identify Fossil Angiosperm Leaves at Family Level",
-      "authors": "Mohit Vaishnav, et al.",
-      "venue": "Geological Society of America — Abstracts with Programs",
+      "authors": "Ivan Felipe Rodriguez, Thomas Fel, Gaurav Gaonkar, Mohit Vaishnav, Herbert Meyer, Peter Wilf, Thomas Serre",
+      "venue": "Geological Society of America — Abstracts with Programs · Leaf Lens project (Serre Lab, Brown University)",
       "year": 2022,
       "citations": 0,
       "type": "conference",
       "featured": false,
-      "links": { "scholar": "https://scholar.google.com/citations?user=jGOzdbgAAAAJ" }
+      "abstract": "Leaf Lens: an interactive platform showing how neural networks classify plant leaves to family level and organise concepts across families — explainability grounded in extant leaves, applied to fossil identification.",
+      "links": { "project": "https://serre-lab.github.io/LeafLens/", "scholar": "https://scholar.google.com/citations?user=jGOzdbgAAAAJ" }
     },
     {
       "title": "Bin Classification Using Temporal Gradient Estimation for Lossless Video Coding",

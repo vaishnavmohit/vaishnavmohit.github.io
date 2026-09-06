@@ -153,6 +153,24 @@ git push
   4. Back in Search Console click **Verify**, then submit your sitemap:
      `https://vaishnavmohit.github.io/sitemap-index.xml`.
 
+## 4c. Knowledge-Graph / entity data (for the Google Knowledge Panel)
+
+Every page emits one JSON-LD graph (`WebSite`, `Person`, `Organization` for
+Kimova AI, the page type, breadcrumbs, plus page-specific nodes such as the
+publications list, the PhD `Thesis` and `BlogPosting`s). It is built in
+`src/lib/schema.ts` from the identity data in `src/data/site.ts`:
+
+- `site.bio` — the canonical two-sentence biography. Paste it **verbatim** on
+  LinkedIn, ORCID, Scholar, Crunchbase, Wikidata… consistency is the signal.
+- `identifiers` — ORCID, Scholar, DBLP, IdRef, VIAF, theses.fr, HAL ids.
+- `sameAsProfiles` — every profile page that is about *you*; also rendered as
+  `<link rel="me">`. Fill `crunchbaseUrl` / `wikidataUrl` when those exist.
+- `almaMaters`, `university`, `site.company` — schools and employers.
+
+Old Jekyll URLs (`/publications`, `/awards`, `/education`, `/cv`, `/news`)
+redirect via `astro.config.mjs`; the CV is also kept at the old
+`/assets/pdf/` path. The blog index is `noindex` until a post is published.
+
 ## 5. Project structure
 
 ```

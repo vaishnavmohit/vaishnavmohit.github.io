@@ -6,8 +6,8 @@ interface Pub {
   abstract?: string; links?: Record<string, string>;
 }
 const { pub } = Astro.props as { pub: Pub };
-const linkOrder = ['arxiv', 'html', 'scholar'];
-const linkLabels: Record<string, string> = { arxiv: 'arXiv', html: 'Paper', scholar: 'Scholar' };
+const linkOrder = ['arxiv', 'html', 'project', 'scholar'];
+const linkLabels: Record<string, string> = { arxiv: 'arXiv', html: 'Paper', project: 'Project', scholar: 'Scholar' };
 const links = Object.entries(pub.links ?? {}).sort(
   (a, b) => linkOrder.indexOf(a[0]) - linkOrder.indexOf(b[0])
 );

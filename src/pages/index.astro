@@ -11,7 +11,7 @@ const heroSocials = socials.filter((s) => s.primary);
 const featuredPubs = pubData.publications.filter((p) => p.featured).slice(0, 3);
 const currentRoles = experience.filter((r) => r.current);
 ---
-<Base isHome>
+<Base pageType="ProfilePage">
   <!-- HERO -->
   <section class="relative overflow-hidden">
     <div class="pointer-events-none absolute inset-0 -z-10">

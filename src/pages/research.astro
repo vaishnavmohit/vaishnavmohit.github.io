@@ -4,12 +4,18 @@ import PubCard from '@components/PubCard.astro';
 import Icon from '@components/Icon.astro';
 import { site, academicProfiles } from '@data/site';
 import pubData from '@data/publications.json';
+import { publicationsListNode } from '../lib/schema';
 
 const pubs = [...pubData.publications].sort((a, b) => (b.year - a.year) || (b.citations - a.citations));
 const totalCitations = pubs.reduce((n, p) => n + p.citations, 0);
 const years = [...new Set(pubs.map((p) => p.year))].sort((a, b) => b - a);
 ---
-<Base title="Research" description={`Publications by Dr. Mohit Vaishnav — ${pubs.length} papers in visual reasoning, vision-language models and computer vision. ${totalCitations}+ citations.`}>
+<Base
+  title="Research"
+  description={`Publications by Dr. Mohit Vaishnav — ${pubs.length} papers in visual reasoning, vision-language models and computer vision. ${totalCitations}+ citations.`}
+  pageType="CollectionPage"
+  schema={[publicationsListNode()]}
+>
   <section class="container-page py-16 sm:py-20">
     <p class="eyebrow">Research</p>
     <h1 class="mt-2 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl dark:text-white">Publications</h1>

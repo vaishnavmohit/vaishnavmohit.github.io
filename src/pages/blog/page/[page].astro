@@ -24,7 +24,7 @@ export async function getStaticPaths() {
 
 const { posts, currentPage, lastPage } = Astro.props;
 ---
-<Base title={`Blog · page ${currentPage}`} description="Writing by Dr. Mohit Vaishnav on applied AI, entrepreneurship, compliance and research.">
+<Base title={`Blog · page ${currentPage}`} description="Writing by Dr. Mohit Vaishnav on applied AI, entrepreneurship, compliance and research." pageType="CollectionPage">
   <section class="container-page py-16 sm:py-20">
     <p class="eyebrow">Writing</p>
     <h1 class="mt-2 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl dark:text-white">Blog</h1>
