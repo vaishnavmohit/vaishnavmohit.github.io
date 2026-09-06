@@ -46,9 +46,12 @@ const currentRoles = experience.filter((r) => r.current);
 
       <div class="relative mx-auto w-full max-w-xs animate-fade-up md:max-w-none">
         <div class="absolute -inset-3 -z-10 rounded-3xl bg-gradient-to-tr from-brand-500/20 via-transparent to-accent-500/20 blur-xl"></div>
-        <img src="/img/profile.jpg" alt="Dr. Mohit Vaishnav"
-          width="480" height="600" loading="eager"
-          class="aspect-[4/5] w-full rounded-3xl border border-white/50 object-cover shadow-2xl dark:border-slate-800" />
+        <picture>
+          <source type="image/webp" srcset="/img/profile-480.webp 480w, /img/profile-900.webp 900w" sizes="(min-width: 768px) 38vw, 320px" />
+          <img src="/img/profile.jpg" alt="Dr. Mohit Vaishnav"
+            width="480" height="600" loading="eager" fetchpriority="high" decoding="async"
+            class="aspect-[4/5] w-full rounded-3xl border border-white/50 object-cover shadow-2xl dark:border-slate-800" />
+        </picture>
       </div>
     </div>
   </section>

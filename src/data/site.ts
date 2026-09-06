@@ -14,11 +14,13 @@ export const site = {
   // Used in the browser tab + as the default <title> suffix
   shortTitle: 'Dr. Mohit Vaishnav',
   role: 'Co-founder & CEO, Kimova AI · AI Researcher',
+  // Shorter role used in the <title> (Google shows ~60 characters)
+  titleRole: 'CEO, Kimova AI · AI Researcher',
   // One-line value proposition shown in the hero
   tagline: 'AI researcher turned founder — building intelligent automation for cybersecurity compliance.',
-  // Longer description for meta tags (home page)
+  // Meta description for the home page (keep under ~155 characters)
   description:
-    'Dr. Mohit Vaishnav is Co-founder & CEO of Kimova AI, building AI-powered ISO 27001 compliance automation. PhD in Cognitive AI & Visual Reasoning (Brown University / ANITI). Former researcher at DFKI, Sandvik and TalTech. Published at NeurIPS, ICLR and Neural Computation.',
+    'Dr. Mohit Vaishnav — Co-founder & CEO of Kimova AI (AI-powered ISO 27001 audits), AI researcher at TalTech. PhD in cognitive AI; NeurIPS and ICLR author.',
   // Canonical biography — paste this VERBATIM on every profile (LinkedIn,
   // ORCID, Scholar, Crunchbase, Wikidata description…). Consistent wording
   // across the web is one of the strongest entity signals for Google.

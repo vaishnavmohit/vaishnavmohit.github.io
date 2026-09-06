@@ -1,32 +1,37 @@
 ---
 import { site } from '@data/site';
-// Loads GA4 only in the production build (never on localhost).
-// Uses Google Consent Mode v2: analytics run in COOKIELESS mode by default
-// (so aggregate traffic is still visible), and upgrade to full cookies only
-// after the visitor clicks "Accept" on the cookie banner.
+// Google Analytics 4 — loaded ONLY in the production build and ONLY after the
+// visitor has accepted the cookie banner (or accepted on a previous visit).
+// Nothing from Google is requested before consent; "Decline" = no analytics.
 const enabled = import.meta.env.PROD && !!site.analyticsId;
 const id = site.analyticsId;
 ---
 {enabled && (
-  <>
-    <script async is:inline src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
-    <script is:inline define:vars={{ id }}>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { window.dataLayer.push(arguments); }
-      window.gtag = gtag;
-      // Default: everything denied → GA sends cookieless pings (privacy-friendly).
-      gtag('consent', 'default', {
-        ad_storage: 'denied',
-        ad_user_data: 'denied',
-        ad_personalization: 'denied',
-        analytics_storage: 'denied',
-      });
-      // If the visitor already accepted in a previous visit, upgrade now.
-      if (localStorage.getItem('cookie-consent') === 'accepted') {
-        gtag('consent', 'update', { analytics_storage: 'granted' });
-      }
-      gtag('js', new Date());
-      gtag('config', id, { anonymize_ip: true });
-    </script>
-  </>
+  <script is:inline define:vars={{ id }}>
+    (function () {
+      var loaded = false;
+      window.loadAnalytics = function () {
+        if (loaded) return;
+        loaded = true;
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('consent', 'default', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: 'granted',
+        });
+        gtag('js', new Date());
+        gtag('config', id, { anonymize_ip: true });
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+        document.head.appendChild(s);
+      };
+      try {
+        if (localStorage.getItem('cookie-consent') === 'accepted') window.loadAnalytics();
+      } catch (e) {}
+    })();
+  </script>
 )}

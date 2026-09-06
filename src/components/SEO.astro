@@ -29,7 +29,7 @@ const {
 const pageType: PageType = Astro.props.pageType ?? (isHome ? 'ProfilePage' : 'WebPage');
 const ogType = Astro.props.type ?? (pageType === 'ProfilePage' ? 'profile' : 'website');
 
-const pageTitle = title ? `${title} · ${site.shortTitle}` : `${site.shortTitle} — ${site.role}`;
+const pageTitle = title ? `${title} · ${site.shortTitle}` : `${site.shortTitle} — ${site.titleRole}`;
 const pathname = Astro.url.pathname;
 const canonical = new URL(pathname, site.url).href;
 const ogImageUrl = new URL(image, site.url).href;

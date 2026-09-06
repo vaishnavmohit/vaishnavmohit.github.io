@@ -12,14 +12,17 @@ const philosophy = [
 ];
 const social = socials.filter((s) => s.id !== 'email');
 const description =
-  'About Dr. Mohit Vaishnav: Co-founder & CEO of Kimova AI in Tallinn, postdoctoral researcher at TalTech, and PhD in cognitive AI and visual reasoning (Université Toulouse III, Brown University, ANITI).';
+  'About Dr. Mohit Vaishnav — Co-founder & CEO of Kimova AI in Tallinn, postdoc at TalTech, PhD in cognitive AI and visual reasoning (Toulouse III, Brown, ANITI).';
 ---
 <Base title="About" description={description} pageType="ProfilePage" image={site.ogImage}>
   <section class="container-page py-16 sm:py-20">
     <div class="grid items-start gap-12 md:grid-cols-[1fr_1.6fr]">
       <div class="md:sticky md:top-24">
-        <img src="/img/about.jpg" alt="Dr. Mohit Vaishnav" width="420" height="525"
-          class="aspect-[4/5] w-full rounded-3xl border border-slate-200 object-cover object-top shadow-xl dark:border-slate-800" />
+        <picture>
+          <source type="image/webp" srcset="/img/about-420.webp 420w, /img/about-675.webp 675w" sizes="(min-width: 768px) 30vw, 90vw" />
+          <img src="/img/about.jpg" alt="Dr. Mohit Vaishnav" width="420" height="525" fetchpriority="high" decoding="async"
+            class="aspect-[4/5] w-full rounded-3xl border border-slate-200 object-cover object-top shadow-xl dark:border-slate-800" />
+        </picture>
         <div class="mt-5 flex gap-3">
           {social.map((s) => (
             <a href={s.href} target="_blank" rel="me noopener" aria-label={s.label}

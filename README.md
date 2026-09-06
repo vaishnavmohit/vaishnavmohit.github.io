@@ -140,8 +140,8 @@ git push
 
 - **Google Analytics 4** is wired up (`G-CJ1FLXGREG` in `src/data/site.ts` →
   `analyticsId`). It loads **only in production** and **only after a visitor
-  accepts** the cookie banner (consent-gated, IP anonymized). Decline = no
-  analytics cookies. Change the ID or set it to `''` to disable.
+  accepts** the cookie banner — nothing from Google is downloaded before that
+  (the choice is remembered in `localStorage`). Decline = no analytics at all. Change the ID or set it to `''` to disable.
 - **CV / résumé**: the "Download CV" buttons point to `public/pdf/Mohit_Vaishnav_CV.pdf`
   (carried over from the old site — **replace it with a current PDF** when you can;
   keep the same filename, or update `cvUrl` in `src/data/site.ts`).
@@ -170,6 +170,29 @@ publications list, the PhD `Thesis` and `BlogPosting`s). It is built in
 Old Jekyll URLs (`/publications`, `/awards`, `/education`, `/cv`, `/news`)
 redirect via `astro.config.mjs`; the CV is also kept at the old
 `/assets/pdf/` path. The blog index is `noindex` until a post is published.
+
+## 4d. Content TODO (collect material, then we build the pages)
+
+- [ ] **Talks & media page** — gather talk titles, event names, dates, slide/video
+      links (e.g. Robert Scoble's ACL 2026 clip on X), podcast appearances, press
+      quotes. One line each is enough; the page + `Event`/`VideoObject` schema
+      come later.
+- [ ] **Press kit page** — 2–3 headshots (already have `profile.jpg`), the
+      canonical bio from `src/data/site.ts`, Kimova AI logo, contact route.
+- [ ] **Publish the first blog post** (`src/content/blog/from-research-to-product.md`
+      → set `draft: false`) so `/blog/` becomes indexable.
+- [ ] **Kaggle stat** — find a linkable leaderboard for the "Top 5" result or
+      reword it in `src/data/site.ts` → `stats` and `src/data/experience.ts` → `awards`.
+- [ ] **Defense slides** — the Google Slides link on `/phd-thesis` requires sign-in;
+      make it public or remove the button.
+- [ ] **CV PDF** — current file says "AI Engineer" and prints your email; export a
+      fresh one and replace `public/pdf/Mohit_Vaishnav_CV.pdf` (+ `public/assets/pdf/`).
+
+## 4e. Images
+
+Photos live in `public/img/`. After replacing `profile.jpg`, `about.jpg` or
+`phd-thesis.png`, run `node scripts/optimize-images.mjs` to regenerate the WebP
+variants and the favicon set the pages reference.
 
 ## 5. Project structure
 

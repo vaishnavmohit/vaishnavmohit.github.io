@@ -26,7 +26,7 @@ export default {
           300: '#ffaa70',
           400: '#ff7d37',
           500: '#fb5c11', // orange CTA
-          600: '#ec4307',
+          600: '#d1440a', // CTA bg — 4.6:1 with white text (WCAG AA)
           700: '#c43108',
           800: '#9c280f',
           900: '#7e2410',
@@ -36,7 +36,7 @@ export default {
           // green — used sparingly for "live/success/positive" signals
           400: '#34d399',
           500: '#10b981',
-          600: '#059669',
+          600: '#047857', // 5:1 on the pale green badge bg
         },
         ink: {
           DEFAULT: '#0f1729',
