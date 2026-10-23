@@ -11,6 +11,8 @@ await out(`${img}/profile.jpg`, 'profile-480.webp', 480);
 await out(`${img}/profile.jpg`, 'profile-900.webp', 900);
 await out(`${img}/about.jpg`, 'about-420.webp', 420);
 await out(`${img}/about.jpg`, 'about-675.webp', 675);
+await out(`${img}/founder.jpg`, 'founder-420.webp', 420);
+await out(`${img}/founder.jpg`, 'founder-675.webp', 675);
 await out(`${img}/phd-thesis.png`, 'phd-thesis-640.webp', 640);
 await out(`${img}/phd-thesis.png`, 'phd-thesis-112.webp', 112);
 // Favicon / app icons from an SVG monogram matching the header wordmark

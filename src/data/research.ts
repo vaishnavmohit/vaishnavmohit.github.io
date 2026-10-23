@@ -28,7 +28,7 @@ export const highlights: Highlight[] = [
   {
     date: '2026',
     title: 'Oral presentation at ACL 2026',
-    detail: '“Symbolic Grounding Reveals Representational Bottlenecks in Abstract Visual Reasoning” (CoNLL 2026).',
+    detail: '“Symbolic Grounding Reveals Representational Bottlenecks in Abstract Visual Reasoning” (CoNLL 2026, co-located with ACL 2026).',
     href: 'https://arxiv.org/abs/2604.21346',
   },
   {

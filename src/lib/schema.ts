@@ -71,6 +71,9 @@ export function organizationNode(): Node {
     },
     address: { '@type': 'PostalAddress', ...c.address },
     founder: [{ '@id': PERSON_ID }, { '@type': 'Person', name: 'Krishna Vaishnav' }],
+    slogan: 'Your agentic AI co-auditor for ISO, SOC 2 and privacy audits',
+    award: ['Google Cloud Startup Program (2024)', 'Tehnopol AI Accelerator (2026)'],
+    subjectOf: { '@id': `${site.url}/founder/#webpage` },
     employee: { '@id': PERSON_ID },
     identifier: {
       '@type': 'PropertyValue',
@@ -104,7 +107,7 @@ export function personNode(): Node {
     mainEntityOfPage: `${site.url}/`,
     image: [
       imageObject(site.portraitSquare, 800, 800, 'Dr. Mohit Vaishnav'),
-      imageObject(site.portrait, 900, 846, 'Dr. Mohit Vaishnav'),
+      imageObject(site.portrait, 900, 1125, 'Dr. Mohit Vaishnav'),
       imageObject(site.ogImage, 1200, 630, 'Dr. Mohit Vaishnav — Co-founder & CEO, Kimova AI'),
     ],
     description: site.bio,
@@ -114,7 +117,7 @@ export function personNode(): Node {
         '@type': 'Occupation',
         name: 'Chief Executive Officer',
         occupationLocation: { '@type': 'City', name: 'Tallinn' },
-        skills: 'Artificial intelligence, cybersecurity compliance automation, product strategy',
+        skills: 'Artificial intelligence, AI audit and compliance automation (ISO 27001, SOC 2), product strategy',
       },
       {
         '@type': 'Occupation',
@@ -141,7 +144,7 @@ export function personNode(): Node {
     knowsAbout: [
       'Artificial Intelligence', 'Machine Learning', 'Computer Vision', 'Deep Learning',
       'Cognitive AI', 'Visual Reasoning', 'Vision-Language Models', 'Transformer Architecture',
-      'Cybersecurity Compliance', 'ISO 27001', 'Enterprise AI',
+      'Cybersecurity Compliance', 'ISO 27001', 'SOC 2', 'Enterprise AI',
     ],
     knowsLanguage: 'en',
     award: awards.map((a) => a.title),
@@ -178,6 +181,7 @@ const SECTION_TITLES: Record<string, string> = {
   about: 'About',
   experience: 'Experience',
   research: 'Research',
+  founder: 'Founder',
   blog: 'Blog',
   contact: 'Contact',
   'phd-thesis': 'PhD Thesis',
@@ -223,6 +227,11 @@ export function pageNode(opts: {
     primaryImageOfPage: { '@id': `${abs(opts.image)}#image` },
     breadcrumb: { '@id': `${url}#breadcrumb` },
   };
+  // The Founder page is about the company as much as the person.
+  if (opts.pathname.replace(/\/$/, '') === '/founder') {
+    n.about = [{ '@id': PERSON_ID }, { '@id': ORG_ID }];
+    n.mainEntity = { '@id': ORG_ID };
+  }
   if (opts.pageType === 'ProfilePage') {
     n.mainEntity = { '@id': PERSON_ID };
     n.dateModified = pubData.meta.lastSynced;

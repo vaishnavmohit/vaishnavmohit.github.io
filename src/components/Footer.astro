@@ -22,7 +22,7 @@ const social = socials.filter((s) => s.id !== 'email');
     <nav aria-label="Footer">
       <p class="text-xs font-semibold uppercase tracking-wider text-ink-faint">Explore</p>
       <ul class="mt-3 space-y-2 text-sm">
-        {nav.map((item) => (
+        {[...nav, { label: 'Experience', href: '/experience' }, { label: 'PhD thesis', href: '/phd-thesis' }].map((item) => (
           <li><a href={item.href} class="text-ink-soft hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-300">{item.label}</a></li>
         ))}
       </ul>

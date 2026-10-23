@@ -5,25 +5,49 @@ import Icon from '@components/Icon.astro';
 import { site, socials, identityLinks } from '@data/site';
 import { awards } from '@data/experience';
 
-const philosophy = [
-  { title: 'Innovation-driven', body: 'Building AI that solves real problems — bridging frontier research and practical business value.' },
-  { title: 'Human-centered AI', body: 'Systems that augment human capability rather than replace it, so technology serves people first.' },
-  { title: 'Global impact', body: 'Scalable solutions that cross borders, making advanced AI accessible to organizations everywhere.' },
+// Quick facts shown under the intro.
+const facts = [
+  { label: 'Now', value: 'Co-founder & CEO, Kimova AI · Postdoc, TalTech' },
+  { label: 'Based in', value: 'Tallinn, Estonia' },
+  { label: 'PhD', value: 'Brown University / ANITI · Université Toulouse III, 2023' },
+  { label: 'Research', value: 'Vision-language models, visual reasoning, attention & memory' },
+  { label: 'Building', value: 'Agentic AI co-auditor for ISO, SOC 2 & privacy audits' },
+  { label: 'Worked across', value: '10+ countries in Asia, Europe and the US' },
 ];
+
+const principles = [
+  {
+    title: 'Evidence before claims',
+    body: 'My research asks whether a model really reasoned or only matched a pattern. The same standard applies to an AI audit: every finding should trace back to evidence.',
+  },
+  {
+    title: 'From paper to product',
+    body: 'Ideas earn their place by working in the real world — benchmarks and diagnostics in the lab, then systems customers rely on at Kimova.',
+  },
+  {
+    title: 'Built across borders',
+    body: 'Studying and working across India, Europe and the US taught me to build with diverse teams, for customers in any market.',
+  },
+];
+
+const featured = awards.find((a) => a.featured);
+const startYear = (y: string) => Number(y.match(/\d{4}/)?.[0] ?? 0);
+const otherAwards = awards.filter((a) => a !== featured).sort((a, b) => startYear(b.year) - startYear(a.year));
+
 const social = socials.filter((s) => s.id !== 'email');
 const description =
-  'About Dr. Mohit Vaishnav — Co-founder & CEO of Kimova AI in Tallinn, postdoc at TalTech, PhD in cognitive AI and visual reasoning (Toulouse III, Brown, ANITI).';
+  'About Dr. Mohit Vaishnav — Co-founder & CEO of Kimova AI in Tallinn, postdoc at TalTech, PhD in cognitive AI and visual reasoning (Toulouse III, Brown, ANITI). GYSS 2027 participant.';
 ---
 <Base title="About" description={description} pageType="ProfilePage" image={site.ogImage}>
   <section class="container-page py-16 sm:py-20">
-    <div class="grid items-start gap-12 md:grid-cols-[1fr_1.6fr]">
-      <div class="md:sticky md:top-24">
+    <div class="grid items-start gap-10 md:grid-cols-[1fr_1.6fr] md:gap-12">
+      <div class="mx-auto w-full max-w-[16rem] md:sticky md:top-24 md:max-w-none">
         <picture>
-          <source type="image/webp" srcset="/img/about-420.webp 420w, /img/about-675.webp 675w" sizes="(min-width: 768px) 30vw, 90vw" />
+          <source type="image/webp" srcset="/img/about-420.webp 420w, /img/about-675.webp 675w" sizes="(min-width: 768px) 30vw, 256px" />
           <img src="/img/about.jpg" alt="Dr. Mohit Vaishnav" width="420" height="525" fetchpriority="high" decoding="async"
             class="aspect-[4/5] w-full rounded-3xl border border-slate-200 object-cover object-top shadow-xl dark:border-slate-800" />
         </picture>
-        <div class="mt-5 flex gap-3">
+        <div class="mt-5 flex justify-center gap-3 md:justify-start">
           {social.map((s) => (
             <a href={s.href} target="_blank" rel="me noopener" aria-label={s.label}
               class="rounded-full border border-slate-200 p-2.5 text-ink-faint transition-colors hover:border-brand-400 hover:text-brand-600 dark:border-slate-700 dark:text-slate-400 dark:hover:text-brand-300">
@@ -36,64 +60,86 @@ const description =
       <div>
         <p class="eyebrow">About</p>
         <h1 class="mt-2 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl dark:text-white">
-          From cognitive science to shipping AI products
+          Scientist by training, founder by choice
         </h1>
         <div class="prose-portfolio mt-6 space-y-4 text-lg text-ink-soft dark:text-slate-400">
           <p>
             I'm <strong class="text-ink dark:text-white">Dr. Mohit Vaishnav</strong>, Co-founder and CEO of
-            <a href={site.company.url} target="_blank" rel="noopener" class="link-underline">Kimova AI</a>.
-            We're reimagining cybersecurity compliance — our platform automates complex ISO&nbsp;27001 audit
-            processes, cutting audit time dramatically while holding enterprise-grade standards.
+            <a href={site.company.url} target="_blank" rel="noopener" class="link-underline">Kimova AI</a>
+            in Tallinn, where we build an agentic AI co-auditor for ISO, SOC&nbsp;2 and privacy audits.
           </p>
           <p>
-            Before founding Kimova, I spent years at the frontier of AI research. My PhD at
-            <strong class="text-ink dark:text-white"> Brown University</strong> and
-            <strong class="text-ink dark:text-white"> ANITI</strong> (one of France's flagship AI institutes)
-            explored how attention and memory drive reasoning in both brains and machines — published at
-            NeurIPS, ICLR and Neural Computation. I've since carried that into applied roles at
-            TalTech, Sandvik and the German Research Center for AI (DFKI).
+            Alongside the company, I'm a postdoctoral researcher in TalTech's Applied Artificial Intelligence
+            Group, asking whether vision-language models really <em>reason</em> or only pattern-match. Recent
+            work appeared in <strong class="text-ink dark:text-white">TMLR</strong> (J2C at NeurIPS 2026) and at
+            <strong class="text-ink dark:text-white">CoNLL 2026</strong>, with an oral presentation at ACL 2026.
           </p>
           <p>
-            That dual lens — rigorous science plus a builder's bias for shipping — is how I approach
-            everything. I've worked across <strong class="text-ink dark:text-white">10+ countries</strong>,
-            ranked top-5 of 3000+ in a global Kaggle AI challenge, and I care most about AI that earns
-            real-world trust.
+            My PhD at Brown University's Serre Lab and ANITI, awarded by Université Toulouse III, studied how
+            attention and memory drive reasoning in brains and machines, with papers at NeurIPS, ICLR and
+            Neural Computation. Before that came an Erasmus Mundus master's across the UK, France and Spain, and
+            an engineering degree in India, where I published my first papers at the IEEE Data Compression
+            Conference as an undergraduate. I've also held applied AI roles at Sandvik, DFKI and WeDiagnostiX.
           </p>
         </div>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="/contact" class="btn-primary">Get in touch</a>
           <a href={site.cvUrl} target="_blank" rel="noopener" class="btn-ghost">Download CV <Icon name="external" class="h-4 w-4" /></a>
-          <a href="/experience" class="btn-ghost">My journey <Icon name="arrow" class="h-4 w-4" /></a>
+          <a href="/research" class="btn-ghost">Research <Icon name="arrow" class="h-4 w-4" /></a>
+          <a href="/experience" class="btn-ghost">Experience <Icon name="arrow" class="h-4 w-4" /></a>
         </div>
 
-        <!-- Canonical short bio (kept identical across all profiles) -->
-        <div class="mt-10 rounded-2xl border border-slate-200 bg-slate-50/60 p-5 dark:border-slate-800 dark:bg-slate-900/30">
-          <p class="text-xs font-semibold uppercase tracking-wider text-ink-faint">In brief</p>
-          <p class="mt-2 text-sm text-ink-soft dark:text-slate-400">{site.bio}</p>
-        </div>
-
-        <!-- Elsewhere: reciprocal identity links -->
-        <div class="mt-6">
-          <p class="text-xs font-semibold uppercase tracking-wider text-ink-faint">Elsewhere</p>
-          <ul class="mt-2 flex flex-wrap gap-x-4 gap-y-1.5 text-sm">
-            {identityLinks.map((l) => (
-              <li>
-                <a href={l.href} target="_blank" rel="me noopener" class="inline-flex items-center gap-1 font-medium link-underline">
-                  {l.label} <Icon name="external" class="h-3 w-3" />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <!-- At a glance -->
+        <dl class="mt-10 grid gap-x-8 gap-y-4 border-t border-slate-200 pt-8 sm:grid-cols-2 dark:border-slate-800">
+          {facts.map((f) => (
+            <div>
+              <dt class="text-xs font-semibold uppercase tracking-wider text-ink-faint">{f.label}</dt>
+              <dd class="mt-1 text-sm font-medium text-ink dark:text-slate-200">{f.value}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </div>
   </section>
 
-  <!-- Philosophy -->
-  <Section eyebrow="How I work" title="Leadership philosophy" class="border-t border-slate-200 dark:border-slate-800">
+  <!-- Recognition -->
+  <Section eyebrow="Recognition" title="Awards & honors" id="awards" class="border-t border-slate-200 dark:border-slate-800">
+    {featured && (
+      <a href={featured.href} target="_blank" rel="noopener"
+        class="group mb-6 flex flex-col gap-5 rounded-2xl border border-accent-200 bg-gradient-to-br from-accent-50 via-white to-brand-50 p-6 transition-colors hover:border-accent-400 sm:flex-row sm:p-8 dark:border-accent-500/30 dark:from-accent-500/10 dark:via-transparent dark:to-brand-500/10">
+        <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-accent-600 text-white">
+          <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 13.9 7 22l5-3 5 3-1.5-8.1"/></svg>
+        </span>
+        <span class="min-w-0">
+          <span class="block text-xs font-semibold uppercase tracking-wider text-accent-700 dark:text-accent-300">{featured.year} · {featured.tags[0]}</span>
+          <span class="mt-1 block font-display text-xl font-bold text-ink sm:text-2xl dark:text-white">{featured.title}</span>
+          <span class="mt-1 block text-sm font-medium text-brand-600 dark:text-brand-300">{featured.org}</span>
+          <span class="mt-3 block max-w-3xl text-ink-soft dark:text-slate-400">{featured.description}</span>
+          <span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-accent-700 group-hover:underline dark:text-accent-300">About GYSS <Icon name="external" class="h-3.5 w-3.5" /></span>
+        </span>
+      </a>
+    )}
+    <div class="grid gap-5 md:grid-cols-2">
+      {otherAwards.map((a) => (
+        <div class="card flex gap-4">
+          <div class="w-20 shrink-0 font-display text-sm font-bold text-accent-600 dark:text-accent-400">{a.year}</div>
+          <div>
+            <h3 class="font-semibold text-ink dark:text-white">
+              {a.href ? <a href={a.href} target="_blank" rel="noopener" class="hover:text-brand-600 hover:underline dark:hover:text-brand-300">{a.title}</a> : a.title}
+            </h3>
+            <p class="text-sm font-medium text-brand-600 dark:text-brand-300">{a.org}</p>
+            <p class="mt-1.5 text-sm text-ink-soft dark:text-slate-400">{a.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- Principles -->
+  <Section eyebrow="How I work" title="What carries over from lab to company" class="border-t border-slate-200 dark:border-slate-800">
     <div class="grid gap-6 md:grid-cols-3">
-      {philosophy.map((p) => (
-        <div class="card card-hover">
+      {principles.map((p) => (
+        <div class="card">
           <h3 class="font-display text-lg font-bold text-ink dark:text-white">{p.title}</h3>
           <p class="mt-2 text-sm text-ink-soft dark:text-slate-400">{p.body}</p>
         </div>
@@ -101,19 +147,25 @@ const description =
     </div>
   </Section>
 
-  <!-- Awards -->
-  <Section eyebrow="Recognition" title="Awards & honors" id="awards">
-    <div class="grid gap-5 md:grid-cols-2">
-      {awards.map((a) => (
-        <div class="card flex gap-4">
-          <div class="shrink-0 font-display text-sm font-bold text-accent-500">{a.year}</div>
-          <div>
-            <h3 class="font-semibold text-ink dark:text-white">{a.title}</h3>
-            <p class="text-sm font-medium text-brand-600 dark:text-brand-300">{a.org}</p>
-            <p class="mt-1.5 text-sm text-ink-soft dark:text-slate-400">{a.description}</p>
-          </div>
-        </div>
-      ))}
+  <!-- Identity: canonical bio + profiles -->
+  <Section class="border-t border-slate-200 dark:border-slate-800">
+    <div class="grid gap-8 md:grid-cols-[1.6fr_1fr]">
+      <div class="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 dark:border-slate-800 dark:bg-slate-900/30">
+        <p class="text-xs font-semibold uppercase tracking-wider text-ink-faint">Short bio · free to reuse</p>
+        <p class="mt-3 text-sm leading-relaxed text-ink-soft dark:text-slate-400">{site.bio}</p>
+      </div>
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wider text-ink-faint">Elsewhere</p>
+        <ul class="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+          {identityLinks.map((l) => (
+            <li>
+              <a href={l.href} target="_blank" rel="me noopener" class="inline-flex items-center gap-1 font-medium link-underline">
+                {l.label} <Icon name="external" class="h-3 w-3" />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </Section>
 </Base>

@@ -1,0 +1,137 @@
+---
+import Base from '@layouts/Base.astro';
+import Section from '@components/Section.astro';
+import Icon from '@components/Icon.astro';
+import { site } from '@data/site';
+
+const c = site.company;
+const registryUrl = `https://ariregister.rik.ee/eng/company/${c.registryCode}`;
+
+const facts = [
+  { label: 'Company', value: `${c.legalName} · Tallinn, Estonia` },
+  { label: 'Founded', value: 'May 2024' },
+  { label: 'My role', value: 'Co-founder & CEO' },
+  { label: 'Co-founder', value: 'Krishna Vaishnav' },
+];
+
+// What the product covers (mirrors kimova.ai's product menu).
+const cycle = ['Audit planning', 'Evidence review', 'Conducting the audit', 'Corrective actions (CAPA)', 'Audit report'];
+
+const audiences = [
+  { title: 'Audit firms', body: 'A workspace per client, with the same frameworks, templates and label sets reused across engagements. The auditor owns the report and the client relationship.' },
+  { title: 'In-house compliance & GRC', body: 'Teams preparing for certification keep evidence, controls and corrective actions in one place, ready for the auditor.' },
+];
+const frameworks = ['ISO 27001', 'SOC 2 Type II', 'ISO 42001', 'ISO 27701', 'ISO 9001'];
+
+// Newest first.
+const milestones = [
+  { date: '2026', title: 'Selected for the Tehnopol AI Accelerator', body: 'Next cohort of the six-month programme at Tehnopol Science and Business Park, Tallinn — eight companies per round.', href: 'https://www.tehnopol.ee/en/accelerator/the-ai-accelerator/' },
+  { date: '2024', title: 'Google Cloud Startup Program', body: 'Kimova AI accepted, with infrastructure, technical support and guidance to scale.' },
+  { date: 'May 2024', title: 'KIMOVA AI OÜ founded in Tallinn', body: `Registered in the Estonian e-Business Register (code ${c.registryCode}).`, href: registryUrl },
+  { date: '2016 — 2017', title: 'First startup: Kevin Technology', body: 'Co-founded a computer-vision surveillance startup in Ajmer, India — before the PhD.' },
+];
+
+const description =
+  'Dr. Mohit Vaishnav is Co-founder & CEO of Kimova AI (KIMOVA AI OÜ, Tallinn, founded 2024), an agentic AI co-auditor for ISO, SOC 2 and privacy audits.';
+---
+<Base title="Founder — Kimova AI" description={description} pageType="AboutPage" image="/img/founder.jpg">
+  <section class="container-page py-16 sm:py-20">
+    <div class="grid items-center gap-10 md:grid-cols-[1.6fr_1fr] md:gap-14">
+      <div>
+        <p class="eyebrow">Founder</p>
+        <h1 class="mt-2 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl dark:text-white">
+          Building <a href={c.url} target="_blank" rel="noopener" class="text-brand-600 hover:underline dark:text-brand-400">Kimova AI</a>
+        </h1>
+        <p class="mt-5 max-w-2xl text-lg text-ink-soft dark:text-slate-400">
+          Kimova AI is an <strong class="text-ink dark:text-white">agentic AI co-auditor for ISO, SOC&nbsp;2 and privacy audits</strong>.
+          I co-founded it in Tallinn in 2024 and lead it as CEO, bringing a decade of AI research into a product that
+          auditors and compliance teams can trust with real evidence.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href={c.url} target="_blank" rel="noopener" class="btn-primary">Visit kimova.ai <Icon name="external" class="h-4 w-4" /></a>
+          <a href="/contact" class="btn-ghost">Talk to me about Kimova</a>
+        </div>
+        <dl class="mt-10 grid gap-x-8 gap-y-4 border-t border-slate-200 pt-8 sm:grid-cols-2 dark:border-slate-800">
+          {facts.map((f) => (
+            <div>
+              <dt class="text-xs font-semibold uppercase tracking-wider text-ink-faint">{f.label}</dt>
+              <dd class="mt-1 text-sm font-medium text-ink dark:text-slate-200">{f.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <div class="mx-auto w-full max-w-[16rem] md:max-w-none">
+        <picture>
+          <source type="image/webp" srcset="/img/founder-420.webp 420w, /img/founder-675.webp 675w" sizes="(min-width: 768px) 30vw, 256px" />
+          <img src="/img/founder.jpg" alt="Dr. Mohit Vaishnav, Co-founder & CEO of Kimova AI" width="420" height="525" fetchpriority="high" decoding="async"
+            class="aspect-[4/5] w-full rounded-3xl border border-slate-200 object-cover shadow-xl dark:border-slate-800" />
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Kimova does -->
+  <Section eyebrow="The product" title="One co-auditor across the whole audit" class="border-t border-slate-200 dark:border-slate-800">
+    <ol class="flex flex-wrap items-center gap-2">
+      {cycle.map((step, i) => (
+        <li class="flex items-center gap-2">
+          <span class="rounded-full border border-brand-200 bg-brand-50 px-3.5 py-1.5 text-sm font-medium text-brand-700 dark:border-brand-800 dark:bg-brand-500/10 dark:text-brand-300">{step}</span>
+          {i < cycle.length - 1 && <Icon name="arrow" class="h-4 w-4 text-ink-faint" />}
+        </li>
+      ))}
+    </ol>
+    <p class="mt-6 text-sm text-ink-faint">
+      Frameworks: {frameworks.join(' · ')} — or any framework you bring.
+    </p>
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      {audiences.map((a) => (
+        <div class="card">
+          <h3 class="font-display text-lg font-bold text-ink dark:text-white">{a.title}</h3>
+          <p class="mt-2 text-sm text-ink-soft dark:text-slate-400">{a.body}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- Why -->
+  <Section eyebrow="Why I started it" title="From being right to being useful" class="border-t border-slate-200 dark:border-slate-800">
+    <div class="grid gap-10 md:grid-cols-[1.6fr_1fr]">
+      <div class="prose-portfolio space-y-4">
+        <p>
+          Research rewards being <em>right</em>: a result that holds up under scrutiny. A company rewards being
+          <em>useful</em>: something a customer relies on tomorrow morning. Audits demand both — every finding
+          has to be correct, defensible and fast.
+        </p>
+        <p>
+          My research asks whether an AI model actually reasoned over what it saw, or only matched a pattern.
+          That is the question an auditor asks of AI too. Kimova is built around it: the co-auditor works from
+          the organisation's real evidence, and its findings point back to it.
+        </p>
+      </div>
+      <a href="/research" class="card card-hover self-start">
+        <p class="eyebrow">The research side</p>
+        <p class="mt-2 font-display text-lg font-bold text-ink dark:text-white">Seeing vs. reasoning in AI</p>
+        <p class="mt-2 text-sm text-ink-soft dark:text-slate-400">Postdoctoral research at TalTech — TMLR (J2C at NeurIPS 2026), CoNLL 2026 (oral at ACL 2026).</p>
+        <span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-brand-600 dark:text-brand-300">Research <Icon name="arrow" class="h-4 w-4" /></span>
+      </a>
+    </div>
+  </Section>
+
+  <!-- Milestones -->
+  <Section eyebrow="Milestones" title="The founder track" class="border-t border-slate-200 dark:border-slate-800">
+    <ol class="space-y-4 border-l-2 border-slate-200 pl-6 dark:border-slate-800">
+      {milestones.map((m, i) => (
+        <li class="relative">
+          <span class:list={['absolute -left-[1.95rem] top-6 h-3 w-3 rounded-full ring-4 ring-white dark:ring-[#080c18]', i === 0 ? 'bg-signal-500' : 'bg-accent-500']}></span>
+          <div class="card">
+            <p class="text-xs font-semibold uppercase tracking-wider text-ink-faint">{m.date}</p>
+            <h3 class="mt-1 font-display text-lg font-bold text-ink dark:text-white">
+              {m.href ? <a href={m.href} target="_blank" rel="noopener" class="hover:text-brand-600 hover:underline dark:hover:text-brand-300">{m.title}</a> : m.title}
+            </h3>
+            <p class="mt-1.5 text-sm text-ink-soft dark:text-slate-400">{m.body}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </Section>
+</Base>

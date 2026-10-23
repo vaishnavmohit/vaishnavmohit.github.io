@@ -202,7 +202,7 @@ src/
   data/            ← edit these to update the site (site, experience, publications)
   components/       ← reusable UI (Header, Footer, cards, SEO/meta, icons)
   layouts/Base.astro ← the page shell (head, nav, footer) used by every page
-  pages/            ← one file = one route (index, about, research, experience, blog, contact)
+  pages/            ← one file = one route (index, founder, research, about, experience, blog, contact)
   content/blog/     ← Markdown blog posts
   styles/global.css ← Tailwind layer + design tokens
 public/             ← static files served as-is (images, robots.txt, favicon)

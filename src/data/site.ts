@@ -17,15 +17,15 @@ export const site = {
   // Shorter role used in the <title> (Google shows ~60 characters)
   titleRole: 'CEO, Kimova AI · AI Researcher',
   // One-line value proposition shown in the hero
-  tagline: 'AI researcher turned founder — building intelligent automation for cybersecurity compliance.',
+  tagline: 'AI researcher and founder — building Kimova AI, the agentic AI co-auditor for ISO, SOC 2 and privacy audits.',
   // Meta description for the home page (keep under ~155 characters)
   description:
-    'Dr. Mohit Vaishnav — Co-founder & CEO of Kimova AI (AI-powered ISO 27001 audits), AI researcher at TalTech. PhD in cognitive AI; NeurIPS and ICLR author.',
+    'Dr. Mohit Vaishnav — Co-founder & CEO of Kimova AI, an agentic AI co-auditor for ISO and SOC 2 audits, and AI researcher at TalTech (PhD, Brown / ANITI).',
   // Canonical biography — paste this VERBATIM on every profile (LinkedIn,
   // ORCID, Scholar, Crunchbase, Wikidata description…). Consistent wording
   // across the web is one of the strongest entity signals for Google.
   bio:
-    'Dr. Mohit Vaishnav is the Co-founder & CEO of Kimova AI, a Tallinn-based company that automates ISO 27001 cybersecurity audits with AI, and a postdoctoral researcher in the Applied Artificial Intelligence Group at Tallinn University of Technology (TalTech). He earned his PhD in computer science (cognitive AI and visual reasoning) from Université Toulouse III, with research conducted at Brown University\'s Serre Lab and ANITI under Thomas Serre and Nicholas Asher. His work on visual reasoning, attention and vision-language models has been published at NeurIPS, ICLR and in Neural Computation.',
+    'Dr. Mohit Vaishnav is the Co-founder & CEO of Kimova AI, a Tallinn-based company building an agentic AI co-auditor for ISO, SOC 2 and privacy audits, and a postdoctoral researcher in the Applied Artificial Intelligence Group at Tallinn University of Technology (TalTech). He earned his PhD in computer science (cognitive AI and visual reasoning) from Université Toulouse III, with research conducted at Brown University\'s Serre Lab and ANITI under Thomas Serre and Nicholas Asher. His work on visual reasoning, attention and vision-language models has been published at NeurIPS, ICLR, TMLR and CoNLL and in Neural Computation.',
   url: 'https://vaishnavmohit.github.io',
   // Your email is NOT rendered anywhere on the site (to avoid scrapers/spam).
   // The contact form delivers messages to the inbox tied to your Web3Forms key.
@@ -35,7 +35,7 @@ export const site = {
     name: 'Kimova AI',
     legalName: 'KIMOVA AI OÜ',
     url: 'https://kimova.ai',
-    description: 'AI-powered ISO 27001 cybersecurity compliance automation.',
+    description: 'Agentic AI co-auditor for ISO, SOC 2 and privacy audits.',
     // From the Estonian e-Business Register (ariregister.rik.ee)
     registryCode: '16986492',
     foundingDate: '2024-05-13',
@@ -85,7 +85,7 @@ export const site = {
 
   keywords: [
     'Mohit Vaishnav', 'AI Entrepreneur', 'Kimova AI', 'Cybersecurity AI',
-    'ISO 27001', 'Computer Vision', 'Deep Learning', 'Visual Reasoning',
+    'ISO 27001', 'SOC 2', 'AI audit', 'Computer Vision', 'Deep Learning', 'Visual Reasoning',
     'Brown University', 'ANITI', 'Cognitive AI', 'Vision-Language Models',
     'NeurIPS', 'ICLR', 'AI CEO',
   ],
@@ -108,12 +108,12 @@ export const identifiers = {
 };
 
 // Order here = order in the navbar.
+// Blog is left out until it has posts; Experience is linked from About + footer.
 export const nav = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Experience', href: '/experience' },
+  { label: 'Founder', href: '/founder' },
   { label: 'Research', href: '/research' },
-  { label: 'Blog', href: '/blog' },
+  { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -245,10 +245,10 @@ export const university = {
   address: { addressLocality: 'Tallinn', addressCountry: 'EE' },
 };
 
-// Headline metrics shown on Home + About.
+// Proof strip on Home — only claims a visitor can verify by following the link.
 export const stats = [
-  { value: 'Top 5', label: 'Kaggle global rank', detail: 'of 3000+ — Half-Earth Challenge', link: site.kaggleUrl },
-  { value: '15+', label: 'Publications', detail: 'NeurIPS · ICLR · Neural Computation', link: '/research' },
-  { value: '10+', label: 'Countries', detail: 'research & work experience', link: '' },
-  { value: 'PhD', label: 'Brown University / ANITI', detail: 'Cognitive AI & visual reasoning', link: '/about' },
+  { value: 'NeurIPS', label: 'ICLR · TMLR · ACL', detail: 'Peer-reviewed publications', link: '/research' },
+  { value: 'Google Cloud', label: 'Startup Program · 2024', detail: 'Kimova AI selected', link: '/founder' },
+  { value: 'Tehnopol', label: 'AI Accelerator · 2026', detail: 'Kimova AI selected', link: '/founder' },
+  { value: 'PhD', label: 'Brown University / ANITI', detail: 'Université Toulouse III, 2023', link: '/phd-thesis' },
 ];

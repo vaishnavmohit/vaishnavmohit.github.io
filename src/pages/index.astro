@@ -4,12 +4,29 @@ import Section from '@components/Section.astro';
 import PubCard from '@components/PubCard.astro';
 import Icon from '@components/Icon.astro';
 import { site, socials, stats } from '@data/site';
-import { experience } from '@data/experience';
+import { awards } from '@data/experience';
 import pubData from '@data/publications.json';
 
 const heroSocials = socials.filter((s) => s.primary);
+const featuredAward = awards.find((a) => a.featured);
 const featuredPubs = pubData.publications.filter((p) => p.featured).slice(0, 3);
-const currentRoles = experience.filter((r) => r.current);
+
+const doors = [
+  {
+    href: '/founder', label: 'Founder', badge: 'bg-accent-50 text-accent-700 dark:bg-accent-500/10 dark:text-accent-300',
+    title: 'Kimova AI', role: 'Co-founder & CEO · Tallinn, since 2024',
+    body: 'An agentic AI co-auditor for ISO, SOC 2 and privacy audits, for audit firms and in-house compliance teams.',
+    points: ['Selected for the Tehnopol AI Accelerator (2026)', 'Google Cloud Startup Program (2024)'],
+    cta: 'The founder story',
+  },
+  {
+    href: '/research', label: 'Researcher', badge: 'bg-brand-50 text-brand-700 dark:bg-brand-500/10 dark:text-brand-300',
+    title: 'Seeing vs. reasoning in AI', role: 'Postdoctoral Researcher · TalTech',
+    body: 'Do vision-language models reason, or only pattern-match? I build diagnostics and benchmarks that tell the two apart.',
+    points: ['TMLR 2026 · J2C at NeurIPS 2026', 'CoNLL 2026 · Oral presentation at ACL 2026'],
+    cta: 'Research & publications',
+  },
+];
 ---
 <Base pageType="ProfilePage">
   <!-- HERO -->
@@ -22,17 +39,22 @@ const currentRoles = experience.filter((r) => r.current);
       <div class="animate-fade-up">
         <p class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-ink-soft dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-300">
           <span class="h-2 w-2 rounded-full bg-signal-500"></span>
-          Building <a href={site.company.url} class="font-semibold text-brand-600 dark:text-brand-300" target="_blank" rel="noopener">Kimova AI</a> · AI for cybersecurity compliance
+          <span>Co-founder &amp; CEO, <a href={site.company.url} class="font-semibold text-brand-600 dark:text-brand-300" target="_blank" rel="noopener">Kimova AI</a><span class="hidden sm:inline"> · Postdoctoral researcher, TalTech</span></span>
         </p>
         <h1 class="mt-5 font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl dark:text-white">
-          AI researcher,<br /><span class="text-brand-600 dark:text-brand-400">turned founder.</span>
+          Dr. Mohit Vaishnav
         </h1>
-        <p class="mt-6 max-w-xl text-lg text-ink-soft dark:text-slate-400">
-          I'm <strong class="font-semibold text-ink dark:text-white">Dr. Mohit Vaishnav</strong> — Co-founder & CEO of Kimova AI, where we're automating cybersecurity compliance with AI. I bring a PhD in cognitive AI and visual reasoning from Brown University &amp; ANITI to building products that turn frontier research into real-world impact.
+        <p class="mt-4 font-display text-2xl font-semibold leading-snug text-brand-600 sm:text-3xl dark:text-brand-400">
+          AI researcher and founder.
+        </p>
+        <p class="mt-5 max-w-xl text-lg text-ink-soft dark:text-slate-400">
+          I build <strong class="font-semibold text-ink dark:text-white">Kimova AI</strong>, an agentic AI co-auditor for
+          ISO, SOC&nbsp;2 and privacy audits, and at TalTech I research how vision-language models perceive and reason.
+          PhD from Brown University &amp; ANITI.
         </p>
         <div class="mt-8 flex flex-wrap items-center gap-3">
-          <a href="/contact" class="btn-primary">Let's work together <Icon name="arrow" class="h-4 w-4" /></a>
-          <a href="/research" class="btn-ghost">View research</a>
+          <a href="/founder" class="btn-primary">Founder — Kimova AI <Icon name="arrow" class="h-4 w-4" /></a>
+          <a href="/research" class="btn-ghost">Research <Icon name="arrow" class="h-4 w-4" /></a>
         </div>
         <div class="mt-8 flex items-center gap-3">
           {heroSocials.map((s) => (
@@ -69,7 +91,7 @@ const currentRoles = experience.filter((r) => r.current);
             rel={ext ? 'noopener' : undefined}
             class:list={['block', s.link && 'group transition-opacity hover:opacity-80']}
           >
-            <p class="font-display text-3xl font-bold text-brand-600 dark:text-brand-400">{s.value}</p>
+            <p class="font-display text-2xl font-bold text-brand-600 lg:text-3xl dark:text-brand-400">{s.value}</p>
             <p class="mt-1 text-sm font-medium text-ink group-hover:underline dark:text-slate-200">{s.label}</p>
             <p class="text-xs text-ink-faint dark:text-slate-400">{s.detail}</p>
           </Tag>
@@ -78,18 +100,40 @@ const currentRoles = experience.filter((r) => r.current);
     </div>
   </section>
 
+  <!-- FEATURED RECOGNITION -->
+  {featuredAward && (
+    <section class="container-page pt-10">
+      <a href="/about#awards"
+        class="group flex flex-col gap-4 rounded-2xl border border-accent-200 bg-gradient-to-r from-accent-50 via-white to-brand-50 p-5 transition-colors hover:border-accent-400 sm:flex-row sm:items-center sm:p-6 dark:border-accent-500/30 dark:from-accent-500/10 dark:via-transparent dark:to-brand-500/10">
+        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent-600 text-white">
+          <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 13.9 7 22l5-3 5 3-1.5-8.1"/></svg>
+        </span>
+        <span class="min-w-0 flex-1">
+          <span class="block text-xs font-semibold uppercase tracking-wider text-accent-700 dark:text-accent-300">Recognition · {featuredAward.year}</span>
+          <span class="mt-0.5 block font-display text-lg font-bold text-ink dark:text-white">{featuredAward.title}</span>
+          <span class="block text-sm text-ink-soft dark:text-slate-400">{featuredAward.org}</span>
+        </span>
+        <span class="inline-flex items-center gap-1 text-sm font-semibold text-accent-700 group-hover:underline dark:text-accent-300">All honors <Icon name="arrow" class="h-4 w-4" /></span>
+      </a>
+    </section>
+  )}
+
   <!-- WHAT I'M BUILDING -->
-  <Section eyebrow="What I'm doing now" title="Two worlds, one mission" lead="I split my time between scaling a company and pushing the science forward.">
+  <Section eyebrow="What I do" title="Two tracks, one question" lead="Can we trust what an AI concludes? I work on it as a scientist and build on it as a founder.">
     <div class="grid gap-6 md:grid-cols-2">
-      {currentRoles.map((r) => (
-        <div class="card card-hover">
-          <div class="flex items-center justify-between">
-            <span class="rounded-full bg-signal-500/10 px-2.5 py-1 text-xs font-semibold text-signal-600 dark:text-signal-400">Current · {r.period.split('—')[1]?.trim()}</span>
-          </div>
-          <h3 class="mt-3 font-display text-xl font-bold text-ink dark:text-white">{r.title}</h3>
-          <p class="text-sm font-medium text-brand-600 dark:text-brand-300">{r.org}</p>
-          <p class="mt-3 text-sm text-ink-soft dark:text-slate-400">{r.summary}</p>
-        </div>
+      {doors.map((d) => (
+        <a href={d.href} class="card card-hover group flex flex-col">
+          <span class:list={['self-start rounded-full px-2.5 py-1 text-xs font-semibold', d.badge]}>{d.label}</span>
+          <h3 class="mt-3 font-display text-2xl font-bold text-ink dark:text-white">{d.title}</h3>
+          <p class="text-sm font-medium text-brand-600 dark:text-brand-300">{d.role}</p>
+          <p class="mt-3 text-ink-soft dark:text-slate-400">{d.body}</p>
+          <ul class="mt-4 space-y-1.5">
+            {d.points.map((p) => (
+              <li class="flex gap-2 text-sm text-ink-soft dark:text-slate-400"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-500"></span>{p}</li>
+            ))}
+          </ul>
+          <span class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand-600 group-hover:underline dark:text-brand-300">{d.cta} <Icon name="arrow" class="h-4 w-4" /></span>
+        </a>
       ))}
     </div>
   </Section>
@@ -109,7 +153,7 @@ const currentRoles = experience.filter((r) => r.current);
     <div class="relative overflow-hidden rounded-3xl border border-brand-200 bg-gradient-to-br from-brand-600 to-brand-800 px-8 py-14 text-center dark:border-brand-800">
       <h2 class="font-display text-3xl font-bold text-white sm:text-4xl">Let's build the future of AI together</h2>
       <p class="mx-auto mt-4 max-w-2xl text-brand-100">
-        Whether it's AI solutions for compliance, research collaboration, investment, or speaking — I'd love to connect.
+        Whether it's Kimova for your audits, a research collaboration, investment or speaking — I'd love to connect.
       </p>
       <div class="mt-8 flex flex-wrap justify-center gap-3">
         <a href="/contact" class="btn bg-white text-brand-700 hover:bg-brand-50">Get in touch</a>

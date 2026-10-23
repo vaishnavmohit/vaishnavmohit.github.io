@@ -21,11 +21,12 @@ export const experience: Role[] = [
     period: '2024 — Present',
     current: true,
     summary:
-      'Pioneering AI-driven ISO auditing — transforming how organizations achieve and maintain cybersecurity compliance.',
+      'Building an agentic AI co-auditor for ISO, SOC 2 and privacy audits — for audit firms and in-house compliance teams.',
     points: [
-      'Revolutionizing ISO/IEC 27001:2022 compliance assessments with AI automation.',
+      'AI support across the audit cycle: planning, evidence review, conducting the audit, corrective actions and reporting.',
       'Lead product strategy, fundraising, partnerships and client engagements.',
       'Driving the roadmap from research-grade models to enterprise-ready product.',
+      'Selected for the next cohort of the Tehnopol AI Accelerator (Tallinn).',
     ],
     tags: ['Startup', 'AI/ML', 'Cybersecurity', 'Leadership'],
   },
@@ -160,6 +161,8 @@ export type Award = {
   org: string;
   description: string;
   tags: string[];
+  featured?: boolean; // shown as the lead card on About + the banner on Home
+  href?: string;
 };
 
 export const awards: Award[] = [
@@ -170,6 +173,17 @@ export const awards: Award[] = [
     description:
       'Selected among early-career researchers nominated worldwide to meet in Singapore (4–8 Jan 2027) for a week of talks and dialogue with Nobel, Fields Medal, Turing Award and Millennium Technology Prize laureates.',
     tags: ['International Selection'],
+    featured: true,
+    href: 'https://gyss.nrf.gov.sg/',
+  },
+  {
+    year: '2026',
+    title: 'Tehnopol AI Accelerator — Kimova AI selected',
+    org: 'Tehnopol Science and Business Park, Tallinn',
+    description:
+      'Kimova AI was selected for the next cohort of Tehnopol’s six-month AI Accelerator, one of eight companies chosen per round, under the AI Development Programme created with Estonia’s Ministry of Economic Affairs and Communications.',
+    tags: ['Startup Accelerator'],
+    href: 'https://www.tehnopol.ee/en/accelerator/the-ai-accelerator/',
   },
   {
     year: '2022',
@@ -192,7 +206,7 @@ export const awards: Award[] = [
     title: 'Arctic Code Vault Contributor',
     org: 'GitHub & Long Now Foundation',
     description:
-      'Selected contributor to GitHub’s 1,000-year preservation of critical open-source software.',
+      'Open-source contributions preserved in GitHub’s Arctic Code Vault, a 1,000-year archive of public software.',
     tags: ['Open Source'],
   },
   {
