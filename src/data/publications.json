@@ -2,8 +2,8 @@
   "meta": {
     "scholarId": "jGOzdbgAAAAJ",
     "scholarUrl": "https://scholar.google.com/citations?user=jGOzdbgAAAAJ",
-    "note": "Auto-seeded from Google Scholar, deduped + enriched with links/abstracts. Re-run `npm run sync:scholar` to refresh citation counts, or edit entries by hand.",
-    "lastSynced": "2026-06-07"
+    "note": "Curated from Google Scholar with links/abstracts. Citation counts are kept only to order papers within a year — they are not shown on the site. `npm run sync:scholar` pulls new papers into a side file.",
+    "lastSynced": "2026-10-23"
   },
   "publications": [
     {
@@ -17,7 +17,8 @@
       "links": {
         "arxiv": "https://arxiv.org/abs/2604.21346",
         "scholar": "https://scholar.google.com/citations?user=jGOzdbgAAAAJ"
-      }
+      },
+      "highlight": "Oral presentation at ACL 2026"
     },
     {
       "title": "Concept Cues Reshape Human Verification in Bongard-LOGO Visual Reasoning",
@@ -42,7 +43,7 @@
       "links": {
         "arxiv": "https://arxiv.org/abs/2507.07574"
       },
-      "highlight": "NeurIPS 2026 · Journal-to-Conference (J2C) track",
+      "highlight": "J2C at NeurIPS 2026",
       "abstract": "A linear probe on a VLM’s raw visual embeddings sets a diagnostic baseline that separates weak perception from weak reasoning on abstract tasks such as Bongard problems. Most models fall short of it; adding a contrastive objective to next-token training reorganises visual representations and lets models clearly surpass it."
     },
     {

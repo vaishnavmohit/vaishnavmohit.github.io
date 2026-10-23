@@ -1,7 +1,7 @@
 ---
 import { site, socials, nav } from '@data/site';
 import Icon from './Icon.astro';
-const year = 2026; // build-time constant; bump in src/components/Footer.astro yearly
+const year = new Date().getFullYear(); // set at build time
 const social = socials.filter((s) => s.id !== 'email');
 ---
 <footer class="mt-24 border-t border-slate-200 bg-slate-50/60 dark:border-slate-800 dark:bg-slate-900/30">

@@ -80,15 +80,15 @@ a captcha later from the Web3Forms dashboard.
 ## 3. Refresh publications from Google Scholar
 
 Your papers are already seeded in `src/data/publications.json` (curated, with
-links + abstracts). To pull fresh citation counts or new papers later:
+links + abstracts). Citation counts are not shown on the site (they change too
+often); they only order papers within a year. To pull new papers later:
 
 ```bash
 npm run sync:scholar
 ```
 
 This writes `src/data/publications.scholar-sync.json` (a safe side-file — it
-never overwrites your curated data). Open it, then copy any new citation counts
-or new papers into `src/data/publications.json` by hand. (Google Scholar has no
+never overwrites your curated data). Open it, then copy any new papers into `src/data/publications.json` by hand. (Google Scholar has no
 official API and sometimes shows a CAPTCHA — if so, just try again later.)
 
 ---

@@ -21,14 +21,14 @@ export const highlights: Highlight[] = [
   },
   {
     date: 'Dec 2026',
-    title: 'TMLR paper presented at NeurIPS 2026',
-    detail: '“Beyond the Linear Separability Ceiling” selected for the NeurIPS Journal-to-Conference (J2C) track.',
+    title: 'J2C at NeurIPS 2026',
+    detail: '“Beyond the Linear Separability Ceiling” (TMLR 2026), in the NeurIPS Journal-to-Conference track.',
     href: 'https://arxiv.org/abs/2507.07574',
   },
   {
     date: '2026',
-    title: 'CoNLL 2026',
-    detail: '“Symbolic Grounding Reveals Representational Bottlenecks in Abstract Visual Reasoning” accepted.',
+    title: 'Oral presentation at ACL 2026',
+    detail: '“Symbolic Grounding Reveals Representational Bottlenecks in Abstract Visual Reasoning” (CoNLL 2026).',
     href: 'https://arxiv.org/abs/2604.21346',
   },
   {
@@ -53,8 +53,8 @@ export const themes: Theme[] = [
     summary:
       'When a VLM fails an abstract visual puzzle, did it fail to see or fail to think? I build diagnostics that separate the two — cognitive-paradigm evaluations, linear-probe baselines on visual embeddings, and symbolic grounding — and training objectives that move models past the bottleneck.',
     papers: [
-      { label: 'TMLR 2026 · NeurIPS J2C', href: 'https://arxiv.org/abs/2507.07574' },
-      { label: 'CoNLL 2026', href: 'https://arxiv.org/abs/2604.21346' },
+      { label: 'TMLR 2026 · J2C at NeurIPS 2026', href: 'https://arxiv.org/abs/2507.07574' },
+      { label: 'CoNLL 2026 · Oral at ACL 2026', href: 'https://arxiv.org/abs/2604.21346' },
       { label: 'Cognitive paradigm probe (2025)', href: 'https://arxiv.org/abs/2501.13620' },
     ],
   },

@@ -8,13 +8,12 @@ import { highlights, themes, workInProgress } from '@data/research';
 import { publicationsListNode } from '../lib/schema';
 
 const pubs = [...pubData.publications].sort((a, b) => (b.year - a.year) || (b.citations - a.citations));
-const totalCitations = pubs.reduce((n, p) => n + p.citations, 0);
 const years = [...new Set(pubs.map((p) => p.year))].sort((a, b) => b - a);
 const firstYear = years[years.length - 1];
 ---
 <Base
   title="Research"
-  description={`Research by Dr. Mohit Vaishnav — how vision-language models perceive and reason. ${pubs.length} papers (TMLR, NeurIPS, ICLR, CoNLL), work in progress and ${totalCitations}+ citations.`}
+  description={`Research by Dr. Mohit Vaishnav — how vision-language models perceive and reason. ${pubs.length} papers (TMLR, NeurIPS, ICLR, CoNLL), and work in progress.`}
   pageType="CollectionPage"
   schema={[publicationsListNode()]}
 >
@@ -29,7 +28,6 @@ const firstYear = years[years.length - 1];
 
     <div class="mt-8 flex flex-wrap gap-8">
       <div><p class="font-display text-2xl font-bold text-brand-600 dark:text-brand-400">{pubs.length}</p><p class="text-sm text-ink-faint">Publications</p></div>
-      <div><p class="font-display text-2xl font-bold text-brand-600 dark:text-brand-400">{totalCitations}+</p><p class="text-sm text-ink-faint">Citations</p></div>
       <div><p class="font-display text-2xl font-bold text-brand-600 dark:text-brand-400">{workInProgress.length}</p><p class="text-sm text-ink-faint">In progress</p></div>
       <div><p class="font-display text-2xl font-bold text-brand-600 dark:text-brand-400">{firstYear}</p><p class="text-sm text-ink-faint">First paper</p></div>
     </div>
@@ -84,7 +82,7 @@ const firstYear = years[years.length - 1];
         the products we build at Kimova AI.
       </p>
       <div class="mt-4 flex flex-wrap gap-2">
-        <span class="rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 dark:bg-brand-500/10 dark:text-brand-300">Recent: TMLR 2026 → NeurIPS 2026 (J2C) · CoNLL 2026 · CVPR Workshop 2026</span>
+        <span class="rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 dark:bg-brand-500/10 dark:text-brand-300">Recent: TMLR 2026 · J2C at NeurIPS 2026 · CoNLL 2026, oral at ACL 2026 · CVPR Workshop 2026</span>
       </div>
     </div>
 
