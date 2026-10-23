@@ -164,6 +164,14 @@ export type Award = {
 
 export const awards: Award[] = [
   {
+    year: '2027',
+    title: 'Selected Participant — Global Young Scientists Summit (GYSS) 2027',
+    org: 'National Research Foundation (NRF), Singapore',
+    description:
+      'Selected among early-career researchers nominated worldwide to meet in Singapore (4–8 Jan 2027) for a week of talks and dialogue with Nobel, Fields Medal, Turing Award and Millennium Technology Prize laureates.',
+    tags: ['International Selection'],
+  },
+  {
     year: '2022',
     title: 'Top 5 Global — Kaggle Half-Earth Challenge',
     org: 'Kaggle',

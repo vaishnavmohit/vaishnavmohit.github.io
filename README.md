@@ -38,7 +38,8 @@ Almost everything lives in plain data files — edit, save, done.
 | Contact-form key (see §3b)         | `src/data/site.ts` → `web3formsKey`             |
 | Headline stats (Kaggle, etc.)      | `src/data/site.ts` → `stats`                    |
 | Jobs / education / awards          | `src/data/experience.ts`                        |
-| Publications                       | `src/data/publications.json`                    |
+| Publications                       | `src/data/publications.json` (optional `highlight`, `rank`) |
+| Research news, dimensions, WIP     | `src/data/research.ts`                          |
 | Home / About / Contact wording     | `src/pages/index.astro` / `about.astro` / `contact.astro` |
 | Your photo                         | replace `public/img/profile.jpg`                |
 | Favicon                            | replace `public/img/favicon.png`                |

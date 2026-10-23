@@ -8,7 +8,7 @@
   "publications": [
     {
       "title": "Symbolic Grounding Reveals Representational Bottlenecks in Abstract Visual Reasoning",
-      "authors": "Mohit Vaishnav, et al.",
+      "authors": "Mohit Vaishnav, Tanel Tammet",
       "venue": "Conference on Computational Natural Language Learning (CoNLL)",
       "year": 2026,
       "citations": 0,
@@ -33,7 +33,7 @@
     },
     {
       "title": "Beyond the Linear Separability Ceiling: Aligning Representations in Vision-Language Models",
-      "authors": "Mohit Vaishnav, et al.",
+      "authors": "Enrico Vompa, Tanel Tammet, Mohit Vaishnav",
       "venue": "Transactions on Machine Learning Research (TMLR)",
       "year": 2026,
       "citations": 1,
@@ -41,11 +41,13 @@
       "featured": true,
       "links": {
         "arxiv": "https://arxiv.org/abs/2507.07574"
-      }
+      },
+      "highlight": "NeurIPS 2026 · Journal-to-Conference (J2C) track",
+      "abstract": "A linear probe on a VLM’s raw visual embeddings sets a diagnostic baseline that separates weak perception from weak reasoning on abstract tasks such as Bongard problems. Most models fall short of it; adding a contrastive objective to next-token training reorganises visual representations and lets models clearly surpass it."
     },
     {
       "title": "A Cognitive Paradigm Approach to Probe the Perception–Reasoning Interface in VLMs",
-      "authors": "Mohit Vaishnav, et al.",
+      "authors": "Mohit Vaishnav, Tanel Tammet",
       "venue": "arXiv preprint arXiv:2501.13620",
       "year": 2025,
       "citations": 4,
@@ -156,6 +158,10 @@
       "featured": false,
       "links": {
         "html": "https://ieeexplore.ieee.org/document/6824482/"
+      },
+      "rank": {
+        "label": "CORE A*",
+        "source": "CORE 2014 conference ranking"
       }
     },
     {
@@ -180,6 +186,10 @@
       "featured": false,
       "links": {
         "html": "https://ieeexplore.ieee.org/document/6824481/"
+      },
+      "rank": {
+        "label": "CORE A*",
+        "source": "CORE 2014 conference ranking"
       }
     },
     {
@@ -192,6 +202,10 @@
       "featured": false,
       "links": {
         "html": "https://ieeexplore.ieee.org/document/6543091/"
+      },
+      "rank": {
+        "label": "CORE A*",
+        "source": "CORE 2013 conference ranking"
       }
     },
     {
@@ -204,6 +218,10 @@
       "featured": false,
       "links": {
         "html": "https://ieeexplore.ieee.org/document/5749537"
+      },
+      "rank": {
+        "label": "CORE A",
+        "source": "ERA 2010 conference ranking"
       }
     }
   ]
