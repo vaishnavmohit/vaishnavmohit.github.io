@@ -14,6 +14,8 @@
       "citations": 0,
       "type": "conference",
       "featured": true,
+      "topics": ["Multimodal Grounding", "Agentic & Active Vision"],
+      "abstract": "Demonstrates that multimodal reasoning pipelines fail on abstract spatial tasks not for lack of downstream reasoning capacity, but because perceptual encoders drop relational geometry at the grounding bottleneck — motivating native visual-state interfaces over brittle language intermediaries.",
       "links": {
         "arxiv": "https://arxiv.org/abs/2604.21346",
         "scholar": "https://scholar.google.com/citations?user=jGOzdbgAAAAJ"
@@ -28,6 +30,8 @@
       "citations": 0,
       "type": "workshop",
       "featured": false,
+      "topics": ["Verification & Benchmarks"],
+      "abstract": "Studies how explicit vs. implicit visual concept cues shift verification accuracy and response criteria in abstract visual reasoning, informing reliable human-in-the-loop and agentic verification workflows.",
       "links": {
         "scholar": "https://scholar.google.com/citations?user=jGOzdbgAAAAJ"
       }
@@ -40,11 +44,12 @@
       "citations": 1,
       "type": "journal",
       "featured": true,
+      "topics": ["Multimodal Grounding", "Verification & Benchmarks"],
       "links": {
         "arxiv": "https://arxiv.org/abs/2507.07574"
       },
       "highlight": "J2C at NeurIPS 2026",
-      "abstract": "A linear probe on a VLM’s raw visual embeddings sets a diagnostic baseline that separates weak perception from weak reasoning on abstract tasks such as Bongard problems. Most models fall short of it; adding a contrastive objective to next-token training reorganises visual representations and lets models clearly surpass it."
+      "abstract": "A linear probe on a VLM’s raw visual embeddings sets a diagnostic baseline that separates weak perception from weak reasoning on compositional visual tasks. Most models fall short of it; pairing contrastive representation alignment with next-token training reorganizes visual state so models clearly surpass the ceiling."
     },
     {
       "title": "A Cognitive Paradigm Approach to Probe the Perception–Reasoning Interface in VLMs",
@@ -54,6 +59,8 @@
       "citations": 4,
       "type": "preprint",
       "featured": true,
+      "topics": ["Multimodal Grounding", "Verification & Benchmarks"],
+      "abstract": "Adapts controlled cognitive-science paradigms into diagnostic evaluation workflows that isolate perceptual encoding failures from downstream reasoning errors in frontier vision-language models.",
       "links": {
         "arxiv": "https://arxiv.org/abs/2501.13620"
       }
@@ -66,6 +73,8 @@
       "citations": 0,
       "type": "preprint",
       "featured": false,
+      "topics": ["Multimodal Grounding"],
+      "abstract": "Shows that scaling test-time reasoning chains cannot recover spatial relations discarded during early visual encoding, arguing for perceptual-first architectures in multimodal agents.",
       "links": {
         "scholar": "https://scholar.google.com/citations?user=jGOzdbgAAAAJ"
       }
@@ -78,7 +87,8 @@
       "citations": 24,
       "type": "conference",
       "featured": true,
-      "abstract": "A novel module for visual reasoning that instantiates an active-vision theory — solving complex visual reasoning dynamically via sequences of attention shifts that route task-relevant information into memory. GAMR learns visual routines robustly and sample-efficiently, and generalizes zero-shot to novel reasoning tasks.",
+      "topics": ["Agentic & Active Vision"],
+      "abstract": "An active-vision cognitive architecture that solves relational visual problems via closed-loop sequences of internally guided attention shifts and working-memory routing — learning reusable visual routines sample-efficiently and generalizing zero-shot to unseen tasks.",
       "links": {
         "html": "https://openreview.net/forum?id=iLMgk2IGNyv"
       }
@@ -91,7 +101,8 @@
       "citations": 2,
       "type": "thesis",
       "featured": false,
-      "abstract": "Investigates the role of attention and memory in complex reasoning. Analyses Transformer self-attention, extends it with memory, refines the taxonomy of SVRT reasoning tasks, and proposes GAMR — a cognitive architecture combining attention and memory inspired by active-vision theory.",
+      "topics": ["Agentic & Active Vision"],
+      "abstract": "Investigates how selective attention and working memory enable compositional visual intelligence — analyzing Transformer self-attention, establishing a computational taxonomy of visual reasoning, and introducing the GAMR active-vision architecture.",
       "links": {
         "arxiv": "https://arxiv.org/abs/2306.14650"
       }
@@ -104,7 +115,8 @@
       "citations": 82,
       "type": "conference",
       "featured": true,
-      "abstract": "Introduces Compositional Visual Relations (CVR), a benchmark driving progress toward more data-efficient visual reasoning. Provides measures of sample efficiency, generalization and compositionality, and finds modern models remain far less data-efficient than humans.",
+      "topics": ["Verification & Benchmarks", "Agentic & Active Vision"],
+      "abstract": "Introduces Compositional Visual Relations (CVR) to measure sample efficiency, out-of-distribution generalization and rule compositionality — exposing the data-efficiency gap between passive deep networks and active human perception.",
       "links": {
         "arxiv": "https://arxiv.org/pdf/2206.05379"
       }
@@ -117,7 +129,8 @@
       "citations": 26,
       "type": "journal",
       "featured": true,
-      "abstract": "Characterizes the computational demands of abstract visual reasoning by assessing CNNs on the SVRT challenge, revealing a novel taxonomy of reasoning tasks and showing how spatial vs. feature-based attention selectively helps the hardest tasks.",
+      "topics": ["Agentic & Active Vision"],
+      "abstract": "Characterizes the computational demands of abstract visual reasoning across the SVRT challenge, establishing a taxonomy of same-different vs. spatial-relation routines and demonstrating how spatial and feature attention unlock the hardest relational tasks.",
       "links": {
         "html": "https://doi.org/10.1162/neco_a_01485"
       }
@@ -130,7 +143,8 @@
       "citations": 6,
       "type": "preprint",
       "featured": false,
-      "abstract": "A convolutional transformer architecture that handles higher-resolution images without exploding memory/compute, with a PreSizer pre-processing technique — achieving state-of-the-art on Herbarium 202x and iNaturalist 2019.",
+      "topics": ["Vision for Science"],
+      "abstract": "A compute-efficient convolutional vision transformer with PreSizer resolution scaling that processes fine-grained high-resolution imagery without quadratic memory blowup — setting state-of-the-art results on Herbarium 202x and iNaturalist 2019.",
       "links": {
         "arxiv": "https://arxiv.org/pdf/2208.08900"
       }
@@ -143,7 +157,8 @@
       "citations": 0,
       "type": "conference",
       "featured": false,
-      "abstract": "Leaf Lens: an interactive platform showing how neural networks classify plant leaves to family level and organise concepts across families — explainability grounded in extant leaves, applied to fossil identification.",
+      "topics": ["Vision for Science"],
+      "abstract": "Leaf Lens: an interactive explainable-vision workflow showing how neural networks organize morphological concepts across plant families to assist palaeobotanists in fossil leaf identification.",
       "links": {
         "project": "https://serre-lab.github.io/LeafLens/",
         "scholar": "https://scholar.google.com/citations?user=jGOzdbgAAAAJ"
@@ -157,6 +172,7 @@
       "citations": 1,
       "type": "conference",
       "featured": false,
+      "topics": ["Video & Signal Coding"],
       "links": {
         "html": "https://ieeexplore.ieee.org/document/6824482/"
       },
@@ -173,6 +189,7 @@
       "citations": 0,
       "type": "conference",
       "featured": false,
+      "topics": ["Video & Signal Coding"],
       "links": {
         "html": "https://doi.org/10.1145/2683483.2683522"
       }
@@ -185,6 +202,7 @@
       "citations": 0,
       "type": "conference",
       "featured": false,
+      "topics": ["Video & Signal Coding"],
       "links": {
         "html": "https://ieeexplore.ieee.org/document/6824481/"
       },
@@ -201,6 +219,7 @@
       "citations": 1,
       "type": "conference",
       "featured": false,
+      "topics": ["Video & Signal Coding"],
       "links": {
         "html": "https://ieeexplore.ieee.org/document/6543091/"
       },
@@ -217,6 +236,7 @@
       "citations": 2,
       "type": "conference",
       "featured": false,
+      "topics": ["Video & Signal Coding"],
       "links": {
         "html": "https://ieeexplore.ieee.org/document/5749537"
       },

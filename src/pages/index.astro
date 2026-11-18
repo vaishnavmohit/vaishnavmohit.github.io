@@ -1,44 +1,48 @@
 ---
 import Base from '@layouts/Base.astro';
 import Section from '@components/Section.astro';
-import PubCard from '@components/PubCard.astro';
 import Icon from '@components/Icon.astro';
 import { site, socials, stats } from '@data/site';
 import { awards } from '@data/experience';
-import pubData from '@data/publications.json';
 
 const heroSocials = socials.filter((s) => s.primary);
 const featuredAward = awards.find((a) => a.featured);
-const featuredPubs = pubData.publications.filter((p) => p.featured).slice(0, 3);
 
 const doors = [
   {
     href: '/founder', label: 'Founder', badge: 'bg-accent-50 text-accent-700 dark:bg-accent-500/10 dark:text-accent-300',
     title: 'Kimova AI', role: 'Co-founder & CEO · Tallinn, since 2024',
-    body: 'An agentic AI co-auditor for ISO, SOC 2 and privacy audits, for audit firms and in-house compliance teams.',
+    body: 'A framework-agnostic, agentic workbench for auditors — built to plan, review evidence, run fieldwork and report across any audit standard.',
     points: ['Selected for the Tehnopol AI Accelerator (2026)', 'Google Cloud Startup Program (2024)'],
     cta: 'The founder story',
   },
   {
     href: '/research', label: 'Researcher', badge: 'bg-brand-50 text-brand-700 dark:bg-brand-500/10 dark:text-brand-300',
-    title: 'Seeing vs. reasoning in AI', role: 'Postdoctoral Researcher · TalTech',
-    body: 'Do vision-language models reason, or only pattern-match? I build diagnostics and benchmarks that tell the two apart.',
+    title: 'Seeing, reasoning & acting in AI', role: 'Postdoctoral Researcher · TalTech',
+    body: 'Building native visual world models, active working-memory loops and verifiable agentic workflows for multimodal & embodied intelligence.',
     points: ['TMLR 2026 · J2C at NeurIPS 2026', 'CoNLL 2026 · Oral presentation at ACL 2026'],
-    cta: 'Research & publications',
+    cta: 'Research vision & papers',
   },
+];
+
+const chapters = [
+  { place: 'Jaipur, India', note: 'Published first IEEE DCC papers as an undergrad & co-founded a first computer-vision startup.' },
+  { place: 'UK · France · Spain', note: 'Erasmus Mundus MSc in Vision & Robotics (VIBOT) across three European universities.' },
+  { place: 'Providence & Toulouse', note: 'PhD at Brown University’s Serre Lab & ANITI on attention and working memory in visual reasoning.' },
+  { place: 'Tallinn, Estonia', note: 'Leading Kimova AI as CEO while advancing active visual & embodied AI research at TalTech.' },
 ];
 ---
 <Base pageType="ProfilePage">
   <!-- HERO -->
   <section class="relative overflow-hidden">
-    <div class="pointer-events-none absolute inset-0 -z-10">
+    <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
       <div class="absolute -top-24 right-0 h-96 w-96 rounded-full bg-brand-500/10 blur-3xl"></div>
       <div class="absolute top-40 -left-20 h-80 w-80 rounded-full bg-accent-500/10 blur-3xl"></div>
     </div>
     <div class="container-page grid items-center gap-12 py-16 sm:py-24 md:grid-cols-[1.5fr_1fr]">
       <div class="animate-fade-up">
         <p class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-ink-soft dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-300">
-          <span class="h-2 w-2 rounded-full bg-signal-500"></span>
+          <span class="h-2 w-2 rounded-full bg-signal-500" aria-hidden="true"></span>
           <span>Co-founder &amp; CEO, <a href={site.company.url} class="font-semibold text-brand-600 dark:text-brand-300" target="_blank" rel="noopener">Kimova AI</a><span class="hidden sm:inline"> · Postdoctoral researcher, TalTech</span></span>
         </p>
         <h1 class="mt-5 font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl dark:text-white">
@@ -48,13 +52,14 @@ const doors = [
           AI researcher and founder.
         </p>
         <p class="mt-5 max-w-xl text-lg text-ink-soft dark:text-slate-400">
-          I build <strong class="font-semibold text-ink dark:text-white">Kimova AI</strong>, an agentic AI co-auditor for
-          ISO, SOC&nbsp;2 and privacy audits, and at TalTech I research how vision-language models perceive and reason.
-          PhD from Brown University &amp; ANITI.
+          I build <strong class="font-semibold text-ink dark:text-white">Kimova AI</strong>, the framework-agnostic
+          agentic workbench for auditors, and at TalTech I research how machines actively perceive, remember, and reason
+          over the visual world. PhD from Brown University &amp; ANITI.
         </p>
         <div class="mt-8 flex flex-wrap items-center gap-3">
           <a href="/founder" class="btn-primary">Founder — Kimova AI <Icon name="arrow" class="h-4 w-4" /></a>
-          <a href="/research" class="btn-ghost">Research <Icon name="arrow" class="h-4 w-4" /></a>
+          <a href="/research" class="btn-ghost">Research vision <Icon name="arrow" class="h-4 w-4" /></a>
+          <a href="/about" class="btn-ghost">About me</a>
         </div>
         <div class="mt-8 flex items-center gap-3">
           {heroSocials.map((s) => (
@@ -67,7 +72,7 @@ const doors = [
       </div>
 
       <div class="relative mx-auto w-full max-w-xs animate-fade-up md:max-w-none">
-        <div class="absolute -inset-3 -z-10 rounded-3xl bg-gradient-to-tr from-brand-500/20 via-transparent to-accent-500/20 blur-xl"></div>
+        <div class="absolute -inset-3 -z-10 rounded-3xl bg-gradient-to-tr from-brand-500/20 via-transparent to-accent-500/20 blur-xl" aria-hidden="true"></div>
         <picture>
           <source type="image/webp" srcset="/img/profile-480.webp 480w, /img/profile-900.webp 900w" sizes="(min-width: 768px) 38vw, 320px" />
           <img src="/img/profile.jpg" alt="Dr. Mohit Vaishnav"
@@ -119,7 +124,7 @@ const doors = [
   )}
 
   <!-- WHAT I'M BUILDING -->
-  <Section eyebrow="What I do" title="Two tracks, one question" lead="Can we trust what an AI concludes? I work on it as a scientist and build on it as a founder.">
+  <Section eyebrow="What I do" title="Two independent tracks" lead="Leading an enterprise audit-software company by day and advancing open academic research on visual & embodied intelligence.">
     <div class="grid gap-6 md:grid-cols-2">
       {doors.map((d) => (
         <a href={d.href} class="card card-hover group flex flex-col">
@@ -129,22 +134,29 @@ const doors = [
           <p class="mt-3 text-ink-soft dark:text-slate-400">{d.body}</p>
           <ul class="mt-4 space-y-1.5">
             {d.points.map((p) => (
-              <li class="flex gap-2 text-sm text-ink-soft dark:text-slate-400"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-500"></span>{p}</li>
+              <li class="flex gap-2 text-sm text-ink-soft dark:text-slate-400"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-500" aria-hidden="true"></span>{p}</li>
             ))}
           </ul>
-          <span class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand-600 group-hover:underline dark:text-brand-300">{d.cta} <Icon name="arrow" class="h-4 w-4" /></span>
+          <span class="mt-auto pt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand-600 group-hover:underline dark:text-brand-300">{d.cta} <Icon name="arrow" class="h-4 w-4" /></span>
         </a>
       ))}
     </div>
   </Section>
 
-  <!-- FEATURED RESEARCH -->
-  <Section eyebrow="Selected research" title="Frontier work in vision & reasoning" lead="Peer-reviewed at TMLR (J2C at NeurIPS 2026), CoNLL (oral at ACL 2026), ICLR and Neural Computation — research dimensions, work in progress and the full list on the research page.">
-    <div class="grid gap-6 md:grid-cols-3">
-      {featuredPubs.map((pub) => <PubCard pub={pub} />)}
-    </div>
-    <div class="mt-8">
-      <a href="/research" class="btn-ghost">All publications <Icon name="arrow" class="h-4 w-4" /></a>
+  <!-- PERSONAL JOURNEY SNAPSHOT -->
+  <Section eyebrow="The journey" title="Shaped across 10+ countries" lead="From early engineering labs in India to robotics across Europe, cognitive science in the US, and building in Estonia." class="border-t border-slate-200 bg-slate-50/40 dark:border-slate-800 dark:bg-slate-900/20">
+    <ol role="list" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {chapters.map((ch, idx) => (
+        <li class="card flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-accent-600 dark:text-accent-400">0{idx + 1} · {ch.place}</span>
+            <p class="mt-2 text-sm leading-relaxed text-ink-soft dark:text-slate-300">{ch.note}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+    <div class="mt-6">
+      <a href="/about" class="btn-ghost">Read the full story <Icon name="arrow" class="h-4 w-4" /></a>
     </div>
   </Section>
 
@@ -153,7 +165,7 @@ const doors = [
     <div class="relative overflow-hidden rounded-3xl border border-brand-200 bg-gradient-to-br from-brand-600 to-brand-800 px-8 py-14 text-center dark:border-brand-800">
       <h2 class="font-display text-3xl font-bold text-white sm:text-4xl">Let's build the future of AI together</h2>
       <p class="mx-auto mt-4 max-w-2xl text-brand-100">
-        Whether it's Kimova for your audits, a research collaboration, investment or speaking — I'd love to connect.
+        Whether it's Kimova's workbench for your audits, a research collaboration, student supervision, R&amp;D advisory or speaking — I'd love to connect.
       </p>
       <div class="mt-8 flex flex-wrap justify-center gap-3">
         <a href="/contact" class="btn bg-white text-brand-700 hover:bg-brand-50">Get in touch</a>

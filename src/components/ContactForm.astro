@@ -1,32 +1,89 @@
 ---
 import { site } from '@data/site';
 const inputCls =
-  'w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-ink placeholder:text-ink-faint focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20 dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-100';
+  'min-h-[48px] w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base text-ink placeholder:text-ink-faint focus:border-brand-500 focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-100';
+
+const topics = [
+  { id: 'collaboration', label: 'Research collaboration', placeholder: 'Tell me about the research problem, benchmark, consortium or paper idea you have in mind…' },
+  { id: 'join', label: 'Join / thesis supervision', placeholder: 'Share your degree stage (MSc / PhD / intern), a problem or paper that excites you, and a link to your GitHub or CV…' },
+  { id: 'consultation', label: 'R&D consultation & talks', placeholder: 'Briefly describe your multimodal / robotics / vision challenge, advisory scope, or speaking invitation…' },
+  { id: 'kimova', label: 'Kimova AI / business', placeholder: 'How can Kimova AI help your audit firm or compliance team?' },
+  { id: 'other', label: 'Say hello / other', placeholder: 'How can I help?' },
+];
 ---
-<form id="contact-form" class="space-y-4">
+<form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-5">
   <!-- Web3Forms access key (delivers to your inbox; your email is never shown) -->
   <input type="hidden" name="access_key" value={site.web3formsKey} />
-  <input type="hidden" name="subject" value="New message from vaishnavmohit.github.io" />
+  <input type="hidden" id="cf-subject" name="subject" value="New message from vaishnavmohit.github.io" />
   <input type="hidden" name="from_name" value="Portfolio contact form" />
-  <!-- Honeypot: bots fill this, humans don't -->
-  <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+  <!-- Honeypot: hidden from humans and assistive tech -->
+  <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" aria-hidden="true" autocomplete="off" />
+
+  <fieldset class="border-0 p-0">
+    <legend class="mb-2.5 block text-sm font-medium text-ink-soft dark:text-slate-300">What brings you here?</legend>
+    <div class="flex flex-wrap gap-2">
+      {topics.map((t, idx) => (
+        <div class="topic-option">
+          <input
+            type="radio"
+            id={`cf-topic-${t.id}`}
+            name="topic"
+            value={t.label}
+            data-topic-key={t.id}
+            data-placeholder={t.placeholder}
+            checked={idx === 0}
+            class="visually-hidden"
+          />
+          <label for={`cf-topic-${t.id}`} class="topic-pill">
+            <span class="topic-dot" aria-hidden="true"></span>
+            {t.label}
+          </label>
+        </div>
+      ))}
+    </div>
+  </fieldset>
 
   <div class="grid gap-4 sm:grid-cols-2">
     <div>
-      <label for="cf-name" class="mb-1.5 block text-sm font-medium text-ink-soft dark:text-slate-300">Name</label>
-      <input id="cf-name" name="name" type="text" required autocomplete="name" placeholder="Your name" class={inputCls} />
+      <label for="cf-name" class="mb-1.5 block text-sm font-medium text-ink-soft dark:text-slate-300">
+        Full name <span aria-hidden="true" class="text-accent-600">*</span>
+      </label>
+      <input id="cf-name" name="name" type="text" required autocomplete="name" enterkeyhint="next" placeholder="Your name" class:list={[inputCls, 'field-input']} />
     </div>
     <div>
-      <label for="cf-email" class="mb-1.5 block text-sm font-medium text-ink-soft dark:text-slate-300">Email</label>
-      <input id="cf-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com" class={inputCls} />
+      <label for="cf-email" class="mb-1.5 block text-sm font-medium text-ink-soft dark:text-slate-300">
+        Email <span aria-hidden="true" class="text-accent-600">*</span>
+      </label>
+      <input
+        id="cf-email"
+        name="email"
+        type="email"
+        required
+        autocomplete="email"
+        autocorrect="off"
+        autocapitalize="none"
+        spellcheck="false"
+        enterkeyhint="next"
+        placeholder="you@institution.edu"
+        class:list={[inputCls, 'field-input']}
+      />
     </div>
   </div>
   <div>
-    <label for="cf-message" class="mb-1.5 block text-sm font-medium text-ink-soft dark:text-slate-300">Message</label>
-    <textarea id="cf-message" name="message" rows="5" required placeholder="How can I help?" class={inputCls}></textarea>
+    <label for="cf-message" class="mb-1.5 block text-sm font-medium text-ink-soft dark:text-slate-300">
+      Message <span aria-hidden="true" class="text-accent-600">*</span>
+    </label>
+    <textarea
+      id="cf-message"
+      name="message"
+      rows="5"
+      required
+      placeholder={topics[0].placeholder}
+      class:list={[inputCls, 'field-input min-h-[132px]']}
+    ></textarea>
   </div>
 
-  <button type="submit" id="cf-submit" class="btn-primary w-full sm:w-auto">
+  <button type="submit" id="cf-submit" class="btn-primary min-h-[48px] w-full sm:w-auto">
     <span class="cf-label">Send message</span>
     <span class="cf-spinner hidden">Sending…</span>
   </button>
@@ -34,12 +91,76 @@ const inputCls =
   <p id="cf-status" class="hidden text-sm" role="status" aria-live="polite"></p>
 </form>
 
+<style>
+  .visually-hidden {
+    position: absolute;
+    clip-path: inset(50%);
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+  }
+  .topic-pill {
+    @apply inline-flex min-h-[38px] cursor-pointer items-center gap-2 rounded-full border border-slate-300 bg-white px-3.5 py-1.5 text-xs font-medium text-ink-soft transition-colors hover:border-brand-400 hover:text-brand-600 dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-300 dark:hover:border-brand-400;
+  }
+  .topic-dot {
+    @apply h-2 w-2 rounded-full border border-slate-400 transition-colors dark:border-slate-500;
+  }
+  .topic-option input:checked + .topic-pill {
+    @apply border-brand-600 bg-brand-50 font-semibold text-brand-700 dark:border-brand-400 dark:bg-brand-500/15 dark:text-brand-200;
+  }
+  .topic-option input:checked + .topic-pill .topic-dot {
+    @apply border-brand-600 bg-brand-600 dark:border-brand-300 dark:bg-brand-300;
+  }
+  .topic-option input:focus-visible + .topic-pill {
+    outline: 2px solid #2f6fef;
+    outline-offset: 2px;
+  }
+  .field-input:user-invalid {
+    @apply border-accent-600 dark:border-accent-400;
+  }
+</style>
+
 <script>
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
   const status = document.getElementById('cf-status');
   const btn = document.getElementById('cf-submit') as HTMLButtonElement | null;
   const label = btn?.querySelector('.cf-label');
   const spinner = btn?.querySelector('.cf-spinner');
+  const msgEl = document.getElementById('cf-message') as HTMLTextAreaElement | null;
+  const subjEl = document.getElementById('cf-subject') as HTMLInputElement | null;
+  const radios = document.querySelectorAll<HTMLInputElement>('input[name="topic"]');
+
+  function syncTopic(radio: HTMLInputElement) {
+    if (msgEl && radio.dataset.placeholder) {
+      msgEl.placeholder = radio.dataset.placeholder;
+    }
+    if (subjEl) {
+      subjEl.value = `[${radio.value}] Message via vaishnavmohit.github.io`;
+    }
+  }
+
+  radios.forEach((r) => {
+    r.addEventListener('change', () => {
+      if (r.checked) syncTopic(r);
+    });
+  });
+
+  // Pre-select topic when arriving from /research?topic=collaboration|join|consultation
+  const paramTopic = new URLSearchParams(window.location.search).get('topic');
+  if (paramTopic) {
+    const match = Array.from(radios).find((r) => r.dataset.topicKey === paramTopic);
+    if (match) {
+      match.checked = true;
+      syncTopic(match);
+    }
+  } else {
+    const checked = Array.from(radios).find((r) => r.checked);
+    if (checked) syncTopic(checked);
+  }
 
   const setStatus = (msg: string, ok: boolean) => {
     if (!status) return;
@@ -49,6 +170,11 @@ const inputCls =
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (!form.checkValidity()) {
+      const firstInvalid = form.querySelector<HTMLElement>(':invalid');
+      firstInvalid?.focus();
+      return;
+    }
     const data = Object.fromEntries(new FormData(form));
     if (String(data.access_key).startsWith('YOUR_')) {
       setStatus('Contact form not configured yet — add a Web3Forms key in src/data/site.ts.', false);

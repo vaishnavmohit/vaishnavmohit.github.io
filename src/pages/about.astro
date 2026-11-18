@@ -10,23 +10,46 @@ const facts = [
   { label: 'Now', value: 'Co-founder & CEO, Kimova AI · Postdoc, TalTech' },
   { label: 'Based in', value: 'Tallinn, Estonia' },
   { label: 'PhD', value: 'Brown University / ANITI · Université Toulouse III, 2023' },
-  { label: 'Research', value: 'Vision-language models, visual reasoning, attention & memory' },
-  { label: 'Building', value: 'Agentic AI co-auditor for ISO, SOC 2 & privacy audits' },
-  { label: 'Worked across', value: '10+ countries in Asia, Europe and the US' },
+  { label: 'Research niche', value: 'Active visual world models, working memory & agentic AI' },
+  { label: 'Building', value: 'Framework-agnostic agentic AI workbench for auditors' },
+  { label: 'Lived & worked', value: '10+ countries across Asia, Europe & the US' },
+];
+
+const snapshots = [
+  {
+    eyebrow: 'Early spark',
+    title: 'Published & founded before grad school',
+    body: 'Wrote my first IEEE Data Compression Conference papers as an undergraduate in Jaipur, then co-founded a computer-vision startup before heading to Europe.',
+  },
+  {
+    eyebrow: 'Global perspective',
+    title: 'Shaped across 10+ countries',
+    body: 'Trained and worked across India, the UK, France, Spain, the US, Germany and Estonia — comfortable bridging cultures, disciplines and time zones.',
+  },
+  {
+    eyebrow: 'Scientific curiosity',
+    title: 'Brains, vision & active machines',
+    body: 'Fascinated by how biological vision solves novel spatial puzzles in a few glances — and how to bring that active intelligence into AI and embodied systems.',
+  },
+  {
+    eyebrow: 'Next stop · Jan 2027',
+    title: 'Global Young Scientists Summit, Singapore',
+    body: 'Selected among early-career scientists worldwide for a week of dialogue with Nobel, Fields Medal and Turing Award laureates.',
+  },
 ];
 
 const principles = [
   {
-    title: 'Evidence before claims',
-    body: 'My research asks whether a model really reasoned or only matched a pattern. The same standard applies to an AI audit: every finding should trace back to evidence.',
+    title: 'Evidence over shortcuts',
+    body: 'Whether testing a scientific hypothesis or shipping enterprise software, strong conclusions require traceable, reproducible evidence rather than surface heuristics.',
   },
   {
-    title: 'From paper to product',
-    body: 'Ideas earn their place by working in the real world — benchmarks and diagnostics in the lab, then systems customers rely on at Kimova.',
+    title: 'Distinct, focused hats',
+    body: 'Open academic science on visual & embodied intelligence at TalTech and enterprise audit software at Kimova AI run as independent tracks — each held to its own standard of rigor.',
   },
   {
-    title: 'Built across borders',
-    body: 'Studying and working across India, Europe and the US taught me to build with diverse teams, for customers in any market.',
+    title: 'Open doors & mentorship',
+    body: 'Great opportunities shaped my own path from Jaipur to Providence and Tallinn — I stay actively open to mentoring students, trading ideas and collaborating across borders.',
   },
 ];
 
@@ -36,7 +59,7 @@ const otherAwards = awards.filter((a) => a !== featured).sort((a, b) => startYea
 
 const social = socials.filter((s) => s.id !== 'email');
 const description =
-  'About Dr. Mohit Vaishnav — Co-founder & CEO of Kimova AI in Tallinn, postdoc at TalTech, PhD in cognitive AI and visual reasoning (Toulouse III, Brown, ANITI). GYSS 2027 participant.';
+  'About Dr. Mohit Vaishnav — Co-founder & CEO of Kimova AI in Tallinn, postdoctoral researcher at TalTech, PhD in cognitive AI and visual reasoning (Toulouse III, Brown, ANITI). GYSS 2027 participant.';
 ---
 <Base title="About" description={description} pageType="ProfilePage" image={site.ogImage}>
   <section class="container-page py-16 sm:py-20">
@@ -58,35 +81,59 @@ const description =
       </div>
 
       <div>
-        <p class="eyebrow">About</p>
+        <p class="eyebrow">About me</p>
         <h1 class="mt-2 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl dark:text-white">
-          Scientist by training, founder by choice
+          Scientist by training, builder at heart
         </h1>
         <div class="prose-portfolio mt-6 space-y-4 text-lg text-ink-soft dark:text-slate-400">
           <p>
-            I'm <strong class="text-ink dark:text-white">Dr. Mohit Vaishnav</strong>, Co-founder and CEO of
-            <a href={site.company.url} target="_blank" rel="noopener" class="link-underline">Kimova AI</a>
-            in Tallinn, where we build an agentic AI co-auditor for ISO, SOC&nbsp;2 and privacy audits.
+            Hi — I’m <strong class="text-ink dark:text-white">Dr. Mohit Vaishnav</strong>. Based in Tallinn, Estonia, I
+            wear two distinct hats that keep me energized every day: building an enterprise software company as a
+            founder, and exploring the frontiers of visual and embodied intelligence as an academic scientist.
           </p>
           <p>
-            Alongside the company, I'm a postdoctoral researcher in TalTech's Applied Artificial Intelligence
-            Group, asking whether vision-language models really <em>reason</em> or only pattern-match. Recent
-            work appeared in <strong class="text-ink dark:text-white">TMLR</strong> (J2C at NeurIPS 2026) and at
-            <strong class="text-ink dark:text-white">CoNLL 2026</strong>, with an oral presentation at ACL 2026.
+            As Co-founder and CEO of <a href={site.company.url} target="_blank" rel="noopener">Kimova AI</a>
+            (selected for the <a href="https://www.tehnopol.ee/en/accelerator/the-ai-accelerator/" target="_blank" rel="noopener">Tehnopol AI Accelerator</a>),
+            we are building a <strong class="text-ink dark:text-white">framework-agnostic, agentic workbench for auditors</strong> —
+            giving audit firms and assurance teams one intelligent workspace to run any regulatory, security, quality or
+            custom audit end-to-end.
           </p>
           <p>
-            My PhD at Brown University's Serre Lab and ANITI, awarded by Université Toulouse III, studied how
-            attention and memory drive reasoning in brains and machines, with papers at NeurIPS, ICLR and
-            Neural Computation. Before that came an Erasmus Mundus master's across the UK, France and Spain, and
-            an engineering degree in India, where I published my first papers at the IEEE Data Compression
-            Conference as an undergraduate. I've also held applied AI roles at Sandvik, DFKI and WeDiagnostiX.
+            In academia, I am a postdoctoral researcher in the
+            <a href="https://taltech.ee/en/contacts/applied-artificial-intelligence-group/mohit-vaishnav" target="_blank" rel="noopener">Applied Artificial Intelligence Group at TalTech</a>
+            under the <a href="https://exai.ee" target="_blank" rel="noopener">Estonian Centre of Excellence in AI (EXAI)</a>.
+            My work focuses on perceptually native visual world models, active attention-and-memory loops, and
+            verifiable multimodal workflows — with recent papers in
+            <a href="https://arxiv.org/abs/2507.07574" target="_blank" rel="noopener">TMLR (J2C at NeurIPS 2026)</a>
+            and <a href="https://arxiv.org/abs/2604.21346" target="_blank" rel="noopener">CoNLL / ACL 2026 (Oral)</a>,
+            supported by <a href="https://antigravity.google/use-cases/science" target="_blank" rel="noopener">Google Antigravity for Science</a>.
+          </p>
+          <p>
+            Before Tallinn, my curiosity took me across three continents. I completed my PhD in cognitive AI and
+            computer vision between <a href="https://serre.lab.brown.edu" target="_blank" rel="noopener">Brown University’s Serre Lab</a>
+            and <a href="https://aniti.univ-toulouse.fr" target="_blank" rel="noopener">ANITI</a>
+            (<a href="https://www.univ-tlse3.fr" target="_blank" rel="noopener">Université Toulouse III</a>,
+            <a href="https://theses.fr/2023TOU30139" target="_blank" rel="noopener">official record</a>) with
+            Prof.&nbsp;Thomas Serre and Prof.&nbsp;Nicholas Asher, publishing at
+            <a href="https://arxiv.org/abs/2206.05379" target="_blank" rel="noopener">NeurIPS</a>,
+            <a href="https://openreview.net/forum?id=iLMgk2IGNyv" target="_blank" rel="noopener">ICLR</a> and
+            <a href="https://doi.org/10.1162/neco_a_01485" target="_blank" rel="noopener">Neural Computation</a>.
+            Earlier came an Erasmus Mundus master’s in Vision &amp; Robotics across
+            <a href="https://www.hw.ac.uk" target="_blank" rel="noopener">Heriot-Watt</a> (UK),
+            <a href="https://www.u-bourgogne.fr" target="_blank" rel="noopener">Université de Bourgogne</a> (France) and
+            <a href="https://www.udg.edu" target="_blank" rel="noopener">Universitat de Girona</a> (Spain), applied AI
+            roles at <a href="https://www.home.sandvik" target="_blank" rel="noopener">Sandvik</a> and
+            <a href="https://www.dfki.de/en/web" target="_blank" rel="noopener">DFKI</a> in Germany, and an engineering
+            degree at <a href="https://www.lnmiit.ac.in" target="_blank" rel="noopener">LNMIIT</a> in India — where I
+            published my first <a href="https://ieeexplore.ieee.org/document/5749537" target="_blank" rel="noopener">IEEE DCC</a>
+            papers as an undergrad.
           </p>
         </div>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="/contact" class="btn-primary">Get in touch</a>
+          <a href="/contact" class="btn-primary">Say hello / connect</a>
           <a href={site.cvUrl} target="_blank" rel="noopener" class="btn-ghost">Download CV <Icon name="external" class="h-4 w-4" /></a>
-          <a href="/research" class="btn-ghost">Research <Icon name="arrow" class="h-4 w-4" /></a>
-          <a href="/experience" class="btn-ghost">Experience <Icon name="arrow" class="h-4 w-4" /></a>
+          <a href="/research" class="btn-ghost">Research vision <Icon name="arrow" class="h-4 w-4" /></a>
+          <a href="/experience" class="btn-ghost">Full timeline <Icon name="arrow" class="h-4 w-4" /></a>
         </div>
 
         <!-- At a glance -->
@@ -101,6 +148,21 @@ const description =
       </div>
     </div>
   </section>
+
+  <!-- Beyond the CV: Personal snapshots -->
+  <Section eyebrow="Beyond the CV" title="Four things to know about me" class="border-t border-slate-200 bg-slate-50/50 dark:border-slate-800 dark:bg-slate-900/20">
+    <ul role="list" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {snapshots.map((s) => (
+        <li class="card flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-accent-600 dark:text-accent-400">{s.eyebrow}</span>
+            <h3 class="mt-1.5 font-display text-base font-bold text-ink dark:text-white">{s.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-soft dark:text-slate-400">{s.body}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </Section>
 
   <!-- Recognition -->
   <Section eyebrow="Recognition" title="Awards & honors" id="awards" class="border-t border-slate-200 dark:border-slate-800">
@@ -136,7 +198,7 @@ const description =
   </Section>
 
   <!-- Principles -->
-  <Section eyebrow="How I work" title="What carries over from lab to company" class="border-t border-slate-200 dark:border-slate-800">
+  <Section eyebrow="How I work" title="Operating principles" class="border-t border-slate-200 dark:border-slate-800">
     <div class="grid gap-6 md:grid-cols-3">
       {principles.map((p) => (
         <div class="card">
@@ -155,7 +217,7 @@ const description =
         <p class="mt-3 text-sm leading-relaxed text-ink-soft dark:text-slate-400">{site.bio}</p>
       </div>
       <div>
-        <p class="text-xs font-semibold uppercase tracking-wider text-ink-faint">Elsewhere</p>
+        <p class="text-xs font-semibold uppercase tracking-wider text-ink-faint">Verified profiles elsewhere</p>
         <ul class="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
           {identityLinks.map((l) => (
             <li>

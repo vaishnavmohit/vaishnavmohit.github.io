@@ -17,15 +17,15 @@ export const site = {
   // Shorter role used in the <title> (Google shows ~60 characters)
   titleRole: 'CEO, Kimova AI · AI Researcher',
   // One-line value proposition shown in the hero
-  tagline: 'AI researcher and founder — building Kimova AI, the agentic AI co-auditor for ISO, SOC 2 and privacy audits.',
+  tagline: 'AI researcher and founder — building Kimova AI, the framework-agnostic agentic workbench for auditors.',
   // Meta description for the home page (keep under ~155 characters)
   description:
-    'Dr. Mohit Vaishnav — Co-founder & CEO of Kimova AI, an agentic AI co-auditor for ISO and SOC 2 audits, and AI researcher at TalTech (PhD, Brown / ANITI).',
+    'Dr. Mohit Vaishnav — Co-founder & CEO of Kimova AI, the framework-agnostic AI workbench for auditors, and AI researcher at TalTech (PhD, Brown / ANITI).',
   // Canonical biography — paste this VERBATIM on every profile (LinkedIn,
   // ORCID, Scholar, Crunchbase, Wikidata description…). Consistent wording
   // across the web is one of the strongest entity signals for Google.
   bio:
-    'Dr. Mohit Vaishnav is the Co-founder & CEO of Kimova AI, a Tallinn-based company building an agentic AI co-auditor for ISO, SOC 2 and privacy audits, and a postdoctoral researcher in the Applied Artificial Intelligence Group at Tallinn University of Technology (TalTech). He earned his PhD in computer science (cognitive AI and visual reasoning) from Université Toulouse III, with research conducted at Brown University\'s Serre Lab and ANITI under Thomas Serre and Nicholas Asher. His work on visual reasoning, attention and vision-language models has been published at NeurIPS, ICLR, TMLR and CoNLL and in Neural Computation.',
+    'Dr. Mohit Vaishnav is the Co-founder & CEO of Kimova AI, a Tallinn-based company building a framework-agnostic agentic AI workbench that helps auditors run any audit end-to-end, and a postdoctoral researcher in the Applied Artificial Intelligence Group at Tallinn University of Technology (TalTech). He earned his PhD in computer science (cognitive AI and visual reasoning) from Université Toulouse III, with research conducted at Brown University\'s Serre Lab and ANITI under Thomas Serre and Nicholas Asher. His research on active visual reasoning, attention, working memory and multimodal architectures has been published at NeurIPS, ICLR, TMLR, ACL/CoNLL and in Neural Computation.',
   url: 'https://vaishnavmohit.github.io',
   // Your email is NOT rendered anywhere on the site (to avoid scrapers/spam).
   // The contact form delivers messages to the inbox tied to your Web3Forms key.
@@ -35,7 +35,7 @@ export const site = {
     name: 'Kimova AI',
     legalName: 'KIMOVA AI OÜ',
     url: 'https://kimova.ai',
-    description: 'Agentic AI co-auditor for ISO, SOC 2 and privacy audits.',
+    description: 'Framework-agnostic agentic AI workbench for auditors to run any audit end-to-end.',
     // From the Estonian e-Business Register (ariregister.rik.ee)
     registryCode: '16986492',
     foundingDate: '2024-05-13',
@@ -86,8 +86,9 @@ export const site = {
   keywords: [
     'Mohit Vaishnav', 'AI Entrepreneur', 'Kimova AI', 'Cybersecurity AI',
     'ISO 27001', 'SOC 2', 'AI audit', 'Computer Vision', 'Deep Learning', 'Visual Reasoning',
-    'Brown University', 'ANITI', 'Cognitive AI', 'Vision-Language Models',
-    'NeurIPS', 'ICLR', 'AI CEO',
+    'Agentic AI', 'Multimodal Reasoning Agents', 'Active Vision', 'Embodied AI',
+    'Brown University', 'ANITI', 'TalTech', 'Cognitive AI', 'Vision-Language Models',
+    'NeurIPS', 'ICLR', 'ACL', 'AI CEO',
   ],
 };
 
@@ -150,10 +151,9 @@ export const sameAsProfiles = [
   `https://theses.fr/${identifiers.thesesFr}`,
   `https://www.idref.fr/${identifiers.idref}`,
   `https://viaf.org/viaf/${identifiers.viaf}`,
-  // Institutional pages
+  // Institutional pages (dedicated person profiles only — avoid #fragment URLs)
   'https://taltech.ee/en/contacts/applied-artificial-intelligence-group/mohit-vaishnav',
   'https://www.etis.ee/CV/mohit-vaishnav/eng/',
-  'https://serre.lab.brown.edu/#/people',
   // Company registry (lists you as board member of KIMOVA AI OÜ)
   'https://www.inforegister.ee/en/2418804-ID/',
   // Optional — light up automatically once filled in above

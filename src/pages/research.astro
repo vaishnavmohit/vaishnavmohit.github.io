@@ -2,50 +2,177 @@
 import Base from '@layouts/Base.astro';
 import PubCard from '@components/PubCard.astro';
 import Icon from '@components/Icon.astro';
-import { site, academicProfiles } from '@data/site';
+import { academicProfiles } from '@data/site';
 import pubData from '@data/publications.json';
-import { highlights, themes, workInProgress } from '@data/research';
+import {
+  visionPillars,
+  horizons,
+  highlights,
+  themes,
+  workInProgress,
+  collaborationTracks,
+} from '@data/research';
 import { publicationsListNode } from '../lib/schema';
 
 const pubs = [...pubData.publications].sort((a, b) => (b.year - a.year) || (b.citations - a.citations));
 const years = [...new Set(pubs.map((p) => p.year))].sort((a, b) => b - a);
-const firstYear = years[years.length - 1];
+const topicOrder = [
+  'Multimodal Grounding',
+  'Agentic & Active Vision',
+  'Verification & Benchmarks',
+  'Vision for Science',
+  'Video & Signal Coding',
+];
+const topics = topicOrder.filter((t) => pubs.some((p) => (p.topics ?? []).includes(t)));
 ---
 <Base
   title="Research"
-  description={`Research by Dr. Mohit Vaishnav — how vision-language models perceive and reason. ${pubs.length} papers (TMLR, NeurIPS, ICLR, CoNLL), and work in progress.`}
+  description={`Academic research by Dr. Mohit Vaishnav — active visual reasoning, perceptual grounding, multimodal agentic workflows and embodied AI. ${pubs.length} papers (TMLR, NeurIPS, ICLR, ACL/CoNLL).`}
   pageType="CollectionPage"
   schema={[publicationsListNode()]}
 >
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+      <div class="absolute -top-24 right-0 h-96 w-96 rounded-full bg-brand-500/10 blur-3xl"></div>
+      <div class="absolute top-36 -left-24 h-80 w-80 rounded-full bg-signal-500/10 blur-3xl"></div>
+    </div>
+
+    <div class="container-page pt-16 pb-12 sm:pt-20 sm:pb-14">
+      <p class="eyebrow">Academic Research · TalTech &amp; EXAI</p>
+      <h1 class="mt-3 max-w-4xl font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl dark:text-white">
+        Seeing, reasoning, and acting in the visual world
+      </h1>
+      <p class="mt-5 max-w-3xl text-lg leading-relaxed text-ink-soft dark:text-slate-300">
+        Glance at an unfamiliar tool on a cluttered workbench: in two seconds, you grasp how its parts relate and how
+        to pick it up. Even today’s largest multimodal models still stumble here — mistaking surface statistical
+        shortcuts for genuine understanding.
+      </p>
+      <p class="mt-3 max-w-3xl text-lg leading-relaxed text-ink-soft dark:text-slate-400">
+        My research bridges <strong class="font-semibold text-ink dark:text-white">computational cognitive science,
+        computer vision, and agentic AI</strong>: designing native perceptual representations, active working-memory
+        loops, and verifiable multimodal workflows for systems that interact with the real world.
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <a href="#collaborate" class="btn-primary">Collaborate, join or consult <Icon name="arrow" class="h-4 w-4" /></a>
+        <a href="#vision" class="btn-ghost">Research vision</a>
+        <a href="#publications" class="btn-ghost">Publications ({pubs.length})</a>
+      </div>
+
+      <!-- Key academic counters -->
+      <div class="mt-10 flex flex-wrap gap-8 border-t border-slate-200 pt-8 dark:border-slate-800">
+        <div>
+          <p class="font-display text-2xl font-bold text-brand-600 dark:text-brand-400">{pubs.length}</p>
+          <p class="text-sm text-ink-faint">Peer-reviewed &amp; archival works</p>
+        </div>
+        <div>
+          <p class="font-display text-2xl font-bold text-brand-600 dark:text-brand-400">{workInProgress.length}</p>
+          <p class="text-sm text-ink-faint">Active manuscripts</p>
+        </div>
+        <div>
+          <p class="font-display text-2xl font-bold text-brand-600 dark:text-brand-400">NeurIPS · ICLR · ACL · TMLR</p>
+          <p class="text-sm text-ink-faint">Core venues</p>
+        </div>
+      </div>
+
+      <!-- Academic profiles (authoritative identity backlinks) -->
+      <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
+        <span class="text-xs font-semibold uppercase tracking-wider text-ink-faint">Academic profiles</span>
+        {academicProfiles.map((p) => (
+          <a href={p.href} target="_blank" rel="me noopener" class="inline-flex items-center gap-1 text-sm font-medium link-underline">
+            {p.label} <Icon name="external" class="h-3 w-3" />
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH VISION & 3 PILLARS -->
+  <section id="vision" class="scroll-mt-20 border-y border-slate-200 bg-slate-50/70 py-16 sm:py-20 dark:border-slate-800 dark:bg-slate-900/30">
+    <div class="container-page">
+      <div class="max-w-3xl">
+        <p class="eyebrow">Research vision &amp; niche</p>
+        <h2 class="mt-2 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl dark:text-white">
+          Why visual reasoning is the long-horizon bet
+        </h2>
+        <p class="mt-4 text-base leading-relaxed text-ink-soft sm:text-lg dark:text-slate-300">
+          Language reasoning scaled rapidly because text arrives pre-packaged as discrete, human-curated symbols.
+          Vision doesn’t: the physical world is continuous, 3D, occluded, and constantly changing. Many current
+          multimodal pipelines try to bridge this gap by reducing scenes into symbolic graphs or word-models of images
+          and letting an LLM reason over text — yet my diagnostic studies show that the spatial and relational geometry
+          needed for hard tasks is often lost before symbolic reasoning even begins.
+        </p>
+        <p class="mt-3 text-base leading-relaxed text-ink-soft sm:text-lg dark:text-slate-400">
+          My niche is <strong class="font-semibold text-ink dark:text-white">perceptually native, active visual
+          world models</strong>: building systems that attend, hold spatial state in working memory, and verify
+          conclusions directly over rich visual representations rather than forcing perception through a linguistic bottleneck.
+        </p>
+      </div>
+
+      <!-- 3 Pillars Grid -->
+      <ol role="list" class="mt-10 grid gap-6 lg:grid-cols-3">
+        {visionPillars.map((p) => (
+          <li class="card flex flex-col justify-between border-slate-200/90 bg-white dark:border-slate-800 dark:bg-slate-900/80">
+            <div>
+              <div class="flex items-center justify-between gap-2">
+                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand-50 font-display text-xs font-bold text-brand-700 dark:bg-brand-500/15 dark:text-brand-300">
+                  {p.step}
+                </span>
+                <span class="text-xs font-medium text-ink-faint">Core pillar</span>
+              </div>
+              <h3 class="mt-4 font-display text-xl font-bold text-ink dark:text-white">{p.title}</h3>
+              <p class="mt-1 text-sm font-medium text-brand-600 dark:text-brand-300">{p.subtitle}</p>
+              <p class="mt-3 text-sm leading-relaxed text-ink-soft dark:text-slate-400">{p.body}</p>
+            </div>
+            <div class="mt-5 flex flex-wrap gap-1.5 border-t border-slate-100 pt-4 dark:border-slate-800/80">
+              {p.anchors.map((a) => (
+                <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-ink-soft dark:bg-slate-800 dark:text-slate-300">
+                  {a}
+                </span>
+              ))}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- APPLICATION HORIZONS (Embodied, Mobility, Science) -->
   <section class="container-page py-16 sm:py-20">
-    <p class="eyebrow">Research</p>
-    <h1 class="mt-2 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl dark:text-white">Seeing vs. reasoning in AI</h1>
-    <p class="mt-4 max-w-2xl text-lg text-ink-soft dark:text-slate-400">
-      Fifteen years of work on how machines see and reason — from lossless video coding to attention-and-memory
-      architectures to probing today's vision-language models — published at TMLR, NeurIPS, ICLR, CoNLL,
-      Neural Computation and IEEE DCC.
-    </p>
-
-    <div class="mt-8 flex flex-wrap gap-8">
-      <div><p class="font-display text-2xl font-bold text-brand-600 dark:text-brand-400">{pubs.length}</p><p class="text-sm text-ink-faint">Publications</p></div>
-      <div><p class="font-display text-2xl font-bold text-brand-600 dark:text-brand-400">{workInProgress.length}</p><p class="text-sm text-ink-faint">In progress</p></div>
-      <div><p class="font-display text-2xl font-bold text-brand-600 dark:text-brand-400">{firstYear}</p><p class="text-sm text-ink-faint">First paper</p></div>
+    <div class="max-w-3xl">
+      <p class="eyebrow">Where this leads</p>
+      <h2 class="mt-2 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl dark:text-white">
+        Built for embodied, physical, and scientific horizons
+      </h2>
+      <p class="mt-3 text-ink-soft dark:text-slate-400">
+        Visual reasoning is a long shot precisely because static benchmarks are not the destination — reliable action in
+        complex, open-ended environments is.
+      </p>
     </div>
 
-    <!-- Academic profiles (authoritative identity backlinks) -->
-    <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
-      <span class="text-xs font-semibold uppercase tracking-wider text-ink-faint">Profiles</span>
-      {academicProfiles.map((p) => (
-        <a href={p.href} target="_blank" rel="me noopener" class="inline-flex items-center gap-1 text-sm font-medium link-underline">
-          {p.label} <Icon name="external" class="h-3 w-3" />
-        </a>
+    <ul role="list" class="mt-8 grid gap-6 md:grid-cols-3">
+      {horizons.map((h) => (
+        <li class="card flex flex-col justify-between bg-gradient-to-b from-white to-slate-50/70 dark:from-slate-900/70 dark:to-slate-900/30">
+          <div>
+            <span class="inline-block rounded-full bg-accent-50 px-2.5 py-1 text-xs font-semibold text-accent-700 dark:bg-accent-500/10 dark:text-accent-300">
+              {h.tag}
+            </span>
+            <h3 class="mt-3 font-display text-lg font-bold text-ink dark:text-white">{h.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-soft dark:text-slate-400">{h.body}</p>
+          </div>
+          <p class="mt-4 border-t border-slate-200/70 pt-3 text-xs font-medium text-ink-faint dark:border-slate-800">
+            {h.foot}
+          </p>
+        </li>
       ))}
-    </div>
+    </ul>
 
-    <!-- Latest highlights -->
-    <div class="mt-12">
-      <p class="eyebrow">Latest</p>
-      <ol class="mt-4 grid gap-4 md:grid-cols-2">
+    <!-- Latest highlights + On the bench now -->
+    <div class="mt-16">
+      <p class="eyebrow">Recent momentum</p>
+      <h2 class="mt-2 font-display text-2xl font-bold text-ink sm:text-3xl dark:text-white">Latest highlights</h2>
+      <ol role="list" class="mt-6 grid gap-4 md:grid-cols-2">
         {highlights.map((h) => {
           const Tag = h.href ? 'a' : 'div';
           const ext = h.href?.startsWith('http');
@@ -53,7 +180,7 @@ const firstYear = years[years.length - 1];
             <li>
               <Tag href={h.href} target={ext ? '_blank' : undefined} rel={ext ? 'noopener' : undefined}
                 class:list={['card flex h-full gap-4', h.href && 'card-hover']}>
-                <span class="w-16 shrink-0 font-display text-sm font-bold text-accent-600 dark:text-accent-400">{h.date}</span>
+                <span class="w-20 shrink-0 font-display text-sm font-bold text-accent-600 dark:text-accent-400">{h.date}</span>
                 <span>
                   <span class="block font-semibold text-ink dark:text-white">{h.title}</span>
                   <span class="mt-1 block text-sm text-ink-soft dark:text-slate-400">{h.detail}</span>
@@ -65,35 +192,83 @@ const firstYear = years[years.length - 1];
       </ol>
     </div>
 
-    <!-- Research vision (establishes the active-researcher entity) -->
-    <div class="mt-12 rounded-2xl border border-slate-200 bg-slate-50/60 p-6 sm:p-8 dark:border-slate-800 dark:bg-slate-900/30">
-      <p class="eyebrow">Research direction</p>
-      <h2 class="mt-2 font-display text-2xl font-bold text-ink dark:text-white">Probing how vision-language models actually reason</h2>
-      <p class="mt-3 max-w-3xl text-ink-soft dark:text-slate-400">
-        My current research — as a postdoctoral researcher at TalTech under the EXAI grant — asks a
-        deceptively simple question: when a large vision-language model answers correctly, is it
-        <em>reasoning</em>, or pattern-matching? I design cognitive-paradigm evaluations that decouple
-        perception from reasoning, build benchmarks that resist shortcut-learning, and develop agents whose
-        attention and memory are guided rather than brute-forced — extending the GAMR line of work from my PhD.
+    <!-- Active manuscripts -->
+    <div class="mt-16 scroll-mt-24" id="in-progress">
+      <p class="eyebrow">Active workflows</p>
+      <h2 class="mt-2 font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl dark:text-white">On the bench now</h2>
+      <p class="mt-2 max-w-2xl text-sm text-ink-soft dark:text-slate-400">
+        Current studies under the EXAI programme at TalTech — if your group explores adjacent questions, feel free to reach out early.
       </p>
-      <p class="mt-3 max-w-3xl text-ink-soft dark:text-slate-400">
-        The throughline across a decade of work: <strong class="text-ink dark:text-white">attention and memory
-        as the levers of efficient, generalizable intelligence</strong> — in brains, in models, and now in
-        the products we build at Kimova AI.
-      </p>
-      <div class="mt-4 flex flex-wrap gap-2">
-        <span class="rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 dark:bg-brand-500/10 dark:text-brand-300">Recent: TMLR 2026 · J2C at NeurIPS 2026 · CoNLL 2026, oral at ACL 2026 · CVPR Workshop 2026</span>
+      <div class="mt-6 grid gap-6 md:grid-cols-2">
+        {workInProgress.map((w) => (
+          <article class="card border-dashed">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-signal-500/10 px-2.5 py-1 text-xs font-semibold text-signal-600 dark:text-signal-400">
+                <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-signal-500" aria-hidden="true"></span>{w.status}
+              </span>
+              <span class="rounded-full bg-brand-50 px-2.5 py-1 text-xs font-medium text-brand-700 dark:bg-brand-500/10 dark:text-brand-300">
+                {w.tag}
+              </span>
+            </div>
+            <h3 class="mt-3 font-display text-lg font-semibold leading-snug text-ink dark:text-white">{w.title}</h3>
+            <p class="mt-1.5 text-sm text-ink-soft dark:text-slate-400">{w.authors}</p>
+            {w.summary && <p class="mt-3 text-sm text-ink-soft dark:text-slate-400">{w.summary}</p>}
+          </article>
+        ))}
       </div>
     </div>
+  </section>
 
-    <!-- Research dimensions -->
-    <div class="mt-16">
-      <p class="eyebrow">Research dimensions</p>
-      <h2 class="mt-2 font-display text-3xl font-bold tracking-tight text-ink dark:text-white">One question, asked at every scale</h2>
-      <ol class="mt-8 space-y-4 border-l-2 border-slate-200 pl-6 dark:border-slate-800">
+  <!-- WORK WITH ME: Collaborate / Join / Consult -->
+  <section id="collaborate" class="scroll-mt-20 border-y border-brand-200/70 bg-gradient-to-br from-brand-50/70 via-white to-accent-50/50 py-16 sm:py-20 dark:border-slate-800 dark:from-brand-950/40 dark:via-[#080c18] dark:to-accent-950/20">
+    <div class="container-page">
+      <div class="max-w-3xl">
+        <p class="eyebrow">Open door</p>
+        <h2 class="mt-2 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl dark:text-white">
+          Work with me — collaborate, join, or consult
+        </h2>
+        <p class="mt-3 text-base leading-relaxed text-ink-soft sm:text-lg dark:text-slate-300">
+          Good science happens in conversation. Whether you’re a fellow researcher exploring joint ideas, a motivated
+          student looking for a thesis home, or an engineering team tackling hard visual &amp; multimodal problems, I’d
+          love to hear from you.
+        </p>
+      </div>
+
+      <ul role="list" class="mt-10 grid gap-6 lg:grid-cols-3">
+        {collaborationTracks.map((c) => (
+          <li class="card card-hover flex flex-col justify-between bg-white dark:bg-slate-900/80">
+            <div>
+              <span class="inline-block rounded-full bg-brand-50 px-2.5 py-1 text-xs font-semibold text-brand-700 dark:bg-brand-500/15 dark:text-brand-300">
+                {c.badge}
+              </span>
+              <h3 class="mt-3 font-display text-xl font-bold text-ink dark:text-white">{c.title}</h3>
+              <p class="mt-2.5 text-sm leading-relaxed text-ink-soft dark:text-slate-400">{c.body}</p>
+              <p class="mt-3 rounded-xl bg-slate-50 px-3 py-2 text-xs text-ink-faint dark:bg-slate-800/60 dark:text-slate-300">
+                {c.note}
+              </p>
+            </div>
+            <div class="mt-6 pt-2">
+              <a href={c.href} class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 hover:underline dark:text-brand-300">
+                {c.cta} <Icon name="arrow" class="h-4 w-4" />
+              </a>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- TRAJECTORY & PUBLICATIONS -->
+  <section class="container-page py-16 sm:py-20">
+    <div>
+      <p class="eyebrow">Research trajectory</p>
+      <h2 class="mt-2 font-display text-3xl font-bold tracking-tight text-ink dark:text-white">
+        How each chapter feeds the bigger picture
+      </h2>
+      <ol role="list" class="mt-8 space-y-4 border-l-2 border-slate-200 pl-6 dark:border-slate-800">
         {themes.map((t, i) => (
           <li class="relative">
-            <span class:list={['absolute -left-[1.95rem] top-7 h-3 w-3 rounded-full ring-4 ring-white dark:ring-[#080c18]', i === 0 ? 'bg-signal-500' : 'bg-brand-400']}></span>
+            <span aria-hidden="true" class:list={['absolute -left-[1.95rem] top-7 h-3 w-3 rounded-full ring-4 ring-white dark:ring-[#080c18]', i === 0 ? 'bg-signal-500' : 'bg-brand-400']}></span>
             <div class="card">
               <p class="text-xs font-semibold uppercase tracking-wider text-ink-faint">{t.period}</p>
               <h3 class="mt-1 font-display text-lg font-bold text-ink dark:text-white">{t.title}</h3>
@@ -112,45 +287,8 @@ const firstYear = years[years.length - 1];
       </ol>
     </div>
 
-    <!-- Research ↔ entrepreneurship -->
-    <div class="mt-12 grid gap-6 rounded-2xl border border-brand-200 bg-gradient-to-br from-brand-50/80 to-white p-6 sm:p-8 md:grid-cols-[1.4fr_1fr] dark:border-brand-800 dark:from-brand-500/5 dark:to-transparent">
-      <div>
-        <p class="eyebrow">From lab to product</p>
-        <h2 class="mt-2 font-display text-2xl font-bold text-ink dark:text-white">The same question drives Kimova AI</h2>
-        <p class="mt-3 text-ink-soft dark:text-slate-400">
-          Asking whether a model really reasoned or merely matched a pattern is, in industry, the difference
-          between an AI you can trust with an audit and one you can't. At
-          <a href={site.company.url} target="_blank" rel="noopener" class="link-underline">Kimova AI</a> we bring
-          that research discipline — grounded evidence, measurable failure modes, evaluation before scale — to
-          an agentic AI co-auditor for ISO, SOC 2 and privacy audits.
-        </p>
-      </div>
-      <ul class="space-y-3 self-center text-sm">
-        <li class="flex gap-3"><span class="font-display font-bold text-brand-600 dark:text-brand-300">Research</span><span class="text-ink-soft dark:text-slate-400">Diagnose perception vs. reasoning failures in VLMs</span></li>
-        <li class="flex gap-3"><span class="font-display font-bold text-accent-600 dark:text-accent-400">Product</span><span class="text-ink-soft dark:text-slate-400">A trustworthy AI co-auditor for ISO, SOC 2 and privacy audits</span></li>
-      </ul>
-    </div>
-
-    <!-- Work in progress -->
-    <div class="mt-16" id="in-progress">
-      <p class="eyebrow">Work in progress</p>
-      <h2 class="mt-2 font-display text-3xl font-bold tracking-tight text-ink dark:text-white">On the bench now</h2>
-      <div class="mt-8 grid gap-6 md:grid-cols-2">
-        {workInProgress.map((w) => (
-          <article class="card border-dashed">
-            <span class="inline-flex items-center gap-1.5 rounded-full bg-accent-50 px-2.5 py-1 text-xs font-semibold text-accent-700 dark:bg-accent-500/10 dark:text-accent-300">
-              <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-accent-500"></span>{w.status}
-            </span>
-            <h3 class="mt-3 font-display text-lg font-semibold leading-snug text-ink dark:text-white">{w.title}</h3>
-            <p class="mt-1.5 text-sm text-ink-soft dark:text-slate-400">{w.authors}</p>
-            {w.summary && <p class="mt-3 text-sm text-ink-soft dark:text-slate-400">{w.summary}</p>}
-          </article>
-        ))}
-      </div>
-    </div>
-
     <!-- PhD thesis highlight -->
-    <a href="/phd-thesis" class="mt-6 flex items-center gap-4 rounded-2xl border border-brand-200 bg-brand-50/60 p-5 transition-colors hover:border-brand-400 dark:border-brand-800 dark:bg-brand-500/5">
+    <a href="/phd-thesis" class="mt-8 flex items-center gap-4 rounded-2xl border border-brand-200 bg-brand-50/60 p-5 transition-colors hover:border-brand-400 dark:border-brand-800 dark:bg-brand-500/5">
       <img src="/img/phd-thesis-112.webp" alt="" width="56" height="56" loading="lazy" decoding="async" class="h-14 w-14 shrink-0 rounded-lg border border-slate-200 object-cover dark:border-slate-700" />
       <div class="min-w-0">
         <p class="text-sm font-semibold text-ink dark:text-white">PhD Thesis — Exploring the role of (self-)attention in cognitive &amp; computer vision</p>
@@ -159,42 +297,102 @@ const firstYear = years[years.length - 1];
     </a>
 
     <!-- Publications -->
-    <h2 id="publications" class="mt-16 scroll-mt-24 font-display text-3xl font-bold tracking-tight text-ink dark:text-white">Publications</h2>
-    <p class="mt-2 text-sm text-ink-faint">Venue ranks are the <a href="https://portal.core.edu.au/conf-ranks/" target="_blank" rel="noopener" class="link-underline">CORE</a> ranking in force when each paper was published.</p>
+    <div id="publications" class="mt-16 scroll-mt-24">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p class="eyebrow">Archive</p>
+          <h2 class="mt-1 font-display text-3xl font-bold tracking-tight text-ink dark:text-white">Publications</h2>
+          <p class="mt-2 text-sm text-ink-faint">
+            Venue ranks reflect the <a href="https://portal.core.edu.au/conf-ranks/" target="_blank" rel="noopener" class="link-underline">CORE</a> ranking in force when each paper was published.
+          </p>
+        </div>
+        <p id="pub-count" role="status" aria-live="polite" class="text-xs font-medium text-ink-faint">
+          Showing all {pubs.length} works
+        </p>
+      </div>
 
-    <!-- Filters -->
-    <div class="mt-6 flex flex-wrap gap-2" id="filters">
-      <button class="filter-btn is-active" data-filter="all">All</button>
-      {years.map((y) => <button class="filter-btn" data-filter={String(y)}>{y}</button>)}
-    </div>
+      <!-- Accessible dual filters inside semantic <search> -->
+      <search aria-label="Filter publications" class="mt-6 space-y-3 rounded-2xl border border-slate-200 bg-slate-50/60 p-4 dark:border-slate-800 dark:bg-slate-900/40">
+        <div class="flex flex-wrap items-center gap-2" role="group" aria-label="Filter by research area">
+          <span class="mr-1 text-xs font-semibold uppercase tracking-wider text-ink-faint">Area</span>
+          <button type="button" class="filter-btn topic-btn is-active" data-topic="all" aria-pressed="true">All areas</button>
+          {topics.map((t) => (
+            <button type="button" class="filter-btn topic-btn" data-topic={t} aria-pressed="false">{t}</button>
+          ))}
+        </div>
+        <div class="flex flex-wrap items-center gap-2 border-t border-slate-200/80 pt-3 dark:border-slate-800" role="group" aria-label="Filter by publication year">
+          <span class="mr-1 text-xs font-semibold uppercase tracking-wider text-ink-faint">Year</span>
+          <button type="button" class="filter-btn year-btn is-active" data-year-filter="all" aria-pressed="true">All years</button>
+          {years.map((y) => (
+            <button type="button" class="filter-btn year-btn" data-year-filter={String(y)} aria-pressed="false">{y}</button>
+          ))}
+        </div>
+      </search>
 
-    <div class="mt-8 grid gap-6 md:grid-cols-2" id="pub-grid">
-      {pubs.map((pub) => <PubCard pub={pub} />)}
+      <div class="mt-8 grid gap-6 md:grid-cols-2" id="pub-grid">
+        {pubs.map((pub) => <PubCard pub={pub} />)}
+      </div>
     </div>
   </section>
 </Base>
 
 <style>
   .filter-btn {
-    @apply rounded-full border border-slate-200 px-4 py-1.5 text-sm font-medium text-ink-soft transition-colors hover:border-brand-400 hover:text-brand-600 dark:border-slate-700 dark:text-slate-400;
+    @apply min-h-[32px] rounded-full border border-slate-200 bg-white px-3.5 py-1.5 text-xs font-medium text-ink-soft transition-colors hover:border-brand-400 hover:text-brand-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-brand-400 dark:hover:text-brand-300;
   }
   .filter-btn.is-active {
-    @apply border-brand-500 bg-brand-500 text-white hover:text-white dark:border-brand-500;
+    @apply border-brand-600 bg-brand-600 text-white hover:text-white dark:border-brand-500 dark:bg-brand-500;
   }
 </style>
 
 <script>
   const grid = document.getElementById('pub-grid');
-  const btns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
-  btns.forEach((btn) => {
+  const countEl = document.getElementById('pub-count');
+  const topicBtns = document.querySelectorAll<HTMLButtonElement>('.topic-btn');
+  const yearBtns = document.querySelectorAll<HTMLButtonElement>('.year-btn');
+  const cards = grid ? Array.from(grid.querySelectorAll<HTMLElement>('[data-year]')) : [];
+  const total = cards.length;
+
+  let activeTopic = 'all';
+  let activeYear = 'all';
+
+  function updateFilters() {
+    let shown = 0;
+    cards.forEach((card) => {
+      const cardTopics = (card.dataset.topics ?? '').split('|').filter(Boolean);
+      const matchTopic = activeTopic === 'all' || cardTopics.includes(activeTopic);
+      const matchYear = activeYear === 'all' || card.dataset.year === activeYear;
+      const visible = matchTopic && matchYear;
+      card.hidden = !visible;
+      if (visible) shown += 1;
+    });
+    if (countEl) {
+      countEl.textContent =
+        shown === total ? `Showing all ${total} works` : `Showing ${shown} of ${total} works`;
+    }
+  }
+
+  topicBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-      btns.forEach((b) => b.classList.remove('is-active'));
-      btn.classList.add('is-active');
-      const f = btn.dataset.filter;
-      grid?.querySelectorAll<HTMLElement>('[data-year]').forEach((card) => {
-        const show = f === 'all' || card.dataset.year === f;
-        card.style.display = show ? '' : 'none';
+      activeTopic = btn.dataset.topic ?? 'all';
+      topicBtns.forEach((b) => {
+        const on = b === btn;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-pressed', String(on));
       });
+      updateFilters();
+    });
+  });
+
+  yearBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      activeYear = btn.dataset.yearFilter ?? 'all';
+      yearBtns.forEach((b) => {
+        const on = b === btn;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-pressed', String(on));
+      });
+      updateFilters();
     });
   });
 </script>

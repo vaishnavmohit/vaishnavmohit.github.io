@@ -21,11 +21,11 @@ export const experience: Role[] = [
     period: '2024 — Present',
     current: true,
     summary:
-      'Building an agentic AI co-auditor for ISO, SOC 2 and privacy audits — for audit firms and in-house compliance teams.',
+      'Building a framework-agnostic agentic AI workbench that empowers auditors and assurance teams to run any audit they choose — from security and AI governance to custom internal standards.',
     points: [
-      'AI support across the audit cycle: planning, evidence review, conducting the audit, corrective actions and reporting.',
+      'End-to-end auditor workbench across planning, evidence review, fieldwork, corrective actions and reporting — adaptable to any framework.',
       'Lead product strategy, fundraising, partnerships and client engagements.',
-      'Driving the roadmap from research-grade models to enterprise-ready product.',
+      'Driving the platform roadmap for audit firms and enterprise assurance teams.',
       'Selected for the next cohort of the Tehnopol AI Accelerator (Tallinn).',
     ],
     tags: ['Startup', 'AI/ML', 'Cybersecurity', 'Leadership'],

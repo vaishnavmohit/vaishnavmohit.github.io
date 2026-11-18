@@ -5,9 +5,10 @@ import ContactForm from '@components/ContactForm.astro';
 import { socials, site } from '@data/site';
 
 const channels = [
-  { title: 'Business & partnerships', body: 'Audit firms and compliance teams working with Kimova AI.' },
-  { title: 'Research collaboration', body: 'Academic or industrial research on vision-language models & reasoning.' },
-  { title: 'Speaking & advisory', body: 'Keynotes, panels and strategic advisory on applied AI.' },
+  { title: 'Research collaborations', body: 'Joint papers, benchmarks, EU/Horizon consortia and workshops in multimodal & embodied AI.' },
+  { title: 'Students & thesis supervision', body: 'MSc / PhD thesis projects and internships on active vision, VLMs & agentic reasoning.' },
+  { title: 'R&D consultation & speaking', body: 'Scientific advisory, architecture diagnostics, keynotes and technical workshops.' },
+  { title: 'Kimova AI & partnerships', body: 'Audit firms and compliance teams working with Kimova AI.' },
 ];
 const social = socials.filter((s) => s.id !== 'email');
 ---
