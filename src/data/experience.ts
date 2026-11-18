@@ -178,6 +178,15 @@ export const awards: Award[] = [
   },
   {
     year: '2026',
+    title: 'Selected Researcher — Google Antigravity for Science',
+    org: 'Google',
+    description:
+      'Selected among academic researchers worldwide for six months of complimentary highest-tier access to Google Antigravity and frontier Gemini 4 (Argon & Carbon) reasoning models to accelerate multimodal reasoning research at TalTech.',
+    tags: ['Research Grant'],
+    href: 'https://antigravity.google/use-cases/science',
+  },
+  {
+    year: '2026',
     title: 'Tehnopol AI Accelerator — Kimova AI selected',
     org: 'Tehnopol Science and Business Park, Tallinn',
     description:

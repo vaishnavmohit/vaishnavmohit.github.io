@@ -26,6 +26,12 @@ export const highlights: Highlight[] = [
     href: 'https://arxiv.org/abs/2507.07574',
   },
   {
+    date: 'Nov 2026',
+    title: 'Google Antigravity for Science',
+    detail: 'Selected for complimentary highest-tier access to Google Antigravity (Gemini 4 Argon & Carbon) to accelerate multimodal reasoning research at TalTech.',
+    href: 'https://antigravity.google/use-cases/science',
+  },
+  {
     date: '2026',
     title: 'Oral presentation at ACL 2026',
     detail: '“Symbolic Grounding Reveals Representational Bottlenecks in Abstract Visual Reasoning” (CoNLL 2026, co-located with ACL 2026).',
